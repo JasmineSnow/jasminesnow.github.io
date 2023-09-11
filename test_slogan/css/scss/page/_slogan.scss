@@ -113,23 +113,29 @@
 
 // nav
 .sloganNav {
-  position: sticky;
+  position: fixed;
   top: 140px;
   z-index: 4;
-  margin: 0 -20px 40px;
-  padding: 0 30px;
+  width: 100%;
+  margin-bottom: 40px;
   color: #fff;
-  background-color: #035fa2;
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 8px 0 0 rgba(0,0,0,0.08);
+  
+  
   @include screen-width($width-mobile) {
     top: 106px;
     margin-bottom: 20px;
-    padding: 0 20px;
-    border-radius: 0 0 20px 20px;
   }
-  @include screen-width($width-mobile) {
+  @include screen-width($width-xs) {
     top: 92px;
+  }
+  .pagesize {
+    background-color: #035fa2;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.08);
+    @include screen-width($width-mobile) {
+      padding: 0 20px;
+      border-radius: 0 0 20px 20px;
+    }
   }
   a {
     position: relative;
