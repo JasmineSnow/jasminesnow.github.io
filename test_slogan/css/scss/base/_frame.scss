@@ -1,0 +1,391 @@
+/*------------------------------------*\
+  天地
+\*------------------------------------*/
+
+/*------------------------------------*\
+  popup
+\*------------------------------------*/
+@import "_frame-popup";
+
+
+
+/*------------------------------------*\
+  天地框架
+\*------------------------------------*/
+// 頁面
+.wrapper {
+  padding-top: 140px; // 84+56
+  background: #f3f3f3;
+  @include screen-width($width-mobile) {
+    padding-top: 106px; // 50+56
+  }
+  @include screen-width($width-xs) {
+    padding-top: 92px; // 50+42
+  }
+}
+.pagesize {
+  margin: 0 auto;
+  max-width: $pagesize-width;
+  padding: 0 40px;
+  @include screen-width($width-large) {
+    padding: 0 20px;
+  }
+  @include screen-width($width-mobile) {
+    padding: 0 17px;
+  }
+}
+// container
+.container {
+}
+
+
+
+
+
+/*------------------------------------*\
+  header
+\*------------------------------------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  .pagesize {
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    flex: 0 0 auto;
+    display: block;
+    width: 174px;
+    height: 36px;
+    margin-right: 20px;
+    background: url(../images/frame/logo.png) center left no-repeat;
+    background-size: auto 100%;
+    span {
+      display: inline-block;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      color: transparent;
+    }
+  }
+    @include screen-width($width-mobile) {
+      .pagesize {
+        height: 50px;
+      }
+      .logo {
+        width: 120px;
+        height: 23px;
+      }
+    }
+
+}
+
+.headerMenuArea {
+  position: relative;
+  padding-left: 20px;
+  .accesskey {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    @include screen-width($width-mid) {
+      top: -2px;
+      left: 0;
+    }
+    @include screen-width($width-mobile) {
+      display: none;
+    }
+  }
+  @include screen-width($width-mobile) {
+    position: static;
+  }
+}
+
+.headerMenu,
+.pageMenu_nav {
+  a {
+    display: block;
+    line-height: 30px;
+    @include web-only {
+      transition: 0.15s;
+      &:hover {
+        color: #e26d40;
+      }
+    }
+  }
+}
+
+.headerLink {
+  margin-bottom: 8px;
+  text-align: right;
+  font-size: 0.9375rem;
+  line-height: 1.3rem;
+  @include screen-width($width-mid) {
+    margin-bottom: 6px;
+  }
+  a {
+    color: #146696;
+    border-bottom: solid 1px;
+  }
+  @include screen-width($width-mobile) {
+    display: none;
+  }
+}
+
+
+@for $i from 1 through 6 {
+  .headerMenu .icon-#{$i},
+  .pageMenu_nav .icon-#{$i} {
+    background: url(../images/frame/headermenu-#{$i}.png) left center no-repeat;
+  }
+}
+.headerMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style: none;
+  @include screen-width($width-mid) {
+    // padding-top: 20px;
+  }
+  @include screen-width($width-mobile) {
+    display: none;
+  }
+
+  & > li {
+    flex: 0 0 auto;
+    position: relative;
+  }
+
+  .menuLv2 {
+    display: none;
+    list-style: none;
+    position: absolute;
+    z-index: 100;
+    top: calc(100% + 4px);
+    width: 260px;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba($color: #000000, $alpha: 0.2);
+    a {
+      padding: 5px 16px;
+      @include screen-width($width-large) {
+        font-size: 1rem;
+      }
+    }
+  }
+    
+  .lv1 {
+    margin-left: 20px;
+    padding: 5px 0 5px 40px;
+    font-size: 1.375rem;
+    color: #191744;
+    @include screen-width($width-xl) {
+      padding: 0 0 0 32px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+    @include screen-width($width-large) {
+      margin-left: 6px;
+      padding-left: 24px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      background-size: 24px;
+    }
+    @include screen-width($width-mid) {
+      // max-width: 7em;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+  }
+}
+
+
+.pageMenu-btn {
+  display: none;
+  span {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: transparent;
+  }
+  @include screen-width($width-mobile) {
+    display: block;
+  }
+}
+@include screen-width($width-mobile) {
+  .pageMenu_nav {
+    padding: 0 10px;
+    & > li {
+      position: relative;
+      padding: 5px 0;
+    }
+    .lv1 {
+      margin-left: 0;
+      padding: 5px 0 5px 40px;
+      font-size: 1.25rem;
+      line-height: 30px;
+      color: #191744;
+      background-size: 30px;
+    }
+  }
+  .menuLv2 {
+    display: block;
+    padding: 10px 0 0 40px;
+    font-size: 1.0625rem;
+  }
+}
+
+
+/*------------------------------------*\
+  footer
+\*------------------------------------*/
+footer {
+  padding: 40px 0;
+  text-align: center;
+  color: #959595;
+  span { display: inline-block; }
+  @include screen-width($width-mobile) {
+    padding: 15px 0;
+    font-size: 0.75rem;
+  }
+  .pagesize {
+    position: relative;
+  }
+  .accesskey {
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+}
+
+/*------------------------------------*\
+  pageMenu
+\*------------------------------------*/
+#pageMenu {
+  color: #0d2965;
+  background: #fff;
+}
+
+/* 跳到主要內容 */
+.pagetab { overflow: hidden; opacity: 0; position: absolute; top: 0; left: 0; width: 1px; height: 1px; line-height: 1.1em; z-index: 102; font-size: 0.875em; background: #fff; }
+.pagetab:active ,
+.pagetab:focus { overflow: visible; opacity: 1; z-index: 1002;  width: auto; height: auto; }
+
+
+
+/*------------------------------------*\
+  標語
+\*------------------------------------*/
+.cautionBar,
+.cautionBar .bar {
+  height: 56px;
+  @include screen-width($width-xs) {
+    height: 42px;
+  }
+}
+.cautionBar {
+  position: fixed;
+  top: 84px;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  color: #fff;
+  background-color: #f74e37;
+  @include screen-width($width-mobile) {
+    top: 50px;
+  }
+  .bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    @include screen-width($width-xs) {
+      padding: 0 6px;
+    }
+    &-text {
+      margin-right: 16px;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      @include screen-width($width-mobile) {
+        flex: 1 1 auto;
+        margin-right: 10px;
+        padding-left: 32px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        background: url(../images/frame/caution-icon.png) left center no-repeat;
+        background-size: auto 24px;
+      }
+      @include screen-width($width-small) {
+        margin-right: 6px;
+        padding-left: 30px;
+        font-size: 0.9375rem;
+        line-height: 1.25rem;
+        background-size: auto 20px;
+      }
+      @include screen-width($width-xs) {
+        padding-left: 28px;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+        background-size: auto 18px;
+      }
+    }
+    &-btn {
+      flex: 0 0 auto;
+      padding: 0 30px;
+      font-size: 1.125rem;
+      line-height: 2em;
+      background-color: #000008;
+      border-radius: 8px;
+      @include screen-width($width-mobile) {
+        padding: 0 15px;
+        font-size: 1rem;
+      }
+      @include screen-width($width-small) {
+        padding: 0 10px;
+        font-size: 0.875rem;
+      }
+      @include screen-width($width-xs) {
+        font-size: 0.8125rem;
+      }
+    }
+  }
+  .icon {
+    padding-left: 36px;
+    background: url(../images/frame/caution-icon.png) left center no-repeat;
+    background-size: auto 24px;
+    @include screen-width($width-mobile) {
+      display: none;
+    }
+  }
+  .swiper-slide {
+    height: auto !important;
+  }
+}
+
+
+/*------------------------------------*\
+  JS_magnific-popup
+\*------------------------------------*/
+.mfp-container {
+  padding: 40px 10px 0;
+}
+.mfp-iframe-scaler iframe {
+  border-radius: 20px;
+}
+.mfp-close {
+  height: 60px;
+  top: -60px;
+  right: 0;
+  background: url(../images/frame/popup-close.png) top right no-repeat;
+  background-size: auto 100%;
+  @include screen-width($width-mobile) {
+    height: 24px;
+    top: -30px;
+  }
+}

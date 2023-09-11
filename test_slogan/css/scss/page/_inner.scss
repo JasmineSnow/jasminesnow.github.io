@@ -1,0 +1,844 @@
+/*------------------------------------*\
+  _inner.scss
+  內頁樣式
+\*------------------------------------*/
+.content {
+  padding: 60px 0 10px;
+  @include screen-width($width-mobile) {
+    padding: 30px 0 10px;
+  }
+  .pagesize {
+    position: relative;
+  }
+  .accesskey {
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+}
+
+/*------------------------------------*\
+  text
+\*------------------------------------*/
+.tC {
+  text-align: center;
+}
+.text-link {
+  font-weight: 500;
+  color: #51aab1;
+  border-bottom: solid 1px;
+}
+
+/*------------------------------------*\
+  utility
+\*------------------------------------*/
+.mb-s { margin-bottom: 20px; }
+.mb-m { margin-bottom: 30px; }
+.mb-l { margin-bottom: 40px; }
+
+@include screen-width($width-mobile) {
+  .mb-s { margin-bottom: 15px; }
+  .mb-m { margin-bottom: 24px; }
+  .mb-l { margin-bottom: 30px; }
+}
+
+
+// imgbox
+.imgbox--radius {
+  img { display: block; width: 100%; border-radius: 20px; }
+}
+
+/*------------------------------------*\
+  title
+\*------------------------------------*/
+.title-main {
+  margin-bottom: 50px;
+  @include screen-width($width-mobile) {
+    margin-bottom: 25px;
+  }
+}
+
+.title-section {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0d2965;
+  @include screen-width($width-mobile) {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+/*------------------------------------*\
+  btn
+\*------------------------------------*/
+.btn-link {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  background: url(../images/inner/btn-link.png);
+  background-size: 100%;
+  @include screen-width($width-mid) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  table
+\*------------------------------------*/
+.table-main {
+  width: 100%;
+  caption {
+    height: 0;
+    overflow: hidden;
+  }
+  thead {
+    th {
+      height: 72px;
+      padding: 0 16px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      background: #51aab1;
+      &:nth-child(1) {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      &:nth-last-child(1) {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+        @include screen-width($width-mid) {
+          font-size: 1.25rem;
+        }
+    }
+  }
+  tbody {
+    tr:nth-child(even) {
+      background: #e7eaec;
+      td:nth-child(1) {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      td:nth-last-child(1) {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+    td {
+      padding: 18px 10px;
+      font-size: 1.25rem;
+        @include screen-width($width-mid) {
+          font-size: 1.125rem;
+        }
+    }
+  }
+    @include screen-width($width-mid) {
+
+    }
+
+  &.bor-b {
+    border-bottom: solid 1px #51aab1;
+  }
+}
+// table-RWD
+@include screen-width($width-mobile) {
+  // RWD 有data-th
+  .table-rwd {
+    border-top: solid 1px #51aab1;
+    border-bottom: solid 1px #51aab1;
+    table,
+    tbody,
+    tr,
+    th,
+    td { display: block; }
+    thead { display: none; }
+    tbody {
+      tr {
+        padding: 4px 10px;
+        border-radius: 4px;
+      }
+      td {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        min-height: 0;
+        line-height: 24px;
+        padding: 4px 0;
+        text-align: right;
+        font-size: 1.125rem;
+        &:before {
+          content: attr(data-th);
+          flex: 0 0 auto;
+          max-width: 6.5em;
+          text-align: left;
+          margin-right: 20px;
+          color: #666;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  友善連結
+\*------------------------------------*/
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px -33px;
+    @include screen-width($width-mobile) {
+      margin: 0 -15px -25px;
+    }
+    @include screen-width($width-small) {
+      margin: 0 0 -20px;
+    }
+  li {
+    @extend .bgbox;
+    flex: 0 0 calc(25% - 40px);
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 33px;
+    font-size: 1.375rem;
+      @include screen-width($width-mid) {
+        flex: 0 0 calc(33% - 40px);
+      }
+      @include screen-width($width-mobile) {
+        flex: 0 0 calc(50% - 30px);
+        margin: 0 15px 25px;
+        padding: 15px;
+        font-size: 1.125rem;
+      }
+      @include screen-width($width-small) {
+        flex: 0 0 100%;
+        display: block;
+        margin: 0 0 20px;
+      }
+  }
+  p {
+    flex: 1 1 auto;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-weight: 700;
+  }
+  
+}
+
+
+
+
+/*------------------------------------*\
+  casebox
+\*------------------------------------*/
+.casebox {
+  @extend .bgbox;
+  &-inner {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  &-img {
+    @extend .imgbox;
+    flex: 0 0 auto;
+  }
+  &-text {
+    @extend .lh-l;
+    flex: 1 1 auto;
+    font-size: 1.375rem;
+    .title-sub {
+      margin-bottom: 10px;
+    }
+    .text {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+  }
+  
+    @include screen-width($width-mid) {
+      &-text {
+        font-size: 1.25rem;
+      }
+      &-img {
+        max-width: 300px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      padding: 20px;
+      &-inner {
+        display: block;
+      }
+      &-text {
+        font-size: 1.125rem;
+        line-height: 30px;
+      }
+      &-img {
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      .title-sub {
+        text-align: center;
+      }
+    }
+}
+
+.casebox--left {
+  .casebox-text {
+    order: 1;
+    margin-right: 30px;
+    @include screen-width($width-mobile) {
+      margin: 0;
+    }
+  }
+  .casebox-img {
+    order: 2;
+  }
+}
+
+.casebox--right {
+  .casebox-text {
+    margin-left: 30px;
+    @include screen-width($width-mobile) {
+      margin: 0;
+    }
+  }
+}
+
+// 漫畫
+.comiclist {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    @extend .imgbox;
+    flex: 0 0 50%;
+    margin-bottom: 10px;
+  }
+    @include screen-width($width-mobile) {
+      display: block;
+    }
+}
+
+
+
+
+/*------------------------------------*\
+  video
+\*------------------------------------*/
+.videoList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  list-style: none;
+  position: relative;
+  margin-bottom: -80px;
+  overflow-x: hidden;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f3f3f3;
+  }
+    @include screen-width($width-mobile) {
+      margin-bottom: -40px;
+      &::after {
+        bottom: 20px;
+      }
+    }
+    @include screen-width($width-small) {
+      display: block;
+      margin-bottom: -30px;
+      &::after {
+        bottom: 15px;
+      }
+    }
+
+  &.last {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+  li {
+    flex: 0 0 calc(33% - 38px);
+    position: relative;
+    padding: 0 0 40px;
+    margin-bottom: 40px;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 1px;
+      background: #dcdcdc;
+    }
+      @include web-only {
+        margin-right: 50px;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+      @include screen-width($width-mid) {
+        flex: 0 0 calc(33% - 16px);
+        margin-right: 24px;
+      }
+      @include screen-width($width-mobile) {
+        flex: 0 0 calc(50% - 8px);
+        margin-right: 16px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      @include screen-width($width-small) {
+        margin: 0 0 15px;
+        padding: 0 0 15px;
+      }
+  }
+}
+
+.videoPreview {
+  .title {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .time {
+    font-size: 1.125rem;
+    line-height: 24px;
+    color: #7d7d7d;
+  }
+    @include screen-width($width-mobile) {
+      .title {
+        margin-bottom: 10px;
+        font-size: 1.125rem;
+        -webkit-line-clamp: 3;
+      }
+      .time {
+        font-size: 1rem;
+      }
+    }
+}
+
+
+
+
+/*------------------------------------*\
+  諮詢申訴頁
+\*------------------------------------*/
+.content.bg-appeal {
+  background: url(../images/inner/appeal-bg-1.jpg) top center no-repeat;
+  background-size: cover;
+}
+.appealArea {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+    @include screen-width($width-mobile) {
+      display: block;
+    }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  p {
+    text-align: justify;
+    font-size: 1.5rem;
+    line-height: 40px;
+    font-weight: 500;
+      @include screen-width($width-mobile) {
+        font-size: 1.125rem;
+        line-height: 24px;
+      }
+  }
+  .title {
+    margin-bottom: 30px;
+    font-size: 2.25rem;
+    line-height: 48px;
+    font-weight: 700;
+    color: #0d2965;
+    @include screen-width($width-mobile) {
+      margin-bottom: 16px;
+      font-size: 1.25rem;
+      line-height: 30px;
+    }
+  }
+}
+
+.appealArea.deco-1 {
+  padding: 0 40px 50px 530px;
+  background: url(../images/inner/appeal-deco-1.png) left 90px bottom no-repeat;
+  &::after {
+    bottom: 100px;
+    left: 420px;
+    right: 350px;
+    border-bottom: dashed 2px #3d9691;
+  }
+  .appealArea-inner {
+    margin-right: 30px;
+    padding-bottom: 80px;
+  }
+  .appealArea-img {
+    @extend .imgbox;
+    flex: 0 0 auto;
+  }
+    @include screen-width($width-large) {
+      margin-bottom: 20px;
+      padding: 0 0 50px 400px;
+      background-position: left bottom;
+      &::after {
+        left: 360px;
+      }
+      .appealArea-img {
+        flex: 0 0 120px;
+      }
+    }
+    @include screen-width($width-mid) {
+      margin-bottom: 40px;
+      padding: 0 0 50px 270px;
+      background-size: 240px auto;
+      &::after {
+        left: 220px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      padding: 0 0 80px 0;
+      background-size: 140px auto;
+      &::after {
+        bottom: 120px;
+        left: 120px;
+        right: 40px;
+      }
+      .appealArea-inner {
+        margin: 0;
+        padding-left: 90px;
+      }
+      .appealArea-img {
+        display: none;
+      }
+    }
+}
+
+.appealArea.deco-2 {
+  min-height: 512px;
+  margin-bottom: 18px;
+  padding: 0 530px 150px 150px;
+  background: url(../images/inner/appeal-deco-3.png) right 36px bottom no-repeat;
+  &::after {
+    bottom: 100px;
+    left: 30%;
+    right: 400px;
+    border-bottom: dashed 2px #f8d648;
+  }
+    @include screen-width($width-large) {
+      padding: 0 450px 150px 0;
+      background-position: right bottom;
+      &::after {
+        right: 360px;
+      }
+    }
+    @include screen-width($width-mid) {
+      min-height: auto;
+      padding: 0 320px 100px 0;
+      background-size: 288px auto;
+      &::after {
+        bottom: 80px;
+        right: 260px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      margin-bottom: 40px;
+      padding: 0 60px 200px 0;
+      background-size: 170px auto;
+      &::after {
+        bottom: 40px;
+        left: 40px;
+        right: 140px;
+      }
+    }
+}
+
+.appealArea.deco-3 {
+  padding: 0 10px 0 765px;
+  background: url(../images/inner/appeal-deco-4.png) left 30px bottom no-repeat;
+  &::after {
+    bottom: 18px;
+    left: 310px;
+    right: 120px;
+    border-bottom: dashed 2px #ea8a78;
+  }
+  .appealArea-inner {
+    padding: 110px 0;
+  }
+    @include screen-width($width-large) {
+      padding: 0 0 0 calc(50% + 30px);
+      background-position: left bottom;
+      background-size: 50% auto;
+      &::after {
+        left: 20%;
+      }
+      .appealArea-inner {
+        padding: 60px 0 80px;
+      }
+    }
+    @include screen-width($width-mid) {
+      .appealArea-inner {
+        padding: 40px 0 60px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      padding: 0 0 220px 0;
+      background-size: 276px auto;
+      &::after {
+        bottom: 5px;
+        left: 120px;
+        right: 20px;
+      }
+      .appealArea-inner {
+        padding: 0;
+      }
+    }
+}
+
+
+/*------------------------------------*\
+  新聞
+\*------------------------------------*/
+.newsArea {
+  display: flex;
+  align-items: flex-start;
+  &-links {
+    flex: 0 0 auto;
+    max-width: 350px;
+    margin-right: 30px;
+  }
+  &-content {
+    flex: 1 1 auto;
+    @extend .bgbox;
+    padding: 30px;
+  }
+  
+    @include screen-width($width-mobile) {
+      display: block;
+      &-links {
+        max-width: 100%;
+        margin: 0;
+      }
+      &-content {
+        display: none;
+      }
+    }
+}
+
+.newsArea-links {
+  .swiper-pagination {
+    position: static;
+  }
+  .swiper-pagination-bullets {
+    text-align: left;
+    line-height: 12px;
+    @include screen-width($width-mobile) {
+      text-align: center;
+    }
+    .swiper-pagination-bullet {
+      width: 32px;
+      height: 12px;
+      margin: 0 16px 0 0;
+      border-radius: 6px;
+      background: #d2d2d2;
+      opacity: 1;
+      @include screen-width($width-mobile) {
+        margin: 0 8px;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      background: $primary;
+    }
+      
+  }
+}
+
+.newsLink {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #bfbfbf;
+  padding-right: 36px;
+  &:last-child {
+    border: none;
+  }
+    @include screen-width($width-mobile) {
+      margin: 0 0 10px;
+      padding: 0 0 10px;
+    }
+
+  span {
+    display: block;
+  }
+  .title {
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 1.375rem;
+    color: #252525;
+      @include screen-width($width-mid) {
+        font-size: 1.25rem;
+      }
+      @include screen-width($width-mobile) {
+        margin-bottom: 0;
+        font-size: 1.125rem;
+        line-height: 24px;
+        
+      }
+  }
+  // open
+  &.open {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 14px);
+      width: 20px;
+      height: 28px;
+      background: url(../images/inner/newslink-open.png);
+    }
+    .title {
+      font-weight: 700;
+    }
+      @include screen-width($width-mobile) {
+        &::after {
+          content: none;
+        }
+        .title {
+          font-weight: 400;
+        }
+      }
+  }
+}
+
+.newsInner {
+  p {
+    text-align: justify;
+    line-height: 36px;
+    font-size: 1.375rem;
+    @include screen-width($width-mid) {
+      font-size: 1.25rem;
+    }
+    @include screen-width($width-mobile) {
+      font-size: 1.125rem;
+      line-height: 24px;      
+    }
+  }
+  .title-sub {
+    margin: 20px 0 10px;
+  }
+  .date {
+    font-size: 1.125rem;
+    color: #a0a0a0;
+  }
+    @include screen-width($width-mobile) {
+      .title-sub {
+        margin: 10px 0;
+      }
+      .date {
+        font-size: 1rem;
+      }
+    }
+}
+
+// mobile
+.mfp-content .newsInner {
+  @extend .bgbox;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  // margin-bottom: 10px;
+  padding: 15px;
+}
+
+
+
+/*------------------------------------*\
+  網站導覽
+\*------------------------------------*/
+.sitemapList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  @include screen-width($width-mobile) {
+    display: block;
+  }
+  & >  li {
+    flex: 0 0 auto;
+    width: 33%;
+    margin-bottom: 20px;
+    padding-right: 20px;
+    @include screen-width($width-mobile) {
+      width: 100%;
+      margin-bottom: 10px;
+      padding-right: 0;
+    }
+  }
+  .lv1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+      color: #146696;
+    @include screen-width($width-mobile) {
+      font-size: 1.25rem;
+    }
+  }
+  a.lv1 {
+    border-bottom: solid 1px;
+  }
+  .menuLv2 {
+    list-style: none;
+    @include screen-width($width-mobile) {
+      padding: 0;
+    }
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 14px;
+        left: 8px;
+        width: 6px;
+        height: 6px;
+        background-color: darken($color: #51aab1, $amount: 20%);
+        border-radius: 50%;
+      }
+    }
+    a {
+      font-weight: 500;
+    color: #51aab1;
+      border-bottom: solid 1px;
+    }
+  }
+}
+

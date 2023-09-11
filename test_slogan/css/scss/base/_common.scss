@@ -1,0 +1,301 @@
+/*------------------------------------*\
+  _common.scss
+  基礎全站變數
+\*------------------------------------*/
+/*------------------------------------*\
+  使用顏色設定_主要
+\*------------------------------------*/
+// 文字顏色
+$text-800: #252525;
+$text-900: #1b1b1b;
+
+// 主色 黃
+$primary: #e59b2e;
+
+
+
+/*------------------------------------*\
+  RWD尺寸標準
+\*------------------------------------*/
+$width-xl: 1360px;
+$width-large: 1280px;
+$width-mid: 1000px;
+$width-mobile: 767px;
+$width-small: 540px;
+$width-xs: 374px;
+@mixin screen-width($screensize) {
+  @media all and (max-width: $screensize) {
+    @content;
+  }
+}
+// 使用範例
+// @include screen-width($width-mid) {
+// }
+@mixin web-only {
+  @media all and (min-width: 768px) {
+    @content;
+  }
+}
+
+
+
+/*------------------------------------*\
+  頁面寬度
+\*------------------------------------*/
+$pagesize-width: 1440px;
+
+
+
+/*------------------------------------*\
+  大小網
+\*------------------------------------*/
+.web { display: block; }
+.mobile { display: none; }
+@media screen and (max-width: 767px) {
+	.web { display: none; }
+	.mobile { display: block; }
+}
+
+
+/*------------------------------------*\
+  大小網共通樣式
+\*------------------------------------*/
+.wrapper {
+  font-size: 1.125rem;
+}
+
+
+
+/*------------------------------------*\
+  text
+\*------------------------------------*/
+.lh-m { line-height: 1.875rem; }
+.lh-l { line-height: 2.25rem; }
+
+
+
+/*------------------------------------*\
+  imgbox
+\*------------------------------------*/
+.imgbox {
+  img { display: block; max-width: 100%; }
+}
+.imgbox--full {
+  img { display: block; width: 100%; }
+}
+
+
+
+/*------------------------------------*\
+  無障礙錨點
+\*------------------------------------*/
+.accesskey {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #b5b5b5;
+  @include screen-width($width-mobile) {
+    font-size: 0.875em;
+  }
+}
+
+
+
+/*------------------------------------*\
+  title
+\*------------------------------------*/
+.title-main {
+  position: relative;
+  padding-bottom: 39px;
+  text-align: center;
+  font-size: 2.25rem;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(50% - 50px);
+    bottom: 0;
+    width: 100px;
+    height: 8px;
+    background: #e26d40;
+    border-radius: 4px;
+  }
+    @include screen-width($width-mobile) {
+      padding-bottom: 20px;
+      font-size: 1.3125rem;
+      line-height: 30px;
+      &::after {
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 4px;
+      }
+    }
+}
+
+.title-sub {
+  font-size: 1.875rem;
+  line-height: 40px;
+  font-weight: 700;
+  color: $primary;
+  @include screen-width($width-mobile) {
+    font-size: 1.3125rem;
+    line-height: 24px;
+  }
+}
+
+
+
+/*------------------------------------*\
+  small box
+\*------------------------------------*/
+.bgbox {
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba($color: #000, $alpha: 0.3 );
+}
+
+
+/*------------------------------------*\
+  btn
+\*------------------------------------*/
+.btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  &.tL { justify-content: flex-start; }
+  &.tR { justify-content: flex-end; }
+}
+.btn {
+  display: block;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 15px;
+}
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  padding: 2px 2px;
+  border-radius: 15px;
+  transition: 0.1s;
+  span {
+    display: block;
+    height: 56px;
+    line-height: 56px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 15px;
+    transition: 0.1s;
+  }
+  @include web-only() {
+    &:active {
+      top: 4px;
+      padding: 4px 2px 2px;
+    }
+  }
+  @include screen-width($width-mobile) {
+    height: 40px;
+    padding: 1px 1px;
+    span {
+      height: 38px;
+      line-height: 38px;
+      font-size: 1.125rem;
+    }
+  }
+}
+.btn-primary {
+  min-width: 200px;
+  background: linear-gradient(to bottom, #f8d202, #e7a300);
+  box-shadow: 0 8px 0 0 #e2942c;
+  span {
+    text-shadow: 0 4px 5px #be730e;
+    background: linear-gradient(to bottom, #d18b1d 0%, #de9729 13%, #e9a932 28%, #f5ba3f 48%, #fdc851 68%, #ffd662 87%, #ffd662 100%);
+  }
+  @include web-only() {
+    &:hover {
+      box-shadow: 0 8px 0 0 #d18b1d;
+    }
+    &:active {
+      box-shadow: 0 4px 0 0 #d18b1d;
+      background: linear-gradient(to bottom, #e7a300, #f8d202);
+    }
+  }
+  @include screen-width($width-mobile) {
+    min-width: 120px;
+    box-shadow: 0 4px 0 0 #e2942c;
+  }
+}
+.btn-secondary {
+  min-width: 120px;
+  height: 48px;
+  background: linear-gradient(to bottom, #218094, #45d9e3);
+  box-shadow: 0 8px 0 0 #07778b;
+  span {
+    height: 44px;
+    line-height: 44px;
+    text-shadow: 0 4px 5px #27afbc;
+    background: linear-gradient(to bottom, #146696, #46bef0);
+  }
+  @include web-only() {
+    &:hover {
+      box-shadow: 0 8px 0 0 #07778b;
+    }
+    &:active {
+      background: linear-gradient(to bottom, #07778b, #45d9e3);
+      box-shadow: 0 4px 0 0 #07778b;
+    }
+  }
+  @include screen-width($width-mobile) {
+    box-shadow: 0 4px 0 0 #07778b;
+  }
+}
+
+
+
+/*------------------------------------*\
+  KV
+\*------------------------------------*/
+.kvArea {
+  picture,img {
+    width: 100%;
+    height: auto;
+  }
+  .web {
+    @extend .web;
+  }
+  .mobile {
+    @extend .mobile;
+  }
+}
+
+
+/*------------------------------------*\
+  video
+\*------------------------------------*/
+.videoPreview {
+  @extend .lh-l;
+  a {
+    display: block;
+  }
+  .imgbox {
+    position: relative;
+    padding-top: 56.25%;
+    margin-bottom: 10px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+    @include screen-width($width-mobile) {
+      line-height: 24px;
+    }
+}
