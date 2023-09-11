@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no" />
+  <title>地下期貨(期貨空中交易)｜詐騙手法及案例分享｜臺灣期貨交易所防詐騙宣導專區</title>
+  <meta property="og:type" content="website" />
+  <meta name="description" content="臺灣期貨交易所防詐騙宣導與手法及案例分享，以及提供合法期貨商名單，提醒投資人	慎防釣魚、假冒及拒絕非法代操">
+  <meta property="og:title" content="臺灣期貨交易所防詐騙宣導專區" />
+  <meta property="og:image"
+    content="https://www.taifex.com.tw/file/taifex/event/cht/anti_fraud/images/frame/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="960" />
+  <meta property="og:image:height" content="480" />
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/frame/favicon.ico">
+  <!-- CSS_jquery -->
+  <link href="css/js.aos.css" rel="stylesheet">
+  <link href="css/jquery.swiper-bundle.min.css" rel="stylesheet">
+  <link href="css/jquery.magnific-popup.css" rel="stylesheet">
+  <!-- CSS -->
+  <link href="css/inner.css" rel="stylesheet">
+  <!--JS-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+  <script type="text/javascript" src="js/frame.js"></script>
+  <script>
+    $(window).ready(function () {
+      var data = getHtmlData('part/header.html');
+      var html = $.parseHTML(data, true); //會執行指令碼程式碼
+      $('#headerArea').append(html);
+      data = getHtmlData('part/footer.html');
+      html = $.parseHTML(data, true);
+      $('#footerArea').append(html);
+    });
+  </script>
+</head>
+
+<body>
+  <div class="page">
+    <div class="page_cover"></div>
+    <div class="wrapper">
+      <a class="pagetab" href="#content" tabindex="1" title="跳到主要內容">跳到主要內容</a>
+      <!-- header -->
+      <div id="headerArea"></div>
+      <!-- 頁面 -->
+      <div class="container container--slogan">
+        <div class="slogan-bg">
+          <div class="slogan-deco-1"></div>
+          <div class="slogan-deco-2"></div>
+          <div class="slogan-man"></div>
+          <div class="mouse">
+            <div class="mouse-item">
+              <div class="wheel"></div>
+            </div>
+            <div class="mouse-arrow">
+              <div class="arrow arrow-1"></div>
+              <div class="arrow arrow-2"></div>
+              <div class="arrow arrow-3"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="slogan-inner">
+          <div class="pagesize">
+            <div class="sloganBox" data-aos="zoom-in-up">
+              <p>賺錢有數，性命要顧，求職陷阱多，多查證多留意，不要被賣了還幫人數錢。</p>
+            </div>
+            <div class="sloganBox" data-aos="zoom-in-up">
+              <p>莫因求職亂投醫，謹慎求證免遭詐</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- footer -->
+      <footer id="footerArea"></footer>
+    </div>
+  </div>
+  <!-- pageMenu -->
+  <nav id="pageMenu" data-from="left">
+    <ul class="pageMenu_nav">
+      <li><a class="lv1 icon-1" href="appeal.html">諮詢及申訴</a></li>
+      <li><a class="lv1 icon-2" href="video.html">宣導短片</a></li>
+      <li><a class="lv1 icon-3" href="dealer.html">合法期貨商</a></li>
+      <li><a class="lv1 foldLv1 icon-4" href="#">詐騙手法及案例分享</a>
+        <ul class="menuLv2">
+          <li><a href="case-1.html">地下期貨</a></li>
+          <li><a href="case-2.html">非法代操</a></li>
+          <li><a href="case-3.html">利用釣魚網站詐騙</a></li>
+          <li><a href="case-4.html">跨境網路交易虛擬貨幣期貨</a></li>
+        </ul>
+      </li>
+      <li><a class="lv1 icon-5" href="news.html">媒體報導</a></li>
+      <li><a class="lv1 icon-6" href="links.html">友善連結</a></li>
+    </ul>
+  </nav>
+  <!-- JS -->
+  <script type="text/javascript" src="js/js.aos.js"></script>
+  <script type="text/javascript" src="js/pagemenu.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    $(function () {
+      // mouse hide
+      var frameH = $(window).height() - $('header').height() - $('.cautionBar').height() - $('footer').height();
+      if ( $('.slogan-inner .pagesize').outerHeight() < frameH ) {
+        $('.mouse').addClass('hide');
+      }
+      // aos
+      var bottomH = $('footer').height() + 130;
+      $('.sloganBox:nth-child(odd)').attr('data-aos', 'fade-up-left');
+      $('.sloganBox:nth-child(even)').attr('data-aos', 'fade-up-right');
+      AOS.init({
+        anchorPlacement: 'bottom-bottom',
+        duration: 1000,
+        delay: 250,
+        offset: bottomH,
+      });
+      
+
+      $('.sloganBox').each(function () {
+        var boxDistance = $(this).offset().top + $(this).outerHeight() - $(window).scrollTop() - $(window).height();
+      });
+    });
+    $(window).on('scroll', function () {
+      // mouse
+      if ($(document).scrollTop() > 20) {
+        $('.mouse').fadeOut();
+      } else {
+        $('.mouse').fadeIn();
+      }
+      // bg shift
+      yPos = window.pageYOffset;
+      shift = yPos * -0.05 + 'px';
+      $('.slogan-deco-2').css('top', shift);
+
+    });
+  </script>
+  <!-- noscript -->
+  <noscript>您的瀏覽器不支援JavaScript，可能無法使用部分功能。</noscript>
+</body>
+
+</html>
