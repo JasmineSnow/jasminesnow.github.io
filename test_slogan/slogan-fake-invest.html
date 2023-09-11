@@ -48,7 +48,7 @@
       <!-- header -->
       <div id="headerArea"></div>
       <!-- 頁面 -->
-      <div class="container container--slogan">
+      <div class="container container--slogan theme-3"><!-- theme-2 theme-3 -->
         <div class="slogan-bg">
           <div class="slogan-deco-1"></div>
           <div class="slogan-deco-2"></div>
@@ -63,15 +63,33 @@
               <div class="arrow arrow-3"></div>
             </div>
           </div>
-
+          
         </div>
         <div class="slogan-inner">
           <div class="pagesize">
-            <div class="sloganBox" data-aos="zoom-in-up">
-              <p>賺錢有數，性命要顧，求職陷阱多，多查證多留意，不要被賣了還幫人數錢。</p>
+            <div class="sloganNav">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="slogan-installment.html">解除分期付款</a></div>
+                  <div class="swiper-slide"><a href="slogan-fake-organ.html">假檢警、醫院</a></div>
+                  <div class="swiper-slide"><a class="on" href="slogan-fake-invest.html">假投資</a></div>
+                  <div class="swiper-slide"><a href="#">網路交友</a></div>
+                  <div class="swiper-slide"><a href="#">遊戲點數詐騙</a></div>
+                  <div class="swiper-slide"><a href="#">假求職詐騙</a></div>
+                  <div class="swiper-slide"><a href="#">假求職詐騙</a></div>
+                  <div class="swiper-slide"><a href="#">假網拍</a></div>
+                  <div class="swiper-slide"><a href="#">綜合類</a></div>
+                </div>
+              </div>
             </div>
             <div class="sloganBox" data-aos="zoom-in-up">
-              <p>莫因求職亂投醫，謹慎求證免遭詐</p>
+              <p>百變投資型詐騙 不變只讓你虧錢</p>
+            </div>
+            <div class="sloganBox" data-aos="zoom-in-up">
+              <p>假投資虛擬貨幣平臺 投資本金不回來</p>
+            </div>
+            <div class="sloganBox" data-aos="zoom-in-up">
+              <p>免費投資課程高獲利 小心只是養套殺</p>
             </div>
 
           </div>
@@ -105,27 +123,55 @@
   <script type="text/javascript" src="js/pagemenu.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script>
+    $(window).on('load resize', function () {
+      if ($(window).width() >= 768) {
+        // aos
+        $('.sloganBox:nth-child(odd)').attr('data-aos', 'fade-up-left');
+        $('.sloganBox:nth-child(even)').attr('data-aos', 'fade-up-right');
+        // aos
+        var bottomH = $('footer').height() + 130;
+        AOS.init({
+          anchorPlacement: 'bottom-bottom',
+          duration: 1000,
+          delay: 250,
+          offset: bottomH,
+        });
+        // bg shift
+        $('.slogan-deco-2').addClass('js-scroll');
+      } else {
+        // aos
+        $('.sloganBox:nth-child(odd)').attr('data-aos', 'fade-up');
+        $('.sloganBox:nth-child(even)').attr('data-aos', 'fade-up');
+        // aos
+        AOS.init({
+          anchorPlacement: 'bottom-bottom',
+          duration: 800,
+          delay: 0,
+          offset: 300,
+        });
+        // bg shift
+        $('.slogan-deco-2').removeClass('js-scroll');
+        $('.slogan-deco-2').css('top', 0);
+      }
+    });
+
     $(function () {
       // mouse hide
       var frameH = $(window).height() - $('header').height() - $('.cautionBar').height() - $('footer').height();
-      if ( $('.slogan-inner .pagesize').outerHeight() < frameH ) {
+      if ($('.slogan-inner .pagesize').outerHeight() < frameH) {
         $('.mouse').addClass('hide');
       }
-      // aos
-      var bottomH = $('footer').height() + 130;
-      $('.sloganBox:nth-child(odd)').attr('data-aos', 'fade-up-left');
-      $('.sloganBox:nth-child(even)').attr('data-aos', 'fade-up-right');
-      AOS.init({
-        anchorPlacement: 'bottom-bottom',
-        duration: 1000,
-        delay: 250,
-        offset: bottomH,
-      });
-      
+
 
       $('.sloganBox').each(function () {
         var boxDistance = $(this).offset().top + $(this).outerHeight() - $(window).scrollTop() - $(window).height();
       });
+
+      var sloganSwiper = new Swiper('.sloganNav .swiper', {
+        slidesPerView: 'auto',
+      });
+      sloganSwiper.slideTo(2);
+
     });
     $(window).on('scroll', function () {
       // mouse
@@ -137,7 +183,7 @@
       // bg shift
       yPos = window.pageYOffset;
       shift = yPos * -0.05 + 'px';
-      $('.slogan-deco-2').css('top', shift);
+      $('.slogan-deco-2.js-scroll').css('top', shift);
 
     });
   </script>
