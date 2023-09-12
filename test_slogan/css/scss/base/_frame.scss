@@ -272,6 +272,20 @@ footer {
   }
 }
 
+// 檢測標章通過後請刪除以下
+footer {
+  .web {
+    padding: 20px 0;
+  }
+  @include screen-width($width-mobile) {
+    .mobile {
+      padding: 16px 0;
+    }
+  }
+}
+// 檢測標章通過後請刪除以上
+
+
 /*------------------------------------*\
   pageMenu
 \*------------------------------------*/
