@@ -1,4 +1,6 @@
-
+// if support JS
+document.querySelector('body').classList.remove('no-js');
+// 
 $(window).on('load resize', function () {
   
   if( $(window).width() >= 768 ) {

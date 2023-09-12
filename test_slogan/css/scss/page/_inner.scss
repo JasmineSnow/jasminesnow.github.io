@@ -794,9 +794,12 @@
   }
   & >  li {
     flex: 0 0 auto;
-    width: 33%;
+    width: 25%;
     margin-bottom: 20px;
     padding-right: 20px;
+    @include screen-width($width-mid) {
+      width: 33%;
+    }
     @include screen-width($width-mobile) {
       width: 100%;
       margin-bottom: 10px;

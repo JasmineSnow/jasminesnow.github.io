@@ -246,12 +246,12 @@ header {
   footer
 \*------------------------------------*/
 footer {
-  padding: 40px 0;
+  padding: 20px 0;
   text-align: center;
   color: #959595;
   span { display: inline-block; }
   @include screen-width($width-mobile) {
-    padding: 15px 0;
+    padding: 9px 0;
     font-size: 0.75rem;
   }
   .pagesize {
@@ -261,6 +261,14 @@ footer {
     position: absolute;
     top: 0;
     left: 20px;
+  }
+  .accessIcon {
+    display: block;
+    height: 31px;
+    margin-top: 9px;
+    @include screen-width($width-mobile) {
+      margin-top: 1px;
+    }
   }
 }
 
