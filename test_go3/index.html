@@ -445,16 +445,6 @@
                         <img src="img/index-adSlide-2.jpg">
                       </a>
                     </div>
-                    <div class="swiper-slide">
-                      <a class="imgbox" href="#" title="3下單滿$399贈香氛洗護旅行組">
-                        <img src="img/index-adSlide-1.jpg">
-                      </a>
-                    </div>
-                    <div class="swiper-slide">
-                      <a class="imgbox" href="#" title="4即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
-                        <img src="img/index-adSlide-2.jpg">
-                      </a>
-                    </div>
               
                   </div>
                   <div class="swiper-button-prev"></div>
@@ -1841,7 +1831,6 @@ $(function () {
     centeredSlides: true,
     spaceBetween: 8,
     loop: true,
-    touchEventsTarget: 'container',
     autoplay: {
       delay: 5000,
       pauseOnMouseEnter: true,
@@ -1857,14 +1846,15 @@ $(function () {
     },
     breakpoints: {
       376: {
-        slidesPerView: 1.6,
+        slidesPerView: 1.5,
       },
       992: {
-        slidesPerView: 1.6,
-        spaceBetween: 16,
+        slidesPerView: 2,
+        spaceBetween: 14,
       },
       1200: {
         slidesPerView: 2,
+        spaceBetween: 14,
       }
     }
   });
