@@ -1,0 +1,632 @@
+/*------------------------------------*\
+  _index_themePromo.scss
+  ___
+  index頁 主題配色廣告
+\*------------------------------------*/
+
+@each $name, $value in $themePromoColor {
+  $main: map-get($value, main);
+  $text: map-get($value, text);
+  $bg: map-get($value, bg);
+  .theme-#{$name} {
+    // 主題區域
+    .themePromo-title .title {
+      background-color: #{$main};
+    }
+    .themePromo-title .subtitle,
+    .themePromo-item-text .text-notice {
+      color: #{$text};
+    }
+    .themePromo-title,
+    .themePromo-inner {
+      background-color: #{$bg};
+    }
+    .themePromo-title .title{
+      &::before {
+        border-color: transparent transparent #{$text} transparent;
+      }
+      &::after {
+        border-color: #{$main} transparent transparent transparent;
+      }
+    }
+    // 主題配色卡片
+    &.themeAdCard {
+      background-color: #{$bg};
+      .themePromo-item-text::after {
+        background-color: #{$main};
+      }
+    }
+    .themePromo-sub {
+      color: #{$text};
+    }
+  }
+
+  // 內頁主題文案
+  .themeArticle.theme-#{$name} {
+    background: linear-gradient(180deg, rgba($bg, 0.5) 0%, rgba($bg, 0) 83.84%);
+    &::before ,
+    &::after {
+      background: radial-gradient(46.96% 46.96% at 50% 50%, rgba($bg, 0.5) 0%, rgba($bg, 0) 100%);
+    }
+    @include screen-width($width-mid) {
+    }
+  }
+
+};
+
+/*------------------------------------*\
+  主題區域
+\*------------------------------------*/
+.themePromo {
+  padding: 28px 0 16px;
+  @include screen-width($width-mid) {
+    padding: 16px 0 4px;
+  }
+}
+.themePromo-title {
+  display: flex;
+  .title {
+    position: relative;
+    top: -12px;
+    flex: 0 0 auto;
+    width: 242px;
+    padding: 8px 24px;
+    font-weight: 500;
+    color: #fff;
+    border-bottom-right-radius: 16px;
+      @include screen-width($width-mid) {
+        width: 150px;
+        top: -8px;
+        padding: 4px 12px;
+      }
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+    }
+    &::before {
+      z-index: -1;
+      right: -0.9em;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0.4em 0.6em 0.4em;
+      // border-color: transparent transparent #007bff transparent;
+    }
+    &::after {
+      right: -0.6em;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 1.9em 0.67em 0 0;
+      // border-color: #007bff transparent transparent transparent;
+      @include screen-width($width-mid) {
+        right: -0.5em;
+        border-width: 1.5em 0.67em 0 0;
+      }
+    }
+  }
+  .subtitle {
+    position: relative;
+    top: 8px;
+    flex: 1 1 auto;
+    padding-left: 16px;
+    @extend %text-ellipsis;
+    @include screen-width($width-mid) {
+      top: 4px;
+      padding-left: 12px;
+    }
+  }
+}
+
+.themePromo-inner {
+  padding: 4px 0 8px;
+}
+
+// themePromo-item
+.themePromo-item {
+  width: 504px;
+  @include screen-width($width-mid) {
+    width: 280px;
+  }
+  a {
+    @include transition(opacity);
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+.themePromo-item-img {
+  display: grid;
+  grid-template-columns: 330px 166px;
+  grid-template-rows: 135px 135px;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  margin-bottom: 8px;
+    @include screen-width($width-mid) {
+      grid-template-columns: 184px 92px;
+      grid-template-rows: 75px 75px;
+      grid-column-gap: 4px;
+      grid-row-gap: 4px;
+    }
+  .imgbox {
+    @extend .imgbox--scale;
+  }
+  .main {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: 8px 0px 0px 8px;
+  }
+  .sub-1 {
+    border-top-right-radius: 8px;
+  }
+  .sub-2 {
+    border-bottom-right-radius: 8px;
+  }
+}
+.themePromo-item-text {
+  @extend .prodBox;
+}
+.themePromo-name {
+  @extend .prodBox-name;
+  display: block;
+  font-size: 20px;
+  line-height: 32px;
+    @include screen-width($width-mid) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+}
+
+// swiper
+.themePromo {
+  .swiper-wrapper {
+    padding-left: 24px;
+    @include screen-width($width-mid) {
+      padding-left: 12px;
+    }
+  }
+  .swiper-slide {
+    width: auto;
+  }
+  .last {
+    width: 110px;
+    @include screen-width($width-mid) {
+      width: 158px;
+    }
+    @include screen-width($width-small) {
+      width: 70px;
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 94px;
+    @include screen-width($width-mid) {
+      top: 32px;
+    }
+  }
+}
+
+
+/*------------------------------------*\
+  為你推薦 主題配色卡片
+\*------------------------------------*/
+.themeAdCard {
+  @extend .themePromo-item;
+  
+  width: 100%;
+  height: 443px;
+
+  padding: 8px;
+  border-radius: 16px;
+  // img
+  .themePromo-item-img {
+    margin-bottom: 16px;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    .main {
+      height: 176px;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      border-radius: 8px 8px 0px 0px;
+    }
+    .sub-1,
+    .sub-2 {
+      height: 95px;
+    }
+    .sub-1 {
+      border-radius: 0px 0px 0px 8px;
+    }
+  }
+  // text
+  .themePromo-item-text {
+    position: relative;
+    display: block;
+    height: 64px;
+    margin-bottom: 11px;
+    padding: 0 32px 0 4px;
+    overflow: visible;
+    &::after {
+      content: "";
+      display: block;
+      width: 37px;
+      height: 32px;
+      position: absolute;
+      right: -8px;
+      top: 4px;
+      background-image: url(../images/icon-link-2.svg);
+      background-size: 32px 32px;
+      background-position: left center;
+      background-repeat: no-repeat;
+      border-radius: 16px 0 0 16px;
+    }
+  }
+  .themePromo-name {
+    margin-bottom: 4px;
+    
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .themePromo-sub {
+    @extend %text-ellipsis;
+  }
+  // btn
+  .btn-box {
+    display: block;
+    width: 154px;
+    margin: 0 auto;
+  }
+  .btn {
+    display: block;
+    padding: 8px 18px;
+    font-weight: 500;
+    color: #707070;
+    border: 1px solid #707070;
+    @include transition();
+    &:hover {
+      background-color: rgba(112, 112, 112,0.1);
+    }
+    &-text {
+      border: none;
+      @extend %link-action;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  @include screen-width($width-mid) {
+    height: auto;
+    // img
+    .themePromo-item-img {
+      margin: 0;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 72px 72px;
+      .main {
+        height: auto;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        border-radius: 8px 0px 0px 8px;
+      }
+      .sub-1, .sub-2 {
+        height: 72px;
+      }
+      .sub-1 {
+        border-radius: 0 8px 0 0;
+      }
+      .sub-2 {
+        border-radius: 0 0 8px 0;
+      }
+    }
+    // text
+    .themePromo-item-text {
+      height: 48px;
+      margin-bottom: 6px;
+    }
+    .themePromo-name {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .themePromo-sub {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    // btn
+    .btn-box {
+      display: none;
+    }
+  }
+  @include screen-width($width-mobile) {
+    .themePromo-item-text {
+      height: auto;
+      margin-bottom: 4px;
+    }
+    .themePromo-name {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .themePromo-sub {
+      font-size: 12px;
+      line-height: 16px;
+      // line-height: 1.6em;
+      // transform: scale(0.833);
+      // transform-origin: left center;
+    }
+    .themePromo-item-img {
+      grid-template-rows: 48px 48px;
+      .sub-1, .sub-2 {
+        height: 48px;
+      }
+    }
+  }
+}
+
+// 限時特賣 --------------------
+.themeAdCard--limit {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 17px;
+  @include screen-width($width-mid) {
+    padding: 12px 8px;
+  }
+  .themePromo-item-text {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin-bottom: 8px;
+    padding-right: 4px;
+    &:active {
+      opacity: 1;
+    }
+    &::after {
+      content: none;
+    }
+    @include screen-width($width-mid) {
+      margin-bottom: 4px;
+    }
+    @include screen-width($width-mobile) {
+      padding: 0;
+    }
+  }
+  .timer {
+    padding-top: 4px;
+    @include screen-width($width-mid) {
+      padding-top: 2px;
+    }
+    @include screen-width($width-mobile) {
+      padding-top: 0;
+    }
+    @include screen-width($width-xs) {
+      .timer-hr, .timer-min {
+        margin-right: 9px;
+        &::before, &::after {
+          right: -6px;
+        }
+      }
+    }
+  }
+  .themePromo-name {
+    margin: 0;
+  }
+  // img
+  .themePromo-item-img {
+    flex: 0 0 auto;
+    grid-template-columns: 1fr;
+    margin-bottom: 8px;
+    .main {
+      border-radius: 8px;
+    }
+    @include screen-width($width-mid) {
+      margin-bottom: 4px;
+    }
+  }
+  // sub
+  .themePromo-item-sub {
+    flex: 1 1 auto;
+    @extend .fs-h3;
+    
+  }
+  .nameSub {
+    font-weight: 500;
+    text-decoration: underline;
+    -webkit-text-underline-position: under;
+    -ms-text-underline-position: below;
+    text-underline-position: under;
+    text-decoration-color: transparent;
+    @include transition();
+    &:hover {
+      text-decoration-color: currentcolor;
+    }
+    &:active {
+      opacity: 0.6;
+    }
+    @include screen-width($width-mobile) {
+      font-size: 12px;
+    }
+  }
+  .text-price {
+    .origin {
+      @extend .fs-h3;
+    }
+    @include screen-width($width-mid) {
+      .num {
+        color: #333;
+      }
+      .origin {
+        font-size: 12px;
+        line-height: 16px;
+        transform: scale(1);
+      }
+    }
+  }
+  .btn {
+    margin-bottom: 12px;
+    &:nth-last-child(1) {
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  內頁 主題文案
+\*------------------------------------*/
+.themeArticle {
+  position: relative;
+  padding: 16px 16px 32px;
+  &::before ,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 228px;
+    height: 228px;
+    bottom: -6px;
+  }
+  &::before {
+    left: -110px;
+  }
+  &::after {
+    right: 0;
+  }
+  &-inner {
+    position: relative;
+    z-index: 2;
+    @extend .fs-h3;
+    padding: 12px 16px 24px;
+    background: linear-gradient(to bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.12));
+    border: 1px solid #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12);
+  }
+  .title {
+    margin-bottom: 8px;
+    font-weight: 500;
+    @include screen-width($width-mid) {
+      margin-bottom: 4px;
+    }
+  }
+  @include screen-width($width-mid) {
+    padding: 0 0 40px;
+    background: none;
+    &::before {
+      display: none;
+    }
+    &::after {
+      width: 100%;
+      height: 133px;
+      border-radius: 0;
+      right: 0;
+      bottom: -20px;
+    }
+    &-inner {
+      padding: 16px 12px 24px;
+      background: #fff;
+      border-radius: 0 0 16px 16px;
+      filter: none;
+      box-shadow: none;
+    }
+  }
+  @include screen-width($width-mobile) {
+    &::after {
+      height: 113px;
+    }
+  }
+}
+.themeArticle.theme-none {
+  background: linear-gradient(180deg, rgba(255, 242, 121, 0.5) 0%, rgba(212, 212, 212, 0) 83.84%, rgba(255, 242, 121, 0) 83.84%);
+  &::before ,
+  &::after {
+    background: radial-gradient(46.96% 46.96% at 50% 50%, rgba(255, 242, 121, 0.5) 0%, rgba(166, 255, 165, 0) 100%);
+  }
+  @include screen-width($width-mid) {
+    &::before,
+    &::after {
+      width: 78vw;
+      height: 123px;
+      bottom: 12px;
+    }
+    &::before {
+      display: block;
+      left: -15%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 242, 121, 0.5) 0%, rgba(255, 242, 121, 0) 100%);
+    }
+    &::after {
+      right: -15%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(166, 255, 165, 0.5) 0%, rgba(201, 255, 199, 0) 100%);
+    }
+  }
+  @include screen-width($width-mobile) {
+    &::before,
+    &::after {
+      width: 95vw;
+      bottom: 8px;
+    }
+    &::before {
+      left: -27%;
+    }
+    &::after {
+      right: -27%;
+    }
+  }
+}
+// banner
+.themeArticle-banner {
+  margin-bottom: 12px;
+  padding: 0 28px;
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+  }
+  @include screen-width($width-mid) {
+    margin-bottom: 16px;
+    padding: 0;
+  }
+}
+// 內容變化
+.themeArticle-brandRow {
+  display: flex;
+  .imgbox {
+    flex: 0 0 auto;
+    width: 88px;
+    height: 88px;
+    margin-right: 12px;
+    background-color: #fff;
+    border: 0.4px solid #EAEAEA;
+    border-radius: 8px;
+    overflow: hidden;
+    img {
+      object-fit: contain;
+    }
+  }
+  .title {
+    margin-bottom: 4px;
+  }
+}
+
+// 只有banner
+.themeArticle--Bn {
+  padding-top: 8px;
+  padding-bottom: 16px;
+  .themeArticle-banner {
+    margin-bottom: 0;
+  }
+  @include screen-width($width-mid) {
+    padding: 16px 32px;
+  }
+  @include screen-width($width-mobile) {
+    padding: 12px;
+  }
+}

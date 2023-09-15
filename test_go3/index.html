@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <!-- title -->
+  <title>Hami Go 商城</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hami Go 商城" />
+  <meta name="description" content="Hami Go 商城">
+  <meta property="og:image" content="images/og-image.jpg" /><!--請再更新為http網址-->
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- og:image 建議最佳圖片大小1200x630 最佳圖片比例1.91:1 最小尺寸至少200×200 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- JS_CSS -->
+  <link href="css/jquery.swiper-bundle.min.css" rel="stylesheet" type="text/css">
+  <link href="css/jquery.jquery-ui.css" rel="stylesheet" type="text/css">
+  <link href="css/jquery.liMarquee.css" rel="stylesheet" type="text/css">
+  <!-- CSS -->
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+  <!-- JS -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- popup a.1.2.2 放棄任務 -->
+    <div class="popup pop-fullpage" data-popup="放棄任務"></div>
+    <div class="panel popup-panel">
+      <h2 class="tC tB mb-2">放棄任務</h2>
+      <p class="fs-h3 text-14 mb-2">你確定要放棄新客獨享任務嗎？放棄後將永遠不再顯示此任務了唷！<br/>任務沒有完成時間限制，你可以再想想看！</p>
+      <p class="fs-h3 color-gray-7 mb-end">*若仍有其他階段任務將一併放棄，你已取得的點數不會回收</p>
+      <div class="btn-box md-block">
+        <a class="btn-dialog btn-danger web-order-2" onclick="closePopup('放棄任務');">確認放棄所有任務</a>
+        <a class="btn-dialog btn-cancel web-order-1" onclick="closePopup('放棄任務');">我再想想</a>
+      </div>
+    </div>
+
+    <!-- popup a.1.2.0 點擊查看任務 -->
+    <div class="popup pop-fullpage" data-popup="點擊查看任務"></div>
+    <div class="panel popup-panel">
+      <h2 class="tC tB mb-2">快去完成任務吧</h2>
+      <p class="fs-h3 text-14 mb-1-5">透過Hami Go完成第一筆訂單，除了訂單回饋外，還能獲得加碼點數回饋！</p>
+      <p class="text-point text-point-eng fs-32 mb-2">30</p>
+      <p class="fs-h3 color-gray-7 mb-end">1點=1元無消費限制、無最高折抵上限，點數越多折越多！快去完成首購任務吧！</p>
+      <div class="btn-box md-block">
+        <a class="btn-dialog btn-primary web-order-2" onclick="closePopup('點擊查看任務');">我知道了</a>
+        <a class="btn-dialog btn-cancel web-order-1" onclick="closePopup('點擊查看任務');">忍痛放棄</a>
+      </div>
+    </div>
+
+    <!-- wrapper -->
+    <div class="wrapper">
+      
+      <!-- header-top -->
+      <header>
+        <!-- 大網 置頂 -->
+        <div class="headerPc-cover"></div>
+        <div class="headerPc">
+          <!-- 未登入 -->
+          <div class="pagesize">
+            <!-- 未下滑 -->
+            <div class="headerPc-head">
+              <div class="headerPc-inner">
+                <a href="#" class="link link--home">首頁</a>
+                <a href="#" class="link link--border space-0">下載APP</a>
+              </div>
+            </div>
+            <!-- 下滑 -->
+            <div class="headerPc-scroll">
+              <div class="headerPc-inner">
+                <a class="header-logo-img" href="index.html" title="Hami Go"></a>
+                <div class="searchInput">
+                  <div class="searchInput-inner">
+                    <input type="text" class="searchInput-input" placeholder="7-11禮券限時回饋">
+                    <a href="#" class="searchInput-inputBtn"></a>
+                  </div>
+                  <a href="#" class="searchInput-btn">搜尋</a>
+                </div>
+              </div>
+            </div>
+            <!-- 未登入 -->
+            <div class="headerPc-log">
+              <div class="headerPc-inner">
+                <a href="#" class="link m-none">瀏覽紀錄</a>
+                <a href="#" class="link m-none">點數加碼</a>
+                <a href="#" class="link">登入</a>
+                <a href="#" class="link link--border last">註冊</a>
+              </div>
+            </div>
+            <!-- 已登入 -->
+            <div class="headerPc-login" hidden>
+              <div class="headerPc-inner">
+                <div class="headMemberInfo">
+                  <div class="headMemberInfo-box">
+                    <button class="headMemberInfo-btn level-1"><span>0911*1*1*8</span></button>
+                  </div>
+                  <div class="headMemberInfo-hidden">
+                    <div class="headMemberCard level-1">
+                      <div class="headMemberCard-main">
+                        <div class="headMemberCard-info">
+                          <div class="icon"></div>
+                          <div class="infotext">
+                            <p class="name">0911*1*1*8</p>
+                            <p>普級卡VIP</p>
+                          </div>
+                        </div>
+                        <a href="#" class="link">帳號管理</a>
+                      </div>
+                      <a class="headMemberCard-mBtn" href="#">持有總點數(9)</a>
+                      <div class="headMemberCard-sub">
+                        <a href="#" class="btn">我的專屬權益</a>
+                      </div>
+                      <a class="headMemberCard-mBtn logout" href="#">登出</a>
+                    </div>
+                  </div>
+                </div>
+                <p class="text m-none">持有總點數(999,999+)</p>
+                <a href="#" class="link link--border last m-none">登出</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 大網 -->
+        <div class="headArea headArea--ad header-top m-none">
+          <div class="pagesize">
+            <div class="pagesize-inner">
+              <!-- logo -->
+              <h1 class="header-logo"><a class="header-logo-img" href="index.html" title="Hami Go"></a></h1>
+              <!-- search -->
+              <div class="header-search">
+                <div class="header-search-box">
+                  <div class="searchInput">
+                    <div class="searchInput-inner">
+                      <input type="text" class="searchInput-input" placeholder="7-11禮券限時回饋">
+                      <a href="#" class="searchInput-inputBtn"></a>
+                    </div>
+                    <a href="#" class="searchInput-btn">搜尋</a>
+                  </div>
+                </div>
+                <div class="header-searchHot">
+                  <span class="header-searchHot-title">🔥 熱門搜尋｜</span>
+                  <a href="#" class="header-searchHot-item">#日式料理</a>
+                  <a href="#" class="header-searchHot-item">#一泊二食餐券</a>
+                  <a href="#" class="header-searchHot-item">#溫泉飯店</a>
+                  <a href="#" class="header-searchHot-item">#iPhone14pro</a>
+                  <a href="#" class="header-searchHot-item">#熱門關鍵字</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 小網 -->
+        <div class="headerM header-top">
+          <div class="pagesize">
+            <div class="pagesize-inner">
+              <!-- logo -->
+              <h1 class="header-logo"><a class="header-logo-img" href="index.html" title="Hami Go"></a></h1>
+              <!-- search -->
+              <div class="header-search">
+                <div class="header-search-box">
+                  <div class="searchInput">
+                    <div class="searchInput-inner">
+                      <input type="text" class="searchInput-input" placeholder="7-11禮券限時回饋">
+                      <a href="#" class="searchInput-inputBtn"></a>
+                    </div>
+                    <a href="#" class="searchInput-btn">搜尋</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="headBg">
+
+        <!-- header-annouce -->
+        <div class="headArea headArea--ad headArea-annouce">
+          <div class="pagesize">
+            <div class="pagesize-inner">
+              <!-- 公告 -->
+              <div class="annouceBar">
+                <a href="#" class="annouceBar-link">
+                  <span class="annouceBar-icon">限量</span>
+                  <span class="annouceBar-text">搶券｜滿51折50紅包</span>
+                </a>
+              </div>
+            </div>
+            <!-- 天天簽到領Hami Point -->
+            <a class="headArea-ad" href="#"><img src="images/headArea-ad-1.png" alt="天天簽到領Hami Point"></a>
+          </div>
+        </div>
+
+        <div class="headBanner">
+          
+          <!-- 持有點數 -->
+          <!-- 持有點數 - 未登入 -->
+          <!-- <div class="hamiPointNav hamiPointNav--login">
+            <div class="hamiPointNav-inner">
+              <div class="hamiPointNav-text">
+                <h3 class="text"><span>登入取得點數紅包</span><span>與個人化資訊</span></h3>
+              </div>
+              <div class="hamiPointNav-loginbtn">
+                <a class="btn" href="#" title="立即登入">立即登入</a>
+              </div>
+            </div>
+          </div> -->
+          <!-- 持有點數 - 已登入 -->
+          <div class="hamiPointNav">
+            <div class="hamiPointNav-title">
+              <h3 class="title">持有總點數</h3>
+              <p class="num"><span class="icon-hami"></span><span class="JS_count-number JS_timer" data-to="200000" data-speed="1500">200,000</span></p>
+            </div>
+            <div class="hamiPointNav-links">
+              <a href="#" class="hamiPointNav-btn" title="我的收藏">
+                <span class="icon icon-1"></span>
+                <span>我的收藏</span>
+              </a>
+              <a href="#" class="hamiPointNav-btn" title="我的訂單">
+                <span class="icon icon-2"></span>
+                <span>我的訂單</span>
+              </a>
+              <a href="#" class="hamiPointNav-btn" title="瀏覽紀錄">
+                <span class="icon icon-3"></span>
+                <span>瀏覽紀錄</span>
+              </a>
+              <a href="#" class="hamiPointNav-btn" title="點數加碼">
+                <span class="icon icon-4"></span>
+                <span>點數加碼</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- banner -->
+          <div class="bannerSwiper">
+            <!-- swiper -->
+            <div class="swiper bannerSwiper-main">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="bg" style="background-color: #E4FFEE;">
+                    <div class="pagesize">
+                      <a class="imgbox" href="#" title="即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-bannerArea-1.jpg">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg" style="background-color: #145348;">
+                    <div class="pagesize">
+                      <a class="imgbox" href="#" title="即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-bannerArea-1.jpg">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg" style="background-color: #ADD9A7;">
+                    <div class="pagesize">
+                      <a class="imgbox" href="#" title="即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-bannerArea-1.jpg">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg" style="background-color: #84C67C;">
+                    <div class="pagesize">
+                      <a class="imgbox" href="#" title="即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-bannerArea-1.jpg">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg" style="background-color: #5bb350;">
+                    <div class="pagesize">
+                      <a class="imgbox" href="#" title="即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-bannerArea-1.jpg">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="bg" style="background-color: #FFEFAF;">
+                    <div class="pagesize">
+                      <a class="imgbox" href="#" title="即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-bannerArea-1.jpg">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper bannerSwiper-switch">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">母親節獻禮5折起</div>
+                <div class="swiper-slide">抹茶季開跑！下午茶大折價</div>
+                <div class="swiper-slide">Hami 限時兌換1折起</div>
+                <div class="swiper-slide">7-11超取贈送大冰拿</div>
+                <div class="swiper-slide">iPhone 15 限時預購中</div>
+                <div class="swiper-slide">百貨週年慶滿3000折300</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- contentNav -->
+        <div class="contentNav">
+          <div class="contentNav-inner">
+            <a class="contentNav-item open" href="#" title="商城">商城</a>
+            <a class="contentNav-item" href="#" title="票券">票券</a>
+            <a class="contentNav-item" href="#" title="導購賺點">導購賺點</a>
+            <div class="contentNav-bg"><div class="contentNav-menuBg"></div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 搜尋提示 -->
+      <div class="headArea-search" hidden>
+        <!-- 搜尋 - 自動完成 -->
+        <div class="searchCorrect searchCorrect-web">
+          <div class="searchCorrect-item">
+            <div class="itembox">
+              <p class="searchCorrect-text color-none">無符合的推薦項目</p>
+            </div>
+          </div>
+        </div>
+        <!-- 搜尋 - TAG 紀錄 關鍵字 -->
+        <div class="searchTag">
+          <div class="searchTag-area searchTag-log">
+            <h3 class="searchTag-title">搜尋紀錄<a href="javascript: void(0)" onclick="openPopup('清除全部')"
+                class="searchTag-delete">清除全部</a></h3>
+            <div class="chip-box searchTag-log">
+              <button class="chip chip-log"><span class="text">全家</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">全嘉</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">全家便利商店</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">豪運到</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">搜尋紀錄關鍵字</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">搜尋紀錄關鍵字搜尋紀錄關鍵字搜尋紀錄關鍵字</span><input type="button"
+                  class="close"></button>
+            </div>
+          </div>
+          <div class="searchTag-area searchTag-hot">
+            <h3 class="searchTag-title">熱門關鍵字</h3>
+            <div class="chip-box">
+              <button class="chip chip-hot"><span class="text">溫泉飯店</span></button>
+              <button class="chip chip-hot"><span class="text">iPhone14pro</span></button>
+              <button class="chip chip-hot"><span class="text">熱門關鍵字</span></button>
+              <button class="chip chip-hot"><span class="text">熱門關鍵字</span></button>
+              <button class="chip chip-hot"><span class="text">熱門關鍵字</span></button>
+              <button class="chip chip-hot"><span class="text">搜尋紀錄關鍵字搜尋紀錄關鍵字搜尋紀錄關鍵字</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-cover"></div>
+      <!-- 搜尋提示 - 小網 -->
+      <div class="container container-finding" hidden>
+        <!-- 搜尋 - 自動完成 -->
+        <div class="searchCorrect searchCorrect-mobile">
+          <div class="searchCorrect-item">
+            <div class="itembox">
+              <p class="searchCorrect-text color-none">無符合的推薦項目</p>
+            </div>
+          </div>
+        </div>
+        <!-- 搜尋 - TAG 紀錄 關鍵字 -->
+        <div class="searchTag">
+          <div class="searchTag-area searchTag-log">
+            <h3 class="searchTag-title"><span>搜尋紀錄</span><a href="javascript: void(0)" onclick="openPopup('清除全部')"
+                class="searchTag-delete">清除全部</a></h3>
+            <div class="chip-box chip-box--fold">
+              <button class="chip chip-fold"></button><!-- 展開按鈕 -->
+              <button class="chip chip-log"><span class="text">全家</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">全嘉</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">全家便利商店</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">豪運到</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">搜尋紀錄關鍵字</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">搜尋關鍵字</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">搜尋關鍵字</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">搜尋關鍵字</span><input type="button" class="close"></button>
+              <button class="chip chip-log"><span class="text">搜尋紀錄關鍵字搜尋紀錄關鍵字搜尋紀錄關鍵字</span><input type="button"
+                  class="close"></button>
+            </div>
+          </div>
+          <div class="searchTag-area searchTag-hot">
+            <h3 class="searchTag-title">熱門關鍵字</h3>
+            <div class="chip-box">
+              <button class="chip chip-hot"><span class="text">溫泉飯店</span></button>
+              <button class="chip chip-hot"><span class="text">iPhone14pro</span></button>
+              <button class="chip chip-hot"><span class="text">熱門關鍵字</span></button>
+              <button class="chip chip-hot"><span class="text">熱門關鍵字</span></button>
+              <button class="chip chip-hot"><span class="text">熱門關鍵字</span></button>
+              <button class="chip chip-hot"><span class="text">搜尋紀錄關鍵字搜尋紀錄關鍵字搜尋紀錄關鍵字</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      
+      <!-- container -->
+      <div class="container container-index">
+        <div class="pagesize">
+          <!-- content-右側選單 -->
+          <div class="contentSide contentSide--menu">
+            <div class="contentSide-links">
+              <a class="contentSide-btn icon-1" href="#" title="我的收藏">我的收藏</a>
+              <a class="contentSide-btn icon-2" href="#" title="我的訂單">我的訂單</a>
+              <a class="contentSide-btn icon-3" href="#" title="瀏覽紀錄">瀏覽紀錄</a>
+              <a class="contentSide-btn icon-4" href="#" title="點數加碼">點數加碼</a>
+            </div>
+            <a class="contentSide-top" href="#" title="回到頂部">頂部</a>
+          </div>
+          <!-- content-左側行銷 -->
+          <div class="contentSide contentSide--promo">
+            <a href="#" class="link"><img src="img/index-side-promo-1.png" alt="限量折價券 立即領券"></a>
+            <a href="#" class="link"><img src="img/index-side-promo-2.png" alt="allme限定 最高回饋12%"></a>
+          </div>
+          <!-- content-area -->
+          <div class="contentArea">
+            <div class="contentArea-inner">
+
+              <!-- adSlide -->
+              <div class="adSlide">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a class="imgbox" href="#" title="1下單滿$399贈香氛洗護旅行組">
+                        <img src="img/index-adSlide-1.jpg">
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="imgbox" href="#" title="2即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-adSlide-2.jpg">
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="imgbox" href="#" title="3下單滿$399贈香氛洗護旅行組">
+                        <img src="img/index-adSlide-1.jpg">
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="imgbox" href="#" title="4即日起至4月30日 Mister Donut 抹茶季開跑 精選午茶甜點">
+                        <img src="img/index-adSlide-2.jpg">
+                      </a>
+                    </div>
+              
+                  </div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!---->
+
+              <!-- 單張banner -->
+              <a class="adBanner" href="#">
+                <picture>
+                  <source type="image/png" srcset="img/index-ad-1-web.png" media="(min-width: 993px)">
+                  <source type="image/png" srcset="img/index-ad-1-pad.png" media="(min-width: 768px)">
+                  <img src="img/index-ad-1-m.png" alt="Hami市集 全站加碼1%點數回饋">
+                </picture>
+              </a>
+              <!--  -->
+
+              <!-- 主題行銷 -->
+              <div class="themePromo theme-5"><!-- 切換不同顏色 請修改class theme-1 ~ theme-10 -->
+                <div class="themePromo-title">
+                  <h2 class="title">當個滿分情人</h2>
+                  <h3 class="subtitle">送禮到她的心坎</h3>
+                </div>
+                <div class="themePromo-inner">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="themePromo-item">
+                        <div class="themePromo-item-img">
+                          <a class="imgbox main" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-1.jpg">
+                          </a>
+                          <a class="imgbox sub-1" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-2.jpg">
+                          </a>
+                          <a class="imgbox sub-2" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-3.jpg">
+                          </a>
+                        </div>
+                        <div class="themePromo-item-text">
+                          <a class="themePromo-name" href="#" title="送給心目中的女神🌹3折起字很多的話"><span class="name">送給心目中的女神🌹3折起字很多的話</span></a>
+                          <p class="text-notice">14.6萬+ 已售出</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="themePromo-item">
+                        <div class="themePromo-item-img">
+                          <a class="imgbox main" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-1.jpg">
+                          </a>
+                          <a class="imgbox sub-1" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-2.jpg">
+                          </a>
+                          <a class="imgbox sub-2" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-3.jpg">
+                          </a>
+                        </div>
+                        <div class="themePromo-item-text">
+                          <a class="themePromo-name" href="#" title="送給心目中的女神🌹3折起字很多的話"><span class="name">送給心目中的女神🌹3折起字很多的話送給心目中的女神🌹3折起字很多的話</span></a>
+                          <p class="text-notice">14.6萬+ 已售出</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="themePromo-item">
+                        <div class="themePromo-item-img">
+                          <a class="imgbox main" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-1.jpg">
+                          </a>
+                          <a class="imgbox sub-1" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-2.jpg">
+                          </a>
+                          <a class="imgbox sub-2" href="#" title="下單滿$399贈香氛洗護旅行組">
+                            <img src="img/index-themePromo-img-3.jpg">
+                          </a>
+                        </div>
+                        <div class="themePromo-item-text">
+                          <a class="themePromo-name" href="#" title="送給心目中的女神🌹3折起字很多的話"><span class="name">送給心目中的女神🌹3折起字很多的話送給心目中的女神🌹3折起字很多的話</span></a>
+                          <p class="text-notice">14.6萬+ 已售出</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide last"></div>
+                    
+                  </div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 熱銷排行榜 -->
+              <div class="hotSale">
+                <div class="indexTitle">
+                  <h2 class="title-icon icon-hot">熱銷排行榜</h2>
+                  <a href="#" class="btn-more" title="看更多"><span>看更多</span></a>
+                </div>
+                <div class="hotSale-inner">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item" href="#" title="好好喝的熬雞精">
+                          <div class="hotSale-chip chip-1"><span>1</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-1.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">好好喝的熬雞精</span></p>
+                          <p class="text-price"><span class="num">$500</span></p>
+                          <p class="text-point">10%(賺10點)</p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item" href="#" title="好好喝的熬雞精好好喝的好好喝的熬雞精">
+                          <div class="hotSale-chip chip-2"><span>2</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-2.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">好好喝的熬雞精好好喝的好好喝的熬雞精</span></p>
+                          <p class="text-price"><span class="num">$500</span></p>
+                          <p class="text-point">10%(賺10點)</p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item" href="#" title="好好喝的熬雞精好好喝的好好喝的熬雞精">
+                          <div class="hotSale-chip chip-3"><span>3</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-3.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">好好喝的熬雞精</span></p>
+                          <p class="text-price"><span class="num">$500</span></p>
+                          <p class="text-point">10%(賺10點)</p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item" href="#" title="好好喝的熬雞精好好喝的好好喝的熬雞精">
+                          <div class="hotSale-chip"><span>4</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-4.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">好好喝的熬雞精</span></p>
+                          <p class="text-price"><span class="num">$500</span></p>
+                          <p class="text-point">10%(賺10點)</p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item" href="#" title="好好喝的熬雞精好好喝的好好喝的熬雞精">
+                          <div class="hotSale-chip"><span>5</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-1.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">好好喝的熬雞精</span></p>
+                          <p class="text-price"><span class="num">$500</span></p>
+                          <p class="text-point">10%(賺10點)</p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a href="#" class="btn-slideMore"><span class="btn-slideMore-text">看更多</span></a>
+                      </div>
+
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 熱銷排行榜 -->
+              <div class="hotSale py">
+                <div class="indexTitle">
+                  <h2 class="title-icon icon-hot">熱銷排行榜</h2>
+                  <a href="#" class="btn-more" title="看更多"><span>看更多</span></a>
+                </div>
+                <div class="hotSale-inner">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item type--border" href="#" title="熬雞精">
+                          <div class="hotSale-chip chip-1"><span>1</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-1.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">熬雞精</span></p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item type--border" href="#" title="智慧型手機">
+                          <div class="hotSale-chip chip-2"><span>2</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-2.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">智慧型手機</span></p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item type--border" href="#" title="智慧型手錶">
+                          <div class="hotSale-chip chip-3"><span>3</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-3.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">智慧型手錶</span></p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item type--border" href="#" title="身體乳液">
+                          <div class="hotSale-chip"><span>4</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-4.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">身體乳液</span></p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                      <div class="swiper-slide">
+                        <a class="hotSale-item type--border" href="#" title="熬雞精">
+                          <div class="hotSale-chip"><span>5</span></div>
+                          <div class="imgbox">
+                            <img src="img/index-hotSale-1.jpg">
+                          </div>
+                          <p class="prodBox-name"><span class="name">熬雞精</span></p>
+                          <p class="notice">已售1,500+</p>
+                        </a>
+                      </div>
+
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 限時特賣欄位 -->
+              <div class="columnArea columnArea--limited">
+                <div class="columnBox columnBox-main">
+
+                  <!-- 限時特賣 -->
+                  <div class="limitedHot JS_limitedHot_1">
+                    <div class="title-limitedSale">
+                      <h2>限時特賣</h2>
+                      <p class="timer">
+                        <span class="timer-hr">00</span><span class="timer-min">20</span><span class="timer-sec">05</span>
+                      </p>
+                      <a href="#" class="btn-more btn-more--white" title="看更多"><span>看更多</span></a>
+                    </div>
+                    <div class="limitedHot-inner">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+
+                          <div class="swiper-slide">
+                            <a class="limitedItem" title="西雅圖-極品濾掛100入" href="#">
+                              <div class="limitedItem-img">
+                                <div class="imgbox">
+                                  <img src="img/index-limitedSale-1.jpg">
+                                </div>
+                                <p class="limitedTag limitedTag-limit"><span>即將完售</span></p>
+                              </div>
+                              <p class="prodBox-name"><span class="name">西雅圖-極品濾掛100入 西雅圖-極品濾掛100入</span></p>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                            </a>
+                          </div>
+                          
+                          <div class="swiper-slide">
+                            <a class="limitedItem" title="莫凡彼-家庭號冰淇淋1盒" href="#">
+                              <div class="limitedItem-img">
+                                <div class="imgbox">
+                                  <img src="img/index-limitedSale-2.jpg">
+                                </div>
+                                <p class="limitedTag limitedTag-hot"><span>熱銷中</span></p>
+                              </div>
+                              <p class="prodBox-name"><span class="name">莫凡彼-家庭號冰淇淋1盒</span></p>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                            </a>
+                          </div>
+
+                          <div class="swiper-slide">
+                            <a class="limitedItem" title="西雅圖-極品濾掛100入" href="#">
+                              <div class="limitedItem-img">
+                                <div class="imgbox">
+                                  <img src="img/index-limitedSale-3.jpg">
+                                </div>
+                                <p class="limitedTag limitedTag-hot"><span>熱銷中</span></p>
+                              </div>
+                              <p class="prodBox-name"><span class="name">西雅圖-極品濾掛100入</span></p>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                            </a>
+                          </div>
+
+                          <div class="swiper-slide">
+                            <a class="limitedItem" title="西雅圖-極品濾掛100入" href="#">
+                              <div class="limitedItem-img">
+                                <div class="imgbox">
+                                  <img src="img/index-limitedSale-1.jpg">
+                                </div>
+                                <p class="limitedTag limitedTag-limit"><span>即將完售</span></p>
+                              </div>
+                              <p class="prodBox-name"><span class="name">西雅圖-極品濾掛100入</span></p>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                            </a>
+                          </div>
+
+                          <div class="swiper-slide">
+                            <a href="#" class="btn-slideMore"><span class="btn-slideMore-text">看更多</span></a>
+                          </div>
+
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="columnBox columnBox-sub">
+
+                  <!-- 品牌限時 -->
+                  <div class="limitedBrand" style="background-color: #4385C0;">
+                    <div class="title-limitedSale">
+                      <h2><a class="link-goto" href="#"><span class="text">神腦國際</span></a></h2>
+                      <p class="timer">
+                        <span class="timer-hr">00</span><span class="timer-min">20</span><span class="timer-sec">05</span>
+                      </p>
+                    </div>
+                    <div class="limitedBrand-inner">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-1.jpg" title="奈米水離子吹風機桃紅 EH-NA9">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">奈米水離子吹風機桃紅 EH-NA9</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="象印日製10人份電子鍋 NP-HEF">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-2.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">象印日製10人份電子鍋 NP-HEF</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+                          
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-3.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-3.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-3.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="limitedBrand-foot">
+                      <h3>精選商品限時加碼回饋！</h3>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- 限時特賣欄位 - 僅有限時特賣 -->
+              <div class="columnBox">
+                <div class="limitedHot JS_limitedHot_2">
+                  <div class="title-limitedSale">
+                    <h2>限時特賣</h2>
+                    <p class="timer">
+                      <span class="timer-hr">00</span><span class="timer-min">20</span><span class="timer-sec">05</span>
+                    </p>
+                    <a href="#" class="btn-more btn-more--white" title="看更多"><span>看更多</span></a>
+                  </div>
+                  <div class="limitedHot-inner">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                          <a class="limitedItem" title="西雅圖-極品濾掛100入" href="#">
+                            <div class="limitedItem-img">
+                              <div class="imgbox">
+                                <img src="img/index-limitedSale-1.jpg">
+                              </div>
+                              <p class="limitedTag limitedTag-limit"><span>即將完售</span></p>
+                            </div>
+                            <p class="prodBox-name"><span class="name">西雅圖-極品濾掛100入 西雅圖-極品濾掛100入</span></p>
+                            <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                          </a>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                          <a class="limitedItem" title="莫凡彼-家庭號冰淇淋1盒" href="#">
+                            <div class="limitedItem-img">
+                              <div class="imgbox">
+                                <img src="img/index-limitedSale-2.jpg">
+                              </div>
+                              <p class="limitedTag limitedTag-hot"><span>熱銷中</span></p>
+                            </div>
+                            <p class="prodBox-name"><span class="name">莫凡彼-家庭號冰淇淋1盒</span></p>
+                            <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                          </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                          <a class="limitedItem" title="西雅圖-極品濾掛100入" href="#">
+                            <div class="limitedItem-img">
+                              <div class="imgbox">
+                                <img src="img/index-limitedSale-3.jpg">
+                              </div>
+                              <p class="limitedTag limitedTag-hot"><span>熱銷中</span></p>
+                            </div>
+                            <p class="prodBox-name"><span class="name">西雅圖-極品濾掛100入</span></p>
+                            <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                          </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                          <a class="limitedItem" title="西雅圖-極品濾掛100入" href="#">
+                            <div class="limitedItem-img">
+                              <div class="imgbox">
+                                <img src="img/index-limitedSale-1.jpg">
+                              </div>
+                              <p class="limitedTag limitedTag-limit"><span>即將完售</span></p>
+                            </div>
+                            <p class="prodBox-name"><span class="name">西雅圖-極品濾掛100入</span></p>
+                            <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                          </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                          <a href="#" class="btn-slideMore"><span class="btn-slideMore-text">看更多</span></a>
+                        </div>
+
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 限時特賣欄位 - 僅有限時加碼 -->
+              <div class="columnBox">
+                <!-- 品牌限時 -->
+                <div class="limitedBrand" style="background-color: #4385C0;">
+                  <div class="title-limitedSale">
+                    <h2><a class="link-goto" href="#"><span class="text">神腦國際</span></a></h2>
+                    <p class="timer">
+                      <span class="timer-hr">00</span><span class="timer-min">20</span><span class="timer-sec">05</span>
+                    </p>
+                  </div>
+                  <div class="limitedBrand-inner">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                          <a class="limitedBrandItem" href="#">
+                            <div class="imgbox">
+                              <img src="img/index-limitedBrand-1.jpg" title="奈米水離子吹風機桃紅 EH-NA9">
+                            </div>
+                            <div class="limitedBrandItem-inner">
+                              <p class="name">奈米水離子吹風機桃紅 EH-NA9</p>
+                              <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                            </div>
+                          </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                          <a class="limitedBrandItem" href="#" title="象印日製10人份電子鍋 NP-HEF">
+                            <div class="imgbox">
+                              <img src="img/index-limitedBrand-2.jpg">
+                            </div>
+                            <div class="limitedBrandItem-inner">
+                              <p class="name">象印日製10人份電子鍋 NP-HEF</p>
+                              <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                            </div>
+                          </a>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                          <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                            <div class="imgbox">
+                              <img src="img/index-limitedBrand-3.jpg">
+                            </div>
+                            <div class="limitedBrandItem-inner">
+                              <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                              <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                            </div>
+                          </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                          <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                            <div class="imgbox">
+                              <img src="img/index-limitedBrand-3.jpg">
+                            </div>
+                            <div class="limitedBrandItem-inner">
+                              <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                              <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                            </div>
+                          </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                          <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                            <div class="imgbox">
+                              <img src="img/index-limitedBrand-3.jpg">
+                            </div>
+                            <div class="limitedBrandItem-inner">
+                              <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                              <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                            </div>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                  <div class="limitedBrand-foot">
+                    <h3>精選商品限時加碼回饋！</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 限時特賣欄位 - 同2家限時加碼 -->
+              <div class="columnArea columnArea--even" style="display: none;">
+                <div class="columnBox">
+                  <!-- 品牌限時 -->
+                  <div class="limitedBrand" style="background-color: #4385C0;">
+                    <div class="title-limitedSale">
+                      <h2><a class="link-goto" href="#"><span class="text">神腦國際</span></a></h2>
+                      <p class="timer">
+                        <span class="timer-hr">00</span><span class="timer-min">20</span><span class="timer-sec">05</span>
+                      </p>
+                    </div>
+                    <div class="limitedBrand-inner">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                  
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-1.jpg" title="奈米水離子吹風機桃紅 EH-NA9">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">奈米水離子吹風機桃紅 EH-NA9</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+                  
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="象印日製10人份電子鍋 NP-HEF">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-2.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">象印日製10人份電子鍋 NP-HEF</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+                  
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-3.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+                  
+                        </div>
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="limitedBrand-foot">
+                      <h3>精選商品限時加碼回饋！</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="columnBox">
+                  <!-- 品牌限時 -->
+                  <div class="limitedBrand" style="background-color: #4385C0;">
+                    <div class="title-limitedSale">
+                      <h2><a class="link-goto" href="#"><span class="text">神腦國際</span></a></h2>
+                      <p class="timer">
+                        <span class="timer-hr">00</span><span class="timer-min">20</span><span class="timer-sec">05</span>
+                      </p>
+                    </div>
+                    <div class="limitedBrand-inner">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                  
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-1.jpg" title="奈米水離子吹風機桃紅 EH-NA9">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">奈米水離子吹風機桃紅 EH-NA9</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+                  
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="象印日製10人份電子鍋 NP-HEF">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-2.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">象印日製10人份電子鍋 NP-HEF</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+                  
+                          <div class="swiper-slide">
+                            <a class="limitedBrandItem" href="#" title="高島 六星級時尚護足樂 腳底按摩機">
+                              <div class="imgbox">
+                                <img src="img/index-limitedBrand-3.jpg">
+                              </div>
+                              <div class="limitedBrandItem-inner">
+                                <p class="name">高島 六星級時尚護足樂 腳底按摩機</p>
+                                <p class="point">加碼<span class="icon-hami"></span>2%</p>
+                              </div>
+                            </a>
+                          </div>
+                  
+                        </div>
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="limitedBrand-foot">
+                      <h3>精選商品限時加碼回饋！</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 更多優惠 -->
+              <div class="columnArea columnArea--promo">
+                <div class="columnBox columnBox-main">
+                  <!-- 更多優惠折價 -->
+                  <div class="promoTicket">
+                    <div class="indexTitle">
+                      <h2>更多優惠折價</h2>
+                    </div>
+                    <a class="promoTicketItem" href="#" title="領券折價">
+                      <div class="promoTicketItem-main">
+                        <h3 class="name">領券折價</h3>
+                        <p class="sub">多種折價券等你使用</p>
+                      </div>
+                      <div class="promoTicketItem-goto"><div class="icon"></div></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="columnBox columnBox-sub">
+                  <!-- 信用卡加碼回饋 -->
+                  <!-- <div class="promoCredit">
+                    <div class="indexTitle">
+                      <h2>信用卡加碼回饋</h2>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+
+              <!-- 信用卡加碼回饋 -->
+              <div class="promoCredit">
+                <div class="promoCredit-area">
+                  <div class="promoCredit-title">
+                    <h2 class="title">銀行卡/信用卡 優惠總覽</h2>
+                    <a href="#" class="btn" title="看更多"><span class="btn-more">看更多</span></a>
+                  </div>
+                  <div class="promoCredit-inner">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a href="#" class="promoCreditItem">
+                            <div class="imgbox">
+                              <img src="img/index-promoCredit-1.jpg">
+                            </div>
+                            <div class="textbox">
+                              <p class="desc">中國信託allme卡<br/>05/01-05/31 限量加碼</p>
+                              <p class="sub">最高12%點數回饋</p>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="#" class="promoCreditItem">
+                            <div class="imgbox">
+                              <img src="img/index-promoCredit-2.jpg">
+                            </div>
+                            <div class="textbox">
+                              <p class="desc">中華電信聯名卡不限卡別指定商城加碼</p>
+                              <p class="sub">最高8%點數回饋</p>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 旗艦品牌 -->
+              <div class="brandList">
+                <div class="indexTitle">
+                  <h2>旗艦品牌</h2>
+                </div>
+                <div class="brandList-inner">
+                  <div class="brandList-marquee">
+                    <div class="brandList-box box-1">
+                      <!-- 請設定item數量至少<=8 -->
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-1.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-2.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案簡略文案簡略文案簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-3.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-4.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-5.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-6.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-1.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-1.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                    </div>
+                    <div class="brandList-box box-2">
+                      <!-- 請設定item數量至少<=8 -->
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-1.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-2.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案簡略文案簡略文案簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-3.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-4.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-5.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-6.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-1.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                      <a class="brandList-item" href="#" title="簡略文案">
+                        <div class="imgbox"><img src="img/index-brandList-1.jpg"></div>
+                        <p class="brandList-name"><span class="name">簡略文案</span></p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 商品分類 -->
+              <div class="indexCatalog">
+                <div class="indexTitle">
+                  <h2 class="title-icon icon-catalog">商品分類</h2>
+                  <a href="#" class="btn-more" title="看更多"><span>看更多</span></a>
+                </div>
+                <div class="indexCatalog-inner">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-phone" title="手機配件"><span class="name">手機配件</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-computer" title="電腦、週邊"><span class="name">電腦、週邊</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-3c" title="數位娛樂"><span class="name">數位娛樂</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-appliance" title="家電用品"><span class="name">家電用品</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-health" title="保健相關"><span class="name">保健相關</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-food" title="生鮮/食品"><span class="name">生鮮/食品</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-baby" title="母嬰用品"><span class="name">母嬰用品</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-makeup" title="美妝保養"><span class="name">美妝保養</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-daily" title="日用生活"><span class="name">日用生活</span></a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="indexCatalog-link icon-ticket" title="票券"><span class="name">票券</span></a>
+                      </div><div class="swiper-slide">
+                        <a class="indexCatalog-link icon-all" title="全部分類"><span class="name">全部分類</span></a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 快速入口 -->
+              <div class="quickLink">
+                <div class="quickLink-inner">
+                  <a class="quickLink-link type-gift" href="#" title="會員禮遇">
+                    <span class="tag">點數專區</span>
+                    <div class="quickLink-link-text">
+                      <span class="name">會員禮遇</span>
+                      <span class="icon"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="quickLink-inner">
+                  <a class="quickLink-link type-buy" href="#" title="會員禮遇">
+                    <span class="tag">點數專區</span>
+                    <div class="quickLink-link-text">
+                      <span class="name">會員禮遇</span>
+                      <span class="icon"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="quickLink-inner">
+                  <a class="quickLink-link type-vip" href="#" title="會員禮遇">
+                    <span class="tag">點數專區</span>
+                    <div class="quickLink-link-text">
+                      <span class="name">會員禮遇</span>
+                      <span class="icon"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="quickLink-inner">
+                  <!-- 上稿自訂背景顏色background 及陰影值box-shadow -->
+                  <a class="quickLink-link type-brand" href="#" title="屈臣氏8折">
+                    <span class="tag">限時</span>
+                    <div class="quickLink-link-text" style="background: #008287; box-shadow: 0px 4px 4px rgba(0, 130, 135, 0.25);">
+                      <span class="name">屈臣氏8折</span>
+                      <!-- 上稿自訂圖片 -->
+                      <span class="imgbox"><img src="img/index-quickLink-1.jpg"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="quickLink-inner">
+                  <a class="quickLink-link type-brand" href="#" title="快車肉乾禮盒販售中">
+                    <span class="tag">限時</span>
+                    <div class="quickLink-link-text" style="background: #860000; box-shadow: 0px 4px 4px rgba(134, 0, 0, 0.25);">
+                      <span class="name">禮盒販售中</span>
+                      <span class="imgbox"><img src="img/index-quickLink-2.jpg"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="quickLink-inner">
+                  <a class="quickLink-link type-brand" href="#" title="LINE TAXI 領乘車金">
+                    <span class="tag">天天都有</span>
+                    <div class="quickLink-link-text" style="color: #333; background: #fff; box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);">
+                      <span class="name">領乘車金</span>
+                      <span class="imgbox"><img src="img/index-quickLink-3.jpg"></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!---->
+
+              <!-- 為你推薦 -->
+              <div class="indexRecommend">
+                <div class="indexTitle">
+                  <h2>為你推薦</h2>
+                </div>
+                <div class="indexRecommend-bg">
+                  <div class="indexRecommend-inner">
+                    <!-- 瀑布 -->
+                    <div class="JS_grid">
+                      <div class="JS_grid-sizer"></div>
+                      
+                      <!-- 商品卡片 -->
+                      <div class="JS_grid-item">
+                        <div class="recommendCard ">
+                          <div class="recommendCard-img JS_recommendCard_1"><!-- 顯示愛心按鈕 btn--show -->
+                            <div class="recommendCard-img-inner">
+                              <div class="swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide">
+                                    <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                                  </div>
+                                  <div class="swiper-slide">
+                                    <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                                  </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <!-- 愛心 -->
+                            <button class="btn-love"></button>
+                          </div>
+                          <div class="recommendCard-inner">
+                            <!-- link -->
+                            <div class="recommendCard-link">
+                              <p class="notice-store">Hami 市集</p>
+                              <a class="name" href="#" title="便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合">便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合</a>
+                              <p class="text-notice">已售1,000+</p>
+                            </div>
+                            <!-- sub -->
+                            <div class="recommendCard-sub">
+                              <div class="recommendCard-tag">
+                                <span class="tag tag-1">歷史低價</span>
+                                <span class="tag tag-2">8折</span>
+                                <span class="tag tag-3">折價券</span>
+                              </div>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                              <p class="text-point">10%(賺10點)</p>
+                              <!-- 愛心 -->
+                              <button class="btn-love"></button>
+                            </div>
+                            <!-- 文字行銷訊息 -->
+                            <div class="recommendCard-promo">
+                              <ul class="recommendCard-promo-list" title="領券再折100元、一個帳戶限購一個、一個帳戶限購一個">
+                                <li>領券再折100元</li>
+                                <li>一個帳戶限購一個</li>
+                                <li>一個帳戶限購一個</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="JS_grid-item">
+                        <!-- 商品卡片 -->
+                        <div class="recommendCard ">
+                          <div class="recommendCard-img"><!-- 顯示愛心按鈕 btn--show -->
+                            <div class="recommendCard-img-inner">
+                              <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <!-- 愛心 -->
+                            <button class="btn-love"></button>
+                          </div>
+                          <div class="recommendCard-inner">
+                            <!-- link -->
+                            <div class="recommendCard-link">
+                              <p class="notice-store">Hami 市集</p>
+                              <a class="name" href="#" title="便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合">便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合</a>
+                              <p class="text-notice">已售1,000+</p>
+                            </div>
+                            <!-- sub -->
+                            <div class="recommendCard-sub">
+                              <div class="recommendCard-tag">
+                                <span class="tag tag-1">歷史低價</span>
+                                <span class="tag tag-2">8折</span>
+                                <span class="tag tag-3">折價券</span>
+                              </div>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                              <p class="text-point">10%(賺10點)</p>
+                              <!-- 愛心 -->
+                              <button class="btn-love"></button>
+                            </div>
+                            <!-- 文字行銷訊息 -->
+                            <div class="recommendCard-promo">
+                              <ul class="recommendCard-promo-list" title="領券再折100元、一個帳戶限購一個、一個帳戶限購一個">
+                                <li>領券再折100元</li>
+                                <li>一個帳戶限購一個</li>
+                                <li>一個帳戶限購一個</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="JS_grid-item">
+                        <!-- 商品卡片 -->
+                        <div class="recommendCard ">
+                          <div class="recommendCard-img"><!-- 顯示愛心按鈕 btn--show -->
+                            <div class="recommendCard-img-inner">
+                              <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <!-- 愛心 -->
+                            <button class="btn-love"></button>
+                          </div>
+                          <div class="recommendCard-inner">
+                            <!-- link -->
+                            <div class="recommendCard-link">
+                              <a class="name" href="#" title="便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合">便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合</a>
+                              <p class="text-notice">已售1,000+</p>
+                            </div>
+                            <!-- sub -->
+                            <div class="recommendCard-sub">
+                              <div class="recommendCard-tag">
+                                <span class="tag tag-1">歷史低價</span>
+                                <span class="tag tag-2">8折</span>
+                                <span class="tag tag-3">折價券</span>
+                              </div>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                              <p class="text-point">10%(賺10點)</p>
+                              <!-- 愛心 -->
+                              <button class="btn-love"></button>
+                            </div>
+                            <!-- 文字行銷訊息 -->
+                            <div class="recommendCard-promo">
+                              <ul class="recommendCard-promo-list" title="領券再折100元、一個帳戶限購一個、一個帳戶限購一個">
+                                <li>領券再折100元</li>
+                                <li>一個帳戶限購一個</li>
+                                <li>一個帳戶限購一個</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="JS_grid-item">
+                        <!-- 商品卡片 -->
+                        <div class="recommendCard ">
+                          <div class="recommendCard-img"><!-- 顯示愛心按鈕 btn--show -->
+                            <div class="recommendCard-img-inner">
+                              <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <!-- 愛心 -->
+                            <button class="btn-love"></button>
+                          </div>
+                          <div class="recommendCard-inner">
+                            <!-- link -->
+                            <div class="recommendCard-link">
+                              <a class="name" href="#" title="便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合">便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合</a>
+                            </div>
+                            <!-- sub -->
+                            <div class="recommendCard-sub">
+                              <div class="recommendCard-tag">
+                                <span class="tag tag-1">歷史低價</span>
+                                <span class="tag tag-2">8折</span>
+                                <span class="tag tag-3">折價券</span>
+                              </div>
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                              <p class="text-point">10%(賺10點)</p>
+                              <!-- 愛心 -->
+                              <button class="btn-love"></button>
+                            </div>
+                            <!-- 文字行銷訊息 -->
+                            <div class="recommendCard-promo">
+                              <ul class="recommendCard-promo-list" title="領券再折100元、一個帳戶限購一個、一個帳戶限購一個">
+                                <li>領券再折100元</li>
+                                <li>一個帳戶限購一個</li>
+                                <li>一個帳戶限購一個</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="JS_grid-item">
+                        <!-- 商品卡片 -->
+                        <div class="recommendCard ">
+                          <div class="recommendCard-img"><!-- 顯示愛心按鈕 btn--show -->
+                            <div class="recommendCard-img-inner">
+                              <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <!-- 愛心 -->
+                            <button class="btn-love"></button>
+                          </div>
+                          <div class="recommendCard-inner">
+                            <!-- link -->
+                            <div class="recommendCard-link">
+                              <a class="name" href="#" title="便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合">便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合</a>
+                            </div>
+                            <!-- sub -->
+                            <div class="recommendCard-sub">
+                              <p class="text-price"><span class="point">500</span><span class="origin">$780</span></p>
+                              <!-- <p class="text-point">10%(賺10點)</p> -->
+                              <!-- 愛心 -->
+                              <button class="btn-love"></button>
+                            </div>
+                            <!-- 文字行銷訊息 -->
+                            <div class="recommendCard-promo">
+                              <ul class="recommendCard-promo-list" title="領券再折100元、一個帳戶限購一個、一個帳戶限購一個">
+                                <li>領券再折100元</li>
+                                <li>一個帳戶限購一個</li>
+                                <li>一個帳戶限購一個</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="JS_grid-item">
+                        <!-- 商品卡片 -->
+                        <div class="recommendCard ">
+                          <div class="recommendCard-img"><!-- 顯示愛心按鈕 btn--show -->
+                            <div class="recommendCard-img-inner">
+                              <div class="imgbox"><img src="img/index-recommendCard-1.jpg"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <!-- 愛心 -->
+                            <button class="btn-love"></button>
+                          </div>
+                          <div class="recommendCard-inner">
+                            <!-- link -->
+                            <div class="recommendCard-link">
+                              <a class="name" href="#" title="便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合便宜的毛巾組合">便宜的毛巾組合便宜的毛巾組合</a>
+                            </div>
+                            <!-- sub -->
+                            <div class="recommendCard-sub">
+                              <p class="text-price"><span class="num">$500</span><span class="origin">$780</span></p>
+                              <!-- 愛心 -->
+                              <button class="btn-love"></button>
+                            </div>
+                            <!-- 文字行銷訊息 -->
+                            <div class="recommendCard-promo">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="JS_grid-item">
+                        <!-- 主題行銷卡片 -->
+                        <div class="themeAdCard theme-2 ">
+                          <a class="themePromo-item-text" href="#" title="冬天保濕聖品">
+                            <p class="themePromo-name"><span class="name">冬天保濕聖品</span></p>
+                            <p class="themePromo-sub">冬天多喝水，皮膚也要喝飽水 冬天多喝水，皮膚也要喝飽水</p>
+                          </a>
+                          <div class="themePromo-item-img">
+                            <a class="imgbox main" href="#" title="下單滿$399贈香氛洗護旅行組">
+                              <img src="img/index-themePromo-img-1.jpg">
+                            </a>
+                            <a class="imgbox sub-1" href="#" title="下單滿$399贈香氛洗護旅行組">
+                              <img src="img/index-themePromo-img-2.jpg">
+                            </a>
+                            <a class="imgbox sub-2" href="#" title="下單滿$399贈香氛洗護旅行組">
+                              <img src="img/index-themePromo-img-3.jpg">
+                            </a>
+                          </div>
+                          <div class="btn-box">
+                            <a href="#" class="btn" title="看更多推薦商品">看更多推薦商品</a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="JS_grid-item">
+                        <!-- 主題行銷卡片 -->
+                        <div class="themeAdCard theme-4 ">
+                          <a class="themePromo-item-text" href="#" title="冬天保濕聖品">
+                            <p class="themePromo-name"><span class="name">冬天保濕聖品冬天保濕聖品冬天保濕聖品</span></p>
+                            <p class="themePromo-sub">冬天多喝水，皮膚也要喝飽水</p>
+                          </a>
+                          <div class="themePromo-item-img">
+                            <a class="imgbox main" href="#" title="下單滿$399贈香氛洗護旅行組">
+                              <img src="img/index-themePromo-img-1.jpg">
+                            </a>
+                            <a class="imgbox sub-1" href="#" title="下單滿$399贈香氛洗護旅行組">
+                              <img src="img/index-themePromo-img-2.jpg">
+                            </a>
+                            <a class="imgbox sub-2" href="#" title="下單滿$399贈香氛洗護旅行組">
+                              <img src="img/index-themePromo-img-3.jpg">
+                            </a>
+                          </div>
+                          <div class="btn-box">
+                            <a href="#" class="btn" title="看更多推薦商品">看更多推薦商品</a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <!-- 正在載入 -->
+                    <div class="indexRecommend-foot">
+                      <p class="footText footText-load">
+                        <span class="footText-load-icon"></span>
+                        <span>正在載入更多商品</span>
+                      </p>
+                    </div>
+                    <!-- 正在載入 - 失敗 -->
+                    <div class="indexRecommend-foot">
+                      <p class="footText footText-error">
+                        <span class="footText-icon"></span>
+                        <span>載入失敗，請檢查網路連線並重新刷新</span>
+                      </p>
+                    </div>
+                    <!-- 已到最底 -->
+                    <div class="indexRecommend-foot">
+                      <p class="footText footText-end">
+                        <span>已到最底了</span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!---->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- JS -->
+  <script type="text/javascript" src="js/jquery.swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/jquery.jquery-ui.js"></script>
+  <script type="text/javascript" src="js/jquery.masonry.pkgd.min.js"></script>
+  
+  <script type="text/javascript" src="js/jquery.scrollfix.js"></script>
+  <script type="text/javascript" src="js/jquery.liMarquee.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
+<script>
+$(function () {
+
+  /*------------------------------------*\
+    contentNav
+  \*------------------------------------*/
+  // sticky
+  $('.contentNav').scrollFix({ side: 'top' });
+
+  // switch
+  var navItems = $('.contentNav-item').length;
+  var bgW = (100 / navItems) + '%';
+  $('.contentNav-menuBg').css('width', bgW);
+
+
+  const body = document.body;
+  const menu = body.querySelector(".contentNav-inner");
+  const menuItems = menu.querySelectorAll(".contentNav-item");
+  const menuBorder = menu.querySelector(".contentNav-menuBg");
+  let activeItem = menu.querySelector(".contentNav-item.open");
+
+  function clickItem(item, index) {
+    menu.style.removeProperty("--timeOut");
+    if (activeItem == item) return;
+    if (activeItem) {
+      activeItem.classList.remove("open");
+    }
+
+    item.classList.add("open");
+    activeItem = item;
+    offsetMenuBorder(activeItem, menuBorder);
+  }
+
+  function offsetMenuBorder(element, menuBorder) {
+    const offsetActiveItem = element.getBoundingClientRect();
+    const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth - offsetActiveItem.width) / 2) + "px";
+    menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
+  }
+
+  offsetMenuBorder(activeItem, menuBorder);
+
+  menuItems.forEach((item, index) => {
+    item.addEventListener("click", () => clickItem(item, index));
+  })
+
+  window.addEventListener("resize", () => {
+    offsetMenuBorder(activeItem, menuBorder);
+    menu.style.setProperty("--timeOut", "none");
+  });
+
+
+
+  /*------------------------------------*/
+  // pad header搜尋區塊開啟
+  $('.headerM .searchInput').on('click', function () {
+    // 關閉其他區塊
+    $('.headBg').hide();
+    headerSearch_m_open();
+  });
+
+  
+  /*------------------------------------*/
+  // adSlide
+  var adSlideSwiper = new Swiper('.adSlide .swiper', {
+    slidesPerView: 1.2,
+    slidesPerGroup: 1,
+    centeredSlides: true,
+    spaceBetween: 8,
+    loop: true,
+    touchEventsTarget: 'container',
+    autoplay: {
+      delay: 5000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".adSlide .swiper-pagination",
+      clickable: false,
+    },
+    navigation: {
+      nextEl: '.adSlide .swiper-button-next',
+      prevEl: '.adSlide .swiper-button-prev',
+    },
+    breakpoints: {
+      376: {
+        slidesPerView: 1.6,
+      },
+      992: {
+        slidesPerView: 1.6,
+        spaceBetween: 16,
+      },
+      1200: {
+        slidesPerView: 2,
+      }
+    }
+  });
+  // prevents loop jump
+  adSlideSwiper.on('transitionEnd', function () {
+    let activeSlide = adSlideSwiper.realIndex + 1;
+    let previousSlide = adSlideSwiper.previousIndex - 2;
+    if (previousSlide == -1) {
+      previousSlide = 0;
+    } else if (previousSlide ==
+      document.querySelectorAll('.adSlide .swiper-slide').length) {
+      return;
+    }
+  });
+
+
+  /*------------------------------------*/
+  // 主題行銷
+  var themePromoSwiper = new Swiper('.themePromo-inner .swiper', {
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.themePromo .swiper-button-next',
+      prevEl: '.themePromo .swiper-button-prev',
+    },
+    breakpoints: {
+      992: {
+        spaceBetween: 16,
+      }
+    }
+  });
+
+
+  /*------------------------------------*/
+  // 熱銷排行榜
+  var hotSaleSwiper = new Swiper('.hotSale .swiper', {
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    spaceBetween: 8,
+    navigation: {
+      nextEl: '.hotSale .swiper-button-next',
+      prevEl: '.hotSale .swiper-button-prev',
+    },
+    breakpoints: {
+      992: {
+        spaceBetween: 16,
+      },
+    }
+  });
+
+  /*------------------------------------*/
+  // 限時特賣
+  var limitedHotSwiper_1 = new Swiper('.JS_limitedHot_1 .swiper', {
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    navigation: {
+      nextEl: '.limitedHot .swiper-button-next',
+      prevEl: '.limitedHot .swiper-button-prev',
+    },
+  });
+  var limitedHotSwiper_2 = new Swiper('.JS_limitedHot_2 .swiper', {
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    spaceBetween: 16,
+    navigation: {
+      nextEl: '.limitedHot .swiper-button-next',
+      prevEl: '.limitedHot .swiper-button-prev',
+    },
+  });
+
+  /*------------------------------------*/
+  // 品牌限時加碼
+  var limitedBrandSwiper = new Swiper('.limitedBrand .swiper', {
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 8,
+    allowSlidePrev: false,
+    allowSlideNext: false,
+    navigation: {
+      nextEl: '.limitedBrand-inner .swiper-button-next',
+      prevEl: '.limitedBrand-inner .swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 5,
+        spaceBetween: 8,
+      },
+      992: {
+        slidesPerView: 'auto',
+        spaceBetween: 4,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+      },
+    }
+  });
+
+
+  /*------------------------------------*/
+  // 信用卡優惠
+  var promoCreditSwiper = new Swiper('.promoCredit-inner .swiper', {
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    spaceBetween: 8,
+    breakpoints: {
+      992: {
+        spaceBetween: 16,
+      }
+    }
+  });
+
+
+  /*------------------------------------*/
+  // 旗艦品牌
+  $('.brandList-marquee').liMarquee({
+    direction: 'left',
+    scrolldelay: 0,
+    loop: -1,
+    circular: true,
+    drag: true
+  });
+
+
+  /*------------------------------------*/
+  // 商品分類
+  var indexCatalogSwiper = new Swiper('.indexCatalog .swiper', {
+    slidesPerView: 'auto',
+  });
+
+
+  /*------------------------------------*/
+  // 商品卡片
+  var recommendCardImgSwiper = new Swiper('.JS_recommendCard_1 .swiper', {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.JS_recommendCard_1 .swiper-pagination',
+      type: 'bullets',
+    },
+  });
+  // 商品卡片 - hover文字
+  $('.recommendCard').tooltip({
+    show: {
+      delay: 3000,
+    }
+  });
+
+
+  // 為你推薦 瀑布流
+  $('.JS_grid').masonry({
+    columnWidth: '.JS_grid-sizer',
+    itemSelector: ".JS_grid-item",
+    percentPosition: 'true',
+    fitWidth: true,
+  //   // isAnimated: true,
+  });
+
+
+  // popup
+  // openPopup("點擊查看任務");
+  // openPopup("放棄任務");
+
+
+  
+
+});
+$(window).on('resize', function () {
+});
+</script>
+</body>
+
+</html>

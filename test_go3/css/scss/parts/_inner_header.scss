@@ -1,0 +1,100 @@
+/*------------------------------------*\
+  _inner_header.scss
+  ___
+  內頁 header
+\*------------------------------------*/
+
+// 小網
+.headerM {
+  display: none;
+  @include screen-width($width-mid) {
+    display: block;
+    top: 0;
+    width: 100%;
+    z-index: 30;
+    background: #5bb350;
+    &.scrollfix-top {
+      width: 100% !important;
+    }
+  }
+  @include screen-width($width-mobile) {
+    &.openContentArea.scrollfix-top {
+      z-index: 0 !important;
+    }
+  }
+}
+
+// title
+.headerM-title {
+  position: relative;
+  height: 44px;
+  padding: 8px 20px;
+  color: #fff;
+  text-align: center;
+  &-back,
+  &-next {
+    display: block;
+    position: absolute;
+    background: url(../images/inner/header-m-back.svg) left center no-repeat;
+  }
+  &-back {
+    top: 2px;
+    left: 20px;
+    padding: 10px 0 10px 40px;
+    line-height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &-next {
+    display: none;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+    @include screen-width($width-mobile) {
+      height: 40px;
+      padding: 8px 80px;
+      &-back,
+      &-next {
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        top: 8px;
+        background-position: center center;
+      }
+      &-back {
+        left: 16px;
+        span { display: none; }
+      }
+      &-next {
+        display: block;
+        left: 56px;
+        transform: scale(-1);
+        &.disabled { opacity: 0.5; }
+      }
+      .title {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    @include screen-width($width-xs) {
+      padding: 8px 72px;
+      &-next {
+        left: 48px;
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

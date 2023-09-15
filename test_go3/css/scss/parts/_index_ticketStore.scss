@@ -1,0 +1,399 @@
+/*------------------------------------*\
+  _index_ticketStore.scss
+  ___
+  index頁 票券頁樣式
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+  可切換佈景色主題票券 
+\*------------------------------------*/
+@each $name, $value in $themePromoColor {
+  $main: map-get($value, main);
+  $text: map-get($value, text);
+  $bg: map-get($value, bg);
+  .theme-#{$name} {
+    .themeTicket-title::after,
+    .themeTicket-title .titleText,
+    .themeTicket-title .titleText::after,
+    .themeTicket-inner {
+      background-color: $bg;
+    }
+    .themeTicket-title .btn-box {
+      background-color: $main;
+    }
+    .themeTicket-title h2 {
+      color: $text;
+    }
+  }
+}
+.themeTicket.theme-none {
+  
+  .themeTicket-title {
+    background-color: #fff;
+  }
+  .titleText {
+    color: #333;
+  }
+    .btn-more--white {
+      color: #707070;
+      background: url(../images/icon-link-1.svg) right 8px center no-repeat;
+    }
+}
+/*------------------------------------*/
+
+.themeTicket {
+  padding: 8px 0;
+}
+.themeTicket-title {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .titleText {
+    position: relative;
+    flex: 1 1 auto;
+    height: 48px;
+    margin-right: 12px;
+    padding: 8px 24px 0 24px;
+    &::after {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -22px;
+      border-top-right-radius: 16px;
+      transform: skewX(20deg);
+    }
+  }
+  h2 {
+    max-width: calc(100% - 12px);
+    @extend %text-ellipsis;
+    font-weight: 500;
+  }
+  .btn-box {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 12px;
+    right: -8px;
+    transform: skewX(20deg);
+    border-bottom-left-radius: 16px;
+  }
+  .btn-more {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #fff;
+    transform: skewX(-20deg);
+  }
+    @include screen-width($width-mid) {
+      &::after {
+        height: 28px;
+      }
+      .titleText {
+        height: 36px;
+        padding: 8px 0 0 12px;
+      }
+    }
+}
+.themeTicket-inner {
+  padding: 16px 0;
+  .swiper {
+    padding: 0 16px;
+  }
+  .swiper-slide {
+    width: auto;
+  }
+    @include screen-width($width-mid) {
+      padding: 8px 0;
+      .swiper {
+        padding: 0 12px;
+      }
+    }
+}
+.themeTicket-item {
+  // @extend .hotSale-item;
+  width: 278px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  .themeTicket-img {
+    padding: 4px;
+  }
+  .imgbox {
+    width: 100%;
+    height: 205px;
+    margin: 0;
+  }
+  .themeTicket-text {
+    padding: 0 5px 8px;
+  }
+  .text-price {
+    margin-bottom: 8px;
+  }
+    @include screen-width($width-mid) {
+      width: 160px;
+      .imgbox {
+        height: 116px;
+      }
+      .themeTicket-text {
+        padding: 4px 8px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      width: 138px;
+      .imgbox {
+        height: 100px;
+      }
+      .themeTicket-text {
+        padding: 4px;
+      }
+    }
+}
+
+
+
+/*------------------------------------*\
+  票券 熱銷排行榜
+\*------------------------------------*/
+.hotTicket {
+  position: relative;
+  padding-bottom: 38px;
+  .swiper-pagination {
+    bottom: 16px;
+  }
+    @include screen-width($width-mid) {
+      padding-bottom: 21px;
+      .swiper-pagination {
+        bottom: 8px;
+      }
+    }
+}
+.hotTicket-inner {
+  .swiper {
+    padding: 2px 20px;
+  }
+  .swiper-slide {
+    transform: scale(0.9)!important;
+    transform-origin: right center;
+  }
+  .swiper-slide-visible + .swiper-slide {
+    transform-origin: left center;
+  }
+  .swiper-slide-visible {
+    transform: scale(1) !important;
+  }
+  @include screen-width($width-mobile) {
+    .swiper {
+      padding: 2px 16px;
+    }
+  }
+}
+// slide卡片
+.hotTicketGroup {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
+  &-title {
+    padding: 12px;
+    background: #F9F9F9;
+    border-radius: 16px 16px 0 0;
+    h3 {
+      @extend .fs-h2;
+      color: #707070;
+    }
+  }
+  &-inner {
+    padding: 8px 4px;
+  }
+  @include screen-width($width-mid) {
+    &-title {
+      padding: 8px 12px;
+    }
+  }
+}
+
+.hotTicketLink {
+  @extend .prodBox;
+  display: flex;
+  position: relative;
+  padding: 8px 12px 8px 8px;
+  &-img {
+    flex: 0 0 auto;
+    margin-right: 8px;
+    .imgbox {
+      width: 180px;
+      height: 180px;
+      overflow: hidden;
+    }
+  }
+  &-text {
+    @extend .fs-h3;
+    flex: 1 1 auto;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    .prodBox-name {
+      overflow: auto;
+      white-space: unset;
+      text-overflow: initial;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      color: #707070;
+    }
+    .text-price {
+      flex: 1 1 auto;
+    }
+  }
+  .hotSale-chip {
+    top: 8px;
+  }
+  // 
+  @include screen-width($width-mid) {
+    &-img {
+      margin-right: 12px;
+    }
+    .imgbox {
+      width: 100px;
+      height: 100px;
+    }
+    &-text {
+      max-width: calc(100% - 110px);
+      height: 100px;
+      padding: 4px 0;
+      .prodBox-name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .hotSale-chip {
+      left: 4px;
+    }
+  }
+  @include screen-width($width-mobile) {
+    .imgbox {
+      width: 84px;
+      height: 84px;
+    }
+    &-text {
+      display: block;
+      max-width: calc(100% - 96px);
+      height: 84px;
+      padding: 4px 0;
+      .prodBox-name {
+        font-size: 12px;
+      }
+      .text-price {
+        margin-bottom: 4px;
+      }
+      .text-point {
+        font-size: 12px;
+        line-height: 1.6em;
+        transform: scale(0.833);
+        transform-origin: left center;
+      }
+    }
+  }
+}
+.hotTicketLink.loading,
+.hotTicketLink.loading--error {
+  &:active {
+    opacity: 1;
+  }
+  .imgbox, .prodBox-name, .text-price, .notice {
+    @extend %loadBg;
+    background: linear-gradient(90deg, #eaeaea 0%, #f9f9f9 50%, #eaeaea 100%);
+      background-size: 200% 200%;
+  }
+  .prodBox-name {
+    height: 32px;
+    margin-bottom: 8px;
+  }
+  .text-price {
+    max-width: 170px;
+    height: 32px;
+    margin-bottom: 79px;
+  }
+  .notice {
+    max-width: 137px;
+    height: 24px;
+  }
+  .text-price {
+    flex: 0 0 auto;
+  }
+  @include screen-width($width-mid) {
+    .prodBox-name, .text-price {
+      height: 16px;
+    }
+    .prodBox-name {
+      margin-bottom: 4px;
+    }
+    .text-price {
+      max-width: 98px;
+      margin-bottom: 44px;
+    }
+    .notice {
+      max-width: 51px;
+      height: 12px;
+    }
+  }
+  @include screen-width($width-mobile) {
+    .text-price {
+      margin-bottom: 26px;
+    }
+  }
+  
+}
+.hotTicketLink.loading {
+  @include screen-width($width-mobile) {
+    .imgbox, .prodBox-name, .text-price, .notice {
+      background: linear-gradient(120deg, #eaeaea 0%, #f9f9f9 50%, #eaeaea 100%);
+      background-size: 200% 200%;
+    }
+  }
+}
+.hotTicketLink.loading--error {
+  .imgbox, .prodBox-name, .text-price, .notice {
+    background: #eaeaea;
+  }
+  .imgbox {
+    position: relative;
+  }
+  .errorText {
+    @extend %errorText;
+    @include screen-width($width-mid) {
+      p {
+        padding-top: 28px;
+        background-size: 24px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

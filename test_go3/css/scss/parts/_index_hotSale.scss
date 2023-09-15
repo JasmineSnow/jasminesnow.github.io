@@ -1,0 +1,112 @@
+/*------------------------------------*\
+  _index_hotSale.scss
+  ___
+  index頁 熱銷排行榜
+\*------------------------------------*/
+.hotSale {
+  &.py {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  &-inner {
+    padding: 0 0 12px;
+  }
+  .swiper {
+    padding: 0 16px;
+  }
+  .swiper-slide {
+    width: auto;
+  }
+  .btn-slideMore {
+    height: 318px;
+    @include screen-width($width-mid) {
+      height: 206px;
+    }
+    @include screen-width($width-mobile) {
+      height: 180px;
+    }
+  }
+}
+
+
+.hotSale-item,
+.themeTicket-item {
+  @extend .prodBox;
+  position: relative;
+  display: block;
+  width: 224px;
+  padding-left: 6px;
+  font-size: 20px;
+  line-height: 32px;
+  color: #707070;
+  @extend .imgbox--scale;
+    @include screen-width($width-mid) {
+      width: 148px;
+      padding-left: 4px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include screen-width($width-mobile) {
+      width: 124px;
+    }
+  .imgbox {
+    width: 216px;
+    height: 164px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    @include screen-width($width-mid) {
+      width: 144px;
+      height: 110px;
+      margin-bottom: 6px;
+    }
+    @include screen-width($width-mobile) {
+      width: 120px;
+      height: 92px;
+    }
+  }
+  .prodBox-name {
+    @include screen-width($width-mobile) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+  .text-price {
+    margin-bottom: 16px;
+    @include screen-width($width-mid) {
+      margin-bottom: 8px;
+    }
+  }
+  .text-point {
+    @include screen-width($width-mid) {
+      background-size: 15px;
+    }
+    @include screen-width($width-mobile) {
+      font-size: 12px;
+      line-height: 1.6em;
+      background-size: 1.2em;
+      transform: scale(0.833);
+      transform-origin: left center;
+    }
+  }
+}
+
+// 有邊框
+.hotSale-item.type--border {
+  .name {
+    color: #333;
+    font-weight: 500;
+  }
+  .hotSale-chip + .imgbox {
+    border: solid 2px #818181;
+  }
+  .chip-1 + .imgbox {
+    border: solid 2px #F8D774;
+  }
+  .chip-2 + .imgbox {
+    border: solid 2px #C7C4CD;
+  }
+  .chip-3 + .imgbox {
+    border: solid 2px #BE937A;
+  }
+}

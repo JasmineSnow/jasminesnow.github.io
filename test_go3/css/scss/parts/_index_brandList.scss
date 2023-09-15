@@ -1,0 +1,101 @@
+/*------------------------------------*\
+  _index_hotSale.scss
+  ___
+  index頁 旗艦品牌
+\*------------------------------------*/
+.brandList {
+  padding-bottom: 12px;
+  &-inner {
+    overflow: hidden;
+    padding: 16px 0 12px;
+    background-color: #fff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  }
+  @include screen-width($width-mid) {
+    &-inner {
+      padding: 8px 0 4px;
+    }
+  }
+  @include screen-width($width-mobile) {
+    padding-bottom: 8px;
+  }
+}
+
+// JS
+.brandList-marquee {
+  .brandList-box {
+    display: flex;
+  }
+  .box-1 {
+    // margin-bottom: 7px;
+  }
+  .box-2 {
+    display: none;
+    @include screen-width($width-mobile) {
+      padding-top: 7px;
+    }
+  }
+  .brandList-item {
+    margin-right: 12px;
+  }
+    @include screen-width($width-mid) {
+      .box-2 {
+        display: flex;
+        position: relative;
+        right: 78px;
+      }
+    }
+}
+.str_wrap {
+  height: 92px !important;
+  @include screen-width($width-mobile) {
+    height: 155px !important;
+  }
+}
+.str_wrap,
+.str_wrap.str_active {
+  background-color: transparent;
+}
+
+// item
+.brandList-item {
+  @extend .prodBox;
+  flex: 0 0 auto;
+  width: 152px;
+  .imgbox {
+    width: 100%;
+    height: 64px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: initial;
+    img {
+      transform: none;
+    }
+  }
+
+  .brandList-name {
+    @extend %text-ellipsis;
+    text-align: center;
+  }
+
+  @include screen-width($width-mid) {
+    .imgbox {
+      margin-bottom: 0;
+    }
+    .brandList-name {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  @include screen-width($width-mobile) {
+    width: 130px;
+    .imgbox {
+      height: 54px;
+    }
+    .brandList-name {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}
