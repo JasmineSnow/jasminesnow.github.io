@@ -65,6 +65,11 @@
       @include screen-width($width-max) {
         object-fit: contain;
       }
+      @include screen-width($width-mobile) {
+        position: relative;
+        width: 105%;
+        left: -2.5%;
+      }
     }
   }
   &-pop {
@@ -80,12 +85,32 @@
       right: 11vw;
       width: 20vw;
     }
+    @include screen-width($width-mobile) {
+      width: 26vw;
+      top: 9vw;
+      right: 0;
+    }
     &.JS_animated {
       animation: slide-in-fwd-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
       animation-delay: 1.65s;
     }
   }
 }
+@keyframes slide-in-fwd-bottom {
+  0% {
+    transform: translateZ(-1400px) translateY(400px) scale(0.2);
+    opacity: 0;
+  }
+  80% {
+    transform: translateZ(0) translateY(0) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
 @mixin ballSize($size) {
   width: #{$size}vw;
   height: #{$size}vw;
@@ -252,20 +277,6 @@
   }
 }
 
-@keyframes slide-in-fwd-bottom {
-  0% {
-    transform: translateZ(-1400px) translateY(400px) scale(0.2);
-    opacity: 0;
-  }
-  80% {
-    transform: translateZ(0) translateY(0) scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateZ(0) translateY(0) scale(1);
-    opacity: 1;
-  }
-}
 
 
 /*------------------------------------*\
@@ -316,8 +327,6 @@
   }
   &-num {
     position: absolute;
-    // width: 63px;
-    // height: 79px;
     width: 6.37%;
     height: 64.76%;
     top: 19%;
