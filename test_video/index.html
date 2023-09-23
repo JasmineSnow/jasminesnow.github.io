@@ -91,7 +91,7 @@
                 <div class="priceBar-card">
                   <img src="images/index-discount-cards.png" alt="電視館、影劇館+、運動館、網紅館">
                 </div>
-                <div class="priceBar-bar "><!--class="count"-->
+                <div class="priceBar-bar count"><!--class="count"-->
                   <img src="images/index-discount-bar.png" alt="2023雙11優惠價 11/2~11/12">
                   <div class="priceBar-num num-1"></div>
                   <div class="priceBar-num num-2"></div>
@@ -591,6 +591,19 @@ STEP 2.好友來活動頁填入你的推坑碼，你與好友可各獲得摩斯�
       $(".btnTop").fadeOut();
     };
 
+    // if priceBar countdown check bar visible
+    function checkBar() {
+      var vTop = $(window).scrollTop();
+      var vBottom = $(window).scrollTop() + window.innerHeight;
+      var barTop = $('.priceBar-bar').offset().top;
+      var barBottom = $('.priceBar-bar').offset().top + $('.priceBar-bar').height();
+      if ( barTop > vTop && barBottom < vBottom) {
+        $('.priceBar-bar .priceBar-num').on('animationiteration', function () {
+          $(this).addClass('JS_stop');
+        });
+      }
+    }
+
     // ready
     $(function(){
       $('.ballBox').addClass('JS_animated');
@@ -610,16 +623,12 @@ STEP 2.好友來活動頁填入你的推坑碼，你與好友可各獲得摩斯�
         return false;
       });
 
+      checkBar();
+
     });
-    // if priceBar countdown
+    
     $(window).on('load scroll', function(){
-      var vH = $(window).scrollTop() + $(window).height();
-      var bar = $('.priceBar-bar').offset().top + $('.priceBar-bar').height();
-      if ( vH > bar ){
-        setTimeout(() => {
-          $('.priceBar-bar').addClass('count');
-        }, 1800);
-      }
+      checkBar();
     });
   </script>
 </body>

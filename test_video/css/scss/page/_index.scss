@@ -324,11 +324,11 @@
     background-image: url(../images/bar-num-unknown.png);
     background-position: top center;
     background-size: 100% auto;
-    animation: barNumUnknown 2.5s infinite linear;
+    animation: barNumUnknown 0.25s infinite linear;
   }
   .num-1,
   .num-3 {
-    animation: barNumUnknown 2s infinite linear;
+    animation: barNumUnknown 0.2s infinite linear;
   }
   .num-1 {
     left: 38.5%;
@@ -345,11 +345,16 @@
   .count .priceBar-num {
     background-image: url(../images/bar-num-count.png);
     background-size: 100% auto;
-    background-position-y: -11%;
-    animation: none;
-    animation: barNum 5.2s 1 cubic-bezier(0.5, 0.6, 0.8, 1);
+    // background-position-y: -11%;
+    animation: barNum 2.5s infinite linear;
+    &.JS_stop {
+      animation: barNumEnd 2.5s 1 forwards cubic-bezier(0.5, 0.6, 0.8, 1);
+    }
     &.num-1, &.num-3 {
-      animation: barNum 4.5s 1 cubic-bezier(0.5, 0.6, 0.8, 1);
+      animation: barNum 2s infinite linear;
+      &.JS_stop {
+        animation: barNumEnd 2s 1 forwards cubic-bezier(0.5, 0.6, 0.8, 1);
+      }
     }
   }
   
@@ -371,10 +376,18 @@
 }
 @keyframes barNum {
   0% {
-    background-position-y: -100%;
+    background-position-y: -11%;
   }
   100% {
     background-position-y: 100%;
+  }
+}
+@keyframes barNumEnd {
+  0% {
+    background-position-y: 100%;
+  }
+  100% {
+    background-position-y: 211%;
   }
 }
 
