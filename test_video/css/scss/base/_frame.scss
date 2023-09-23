@@ -1,0 +1,297 @@
+/*------------------------------------*\
+  天地
+\*------------------------------------*/
+
+/*------------------------------------*\
+  popup
+\*------------------------------------*/
+@import "_frame-popup";
+
+
+
+/*------------------------------------*\
+  天地框架
+\*------------------------------------*/
+// 頁面
+.wrapper {
+  padding-top: 77px;
+  background: #000;
+  @include screen-width($width-mobile) {
+    padding-top: 62px;
+  }
+}
+.pagesize {
+  margin: 0 auto;
+  max-width: $pagesize-width;
+  padding: 0 26px;
+  @include screen-width($width-mid) {
+    padding: 0 10px;
+  }
+  .pd-s {
+    padding: 0 60px;
+  }
+}
+// container
+.container {
+  background: repeating-linear-gradient(-45deg, #FFC602, #FFC602 10px, #F8E146 10px, #F8E146 20px);
+}
+
+
+
+
+
+/*------------------------------------*\
+  header
+\*------------------------------------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: solid 4px #000;
+  @include screen-width($width-mobile) {
+    border-width: 2px;
+  }
+  .pagesize {
+    height: 73px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 40px;
+    @include screen-width($width-large) {
+      padding: 0 20px;
+    }
+    @include screen-width($width-mid) {
+      padding: 0 10px;
+    }
+    @include screen-width($width-mobile) {
+      height: 60px;
+      justify-content: center;
+    }
+  }
+  .link-log {
+    @include screen-width($width-mobile) {
+      position: absolute;
+      right: 20px;
+      top: calc(50% - 10px);
+      
+    }
+  }
+}
+.logo {
+  flex: 0 0 auto;
+  display: block;
+  width: 218px;
+  height: 48px;
+  margin-right: 64px;
+  background: url(../images/frame/logo-hamivideo.svg) center left no-repeat;
+  background-size: auto 100%;
+
+  @include screen-width($width-large) {
+    margin-right: 32px;
+  }
+
+  @include screen-width($width-mid) {
+    width: 146px;
+    height: 32px;
+    margin-right: 16px;
+  }
+}
+
+header a {
+  display: inline-block;
+  font-weight: 700;
+}
+.activeNav {
+  flex: 1 1 auto;
+  a {
+    margin-right: 40px;
+    padding: 9px 0 4px;
+    border-bottom: solid 5px transparent;
+    @include screen-width($width-large) {
+      margin-right: 20px;
+    }
+    @include screen-width($width-mid) {
+      margin-right: 6px;
+    }
+    &.on {
+      border-color: #000;
+    }
+  }
+}
+.prizeNav {
+  &-link {
+    height: 48px;
+    line-height: 40px;
+    margin-right: 20px;
+    padding: 0 20px;
+    border: solid 4px;
+    border-radius: 24px;
+    @include screen-width($width-large) {
+      margin-right: 16px;
+    }
+    @include screen-width($width-mid) {
+      margin-right: 4px;
+      padding: 0 8px;
+    }
+    @include screen-width($width-mobile) {
+      display: block;
+      height: 40px;
+      line-height: 36px;
+      border: solid 2px;
+      margin: 0 0 20px;
+    }
+    &:nth-last-child(1) {
+      margin-right: 60px;
+      @include screen-width($width-large) {
+        margin-right: 32px;
+      }
+      @include screen-width($width-mid) {
+        margin-right: 8px;
+      }
+      @include screen-width($width-mobile) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.pageMenu-btn {
+  display: none;
+}
+
+// mobile
+@include screen-width($width-mobile) {
+  // header
+  header .activeNav,
+  header .prizeNav {
+    display: none;
+  }
+  // menu
+  .pageMenu-btn {
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    width: 28px;
+    height: 28px;
+    background: url(../images/frame/pagemenu-btn.svg) center center no-repeat;
+  }
+  #pageMenu {
+    background-color: #fff;
+  }
+  .openmenu + #pageMenu{
+    border-right: solid 3px #000;
+  }
+  // pageMenu
+  .pageMenu {
+    &-inner {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      overflow-y: auto;
+      font-weight: 900;
+    }
+    &-head {
+      position: relative;
+      margin: 14px 0;
+      .logo {
+        margin: 0 auto;
+      }
+    }
+    &-close {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      display: block;
+      width: 32px;
+      height: 32px;
+      background: url(../images/frame/pagemenu-close.svg) center center no-repeat;
+    }
+    &_nav {
+      a {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    &-foot {
+      width: 100%;
+      max-width: 180px;
+      margin: 0 auto;
+      padding-bottom: 27px;
+    }
+  }
+  
+}
+
+.logo,
+.pageMenu-btn {
+  span {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: transparent;
+  }
+}
+
+/*------------------------------------*\
+  footer
+\*------------------------------------*/
+footer {
+  display: flex;
+  padding: 68px 0;
+  @include screen-width($width-mobile) {
+    padding: 20px 0;
+  }
+  .pagesize {
+    max-width: 375px;
+    padding: 0 10px;
+    color: #888;
+    text-align: center;
+  }
+  a {
+    @include transition(color);
+    &:hover,
+    &:active {
+      color: #ccc;
+    }
+  }
+}
+.footer_link {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.footer_info {
+  display: block;
+  margin: 22px auto;
+  width: fit-content;
+  padding: 0 10px;
+  font-size: 0.75rem;
+  line-height: 1.5em;
+  border: solid 1px;
+  border-radius: 18px;
+  @include screen-width($width-mobile) {
+    margin: 13px auto;
+  }
+}
+.footer_copyright {
+  font-size: 0.75rem;
+}
+
+
+
+
+
+
