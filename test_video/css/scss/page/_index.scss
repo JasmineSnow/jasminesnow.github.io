@@ -1031,8 +1031,8 @@
   left: -130px;
 }
 
-.JS_marquee_1,
-.JS_marquee_2 {
+.JS_marquee_3,
+.JS_marquee_4 {
   width: 100vw;
   overflow: hidden;
   display: flex;
@@ -1040,7 +1040,13 @@
     flex: 0 0 auto;
   }
 }
-.JS_marquee_2 {
+.JS_marquee_3 {
+  margin-bottom: 16px;
+  @include screen-width($width-mobile) {
+    margin-bottom: 12px;
+  }
+}
+.JS_marquee_4 {
   left: 0;
 }
 
