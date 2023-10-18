@@ -1,0 +1,272 @@
+/*------------------------------------*\
+  _index_quickLink.scss
+  ___
+  index頁 快速入口
+\*------------------------------------*/
+.quickLink {
+  padding: 8px 6px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  &-inner {
+    @extend .prodBox, .imgbox--noscale;
+    padding: 8px 16px 8px 12px;
+    overflow: hidden;
+    color: #fff;
+  }
+    @include screen-width($width-mid) {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 8px 4px;
+      &-inner {
+        flex: 0 0 auto;
+        width: 108px;
+        padding: 8px 6px 8px 8px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      padding: 8px 3px;
+      &-inner {
+        width: 92px;
+        padding: 8px 6px;
+      }
+    }
+}
+
+.quickLink-link {
+  position: relative;
+  display: block;
+  
+  &-text {
+    position: relative;
+    height: 90px;
+    padding-top: 26px;
+    border-radius: 12px 32px 12px 12px;
+    overflow: hidden;
+    text-align: center;
+    // 背景裝飾
+    &::before { 
+      content: "";
+      display: block;
+      width: 99px;
+      height: 99px;
+      position: absolute;
+      top: -36px;
+      left: -45px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+  .name {
+    position: relative;
+    z-index: 3;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .tag {
+    position: absolute;
+    top: 8px;
+    right: -16px;
+    z-index: 3;
+    padding: 3px 11px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    background: #EF5A5A;
+    border: solid 1px #fff;
+    border-radius: 14px;
+  }
+  .icon {
+    display: block;
+    position: absolute;
+  }
+  @include screen-width($width-mid) {
+    &-text {
+      height: 98px;
+      padding-top: 30px;
+      &::before {
+        width: 77px;
+        height: 77px;
+        left: -25px;
+        top: -13px;
+      }
+    }
+    .name {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .tag {
+      top: 4px;
+      right: -6px;
+      padding: 0px 8px;
+    }
+  }
+  @include screen-width($width-mobile) {
+    &-text {
+      height: 82px;
+      padding-top: 26px;
+    }
+    .name {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .tag {
+      font-size: 12px;
+      line-height: 1.6em;
+      transform: scale(0.833);
+      transform-origin: top right;
+    }
+  }
+  @include screen-width($width-xs) {
+    .name {
+      font-size: 12px;
+    }
+  }
+}
+// icon ------------------------
+// gift
+.quickLink-link.type-gift {
+  .quickLink-link-text {
+    background: linear-gradient(180deg, #FFB7AF 0%, #E46E61 100%);
+    box-shadow: 0px 4px 4px rgba(231, 115, 102, 0.25);
+  }
+  .icon {
+    width: 52px;
+    height: 48px;
+    left: 8px;
+    bottom: -14px;
+    background: url(../images/index-quickLink/index-quickLink-gift.svg);
+    background-size: 100%;
+    @include screen-width($width-mid) {
+      width: 46px;
+      height: 44px;
+      left: 4px;
+      bottom: -5px;
+    }
+    @include screen-width($width-mobile) {
+      width: 38px;
+      height: 37px;
+      left: 3px;
+      bottom: -6px;
+    }
+  }
+}
+// buy
+.quickLink-link.type-buy {
+  .quickLink-link-text {
+    background: linear-gradient(180deg, #FFE1BE 0%, #FFA437 100%);
+    box-shadow: 0px 4px 4px rgba(255, 169, 64, 0.25);
+  }
+  .icon {
+    width: 41px;
+    height: 50px;
+    left: 14px;
+    bottom: -19px;
+    background: url(../images/index-quickLink/index-quickLink-buy.svg);
+    background-size: 100%;
+    @include screen-width($width-mid) {
+      width: 36px;
+      height: 44px;
+      left: 7px;
+      bottom: -4px;
+    }
+    @include screen-width($width-mobile) {
+      width: 30px;
+      height: 36px;
+      left: 7px;
+      bottom: -7px;
+    }
+  }
+}
+// vip
+.quickLink-link.type-vip {
+  .quickLink-link-text {
+    background: linear-gradient(157.84deg, #E6BC8E 14.47%, #B38A57 100%);
+    box-shadow: 0px 4px 4px rgba(186, 145, 95, 0.25);
+  }
+  .icon {
+    width: 58px;
+    height: 43px;
+    left: 4px;
+    bottom: -8px;
+    background: url(../images/index-quickLink/index-quickLink-vip.svg);
+    background-size: 100%;
+    @include screen-width($width-mid) {
+      width: 51px;
+      height: 38px;
+      left: 1px;
+      bottom: -3px;
+    }
+    @include screen-width($width-mobile) {
+      width: 38px;
+      height: 22px;
+      bottom: 0;
+    }
+  }
+}
+
+// 情人節
+.quickLink-link.type-valentine {
+  .quickLink-link-text {
+    background: #F1F3F4;
+    box-shadow: 0px 4px 4px rgba(201, 203, 204, 0.25);
+    color: #333;
+  }
+  .icon {
+    width: 100%;
+    height: 32px;
+    bottom: 0;
+    background: #F1F3F4 url(../images/index-quickLink/index-quickLink-valentine.jpg) center bottom no-repeat;
+    background-size: 110% auto;
+    @include screen-width($width-mid) {
+      height: 100%;
+      background: #F1F3F4 url(../images/index-quickLink/index-quickLink-valentine-m.jpg) center bottom no-repeat;
+      background-size: contain;
+    }
+    @include screen-width($width-mobile) {
+      height: 44px;
+      background-position: right bottom;
+    }
+  }
+}
+
+// 母親節
+.quickLink-link.type-mother {
+  .quickLink-link-text {
+    background: #E7A1A9;
+    box-shadow: 0px 4px 4px rgba(231, 161, 169, 0.25);
+    &::before {
+      z-index: 2;
+    }
+  }
+  .icon {
+    width: 100%;
+    height: 36px;
+    bottom: 0;
+    background: url(../images/index-quickLink/index-quickLink-mother.jpg) left bottom no-repeat;
+    background-size: contain;
+  }
+}
+
+// 品牌上稿
+.quickLink-link.type-brand {
+  .quickLink-link-text {
+    overflow: hidden;
+  }
+  .imgbox {
+    display: block;
+    height: 32px;
+    img {
+      display: inline;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+      @include screen-width($width-mid) {
+        height: 44px;
+      }
+      @include screen-width($width-mobile) {
+        height: 32px;
+      }
+  }
+}

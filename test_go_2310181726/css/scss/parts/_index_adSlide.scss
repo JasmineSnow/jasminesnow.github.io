@@ -1,0 +1,66 @@
+/*------------------------------------*\
+  _index_adSlide.scss
+  ___
+  index頁 content內廣告banner 
+\*------------------------------------*/
+// 單張banner
+.adBanner {
+  display: block;
+  img {
+    display: block;
+    width: 100%;
+  }
+  @include screen-width($width-mid) {
+    margin-bottom: 8px;
+  }
+  @include screen-width($width-mobile) {
+    margin-bottom: 0;
+  }
+}
+
+// 輪播banner
+.adSlide {
+  position: relative;
+  
+  // js
+  .swiper {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 32px 0;
+    @include screen-width($width-mid) {
+      padding: 16px 0 15px;
+    }
+  }
+  .swiper-slide {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .imgbox {
+    // width: 684px;
+    // height: 260px;
+    border-radius: 16px;
+    @extend .imgbox--scale;
+  }
+  .swiper-pagination {
+    bottom: 4px;
+    .swiper-pagination-bullet {
+      @include transition();
+      &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 6px;
+        background: transparent;
+        border-radius: 3px;
+        @include transition(background-color);
+      }
+    }
+    .swiper-pagination-bullet-active {
+      width: 18px;
+      @include screen-width($width-mid) {
+        width: 15px;
+      }
+    }
+  }
+}

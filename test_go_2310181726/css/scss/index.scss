@@ -1,0 +1,37 @@
+/*------------------------------------*\
+  必要CSS檔
+  ---
+  如果SASS編譯出現子資料夾的檔案，請檢查設定
+  "savePath": "~/../../css" //輸出資料夾
+\*------------------------------------*/
+// base & reset
+@import "base/_variables";
+@import "base/_reset";
+// 天地
+@import "base/_frame";
+
+/*------------------------------------*\
+  需要的部分樣式 放置於parts/
+\*------------------------------------*/
+@import "parts/_btn";
+@import "parts/_chip";
+
+/*------------------------------------*\
+  此頁樣式
+\*------------------------------------*/
+@import "page/_index";
+@import "parts/_index_headBanner";
+@import "parts/_index_adSlide";
+@import "parts/_index_themePromo";
+@import "parts/_index_hotSale";
+@import "parts/_index_limited";
+@import "parts/_index_brandList";
+@import "parts/_index_indexCatalog";
+@import "parts/_index_ticket";
+@import "parts/_index_quickLink";
+@import "parts/_index_recommend";
+@import "parts/_index_promoCredit";
+// 票券
+@import "parts/_index_brandCatalog";
+@import "parts/_index_ticketStore";
+@import "parts/_index_storePromo";

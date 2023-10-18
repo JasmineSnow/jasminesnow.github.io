@@ -1,0 +1,355 @@
+/*------------------------------------*\
+  _index_limited.scss
+  ___
+  index頁 限時特賣
+\*------------------------------------*/
+
+// block 限時+品牌
+.columnArea--limited {
+  .columnBox-main {
+    flex: 1 1 auto;
+    max-width: calc(100% - 432px);
+  }
+  .columnBox-sub {
+    flex: 0 0 auto;
+    width: 432px;
+  }
+  @include screen-width($width-mid) {
+    .columnBox {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+
+// title
+.title-limitedSale {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  color: #fff;
+  h2 {
+    flex: 1 1 auto;
+    font-weight: 500;
+  }
+  .btn-more {
+    margin-left: 12px;
+  }
+    @include screen-width($width-mid) {
+      height: 44px;
+      .btn-more {
+        margin-left: 12px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      .btn-more {
+        margin-left: 30px;
+      }
+    }
+    @include screen-width($width-xs) {
+      .btn-more {
+        margin-left: 2px;
+      }
+    }
+}
+
+
+// 區塊
+.limitedHot,
+.limitedBrand {
+  height: 338px;
+  @include screen-width($width-mid) {
+    height: auto;
+  }
+}
+
+/*------------------------------------*\
+  限時特賣
+\*------------------------------------*/
+.limitedHot {
+  position: relative;
+  padding: 0 4px 4px;
+  background: #84C67C;
+  border-radius: 16px;
+  // deco
+  &::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: url(../images/index-limitedHot/index-limitedHot-deco.png) left top no-repeat;
+    background-size: 100%;
+  }
+
+  &-inner {
+    padding: 12px 0;
+    background: #F9F9F9;
+    border-radius: 12px;
+  }
+
+  .title-limitedSale {
+    padding-left: 93px;
+    @include screen-width($width-mid) {
+      padding-left: 68px;
+    }
+    @include screen-width($width-mobile) {
+      padding-right: 4px;
+    }
+    @include screen-width($width-xs) {
+      padding-right: 0;
+    }
+  }
+
+  .swiper {
+    padding: 0 12px;
+  }
+  .swiper-slide {
+    width: auto;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 60px;
+  }
+  .btn-slideMore {
+    height: 194px;
+    @include screen-width($width-mid) {
+      height: 192px;
+    }
+    @include screen-width($width-mobile) {
+      height: 168px;
+    }
+  }
+}
+
+// item
+.limitedItem {
+  @extend .prodBox, .imgbox--scale;
+  display: block;
+  max-width: 237px;
+  color: #707070;
+    @include screen-width($width-mid) {
+      width: 172px;
+    }
+    @include screen-width($width-mobile) {
+      width: 144px;
+    }
+  .limitedTag {
+    text-align: center;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+    @include screen-width($width-mid) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include screen-width($width-mobile) {
+      line-height: 16px;
+      span {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1.6em;
+        transform: scale(0.833);
+        transform-origin: center center;
+      }      
+    }
+    &-limit {
+      color: #EF5A5A;
+      background: #FFC7C7;
+    }
+    &-hot {
+      color: #494949;
+      background: #ADD9A7;
+    }
+  }
+  .prodBox-name {
+    font-weight: 500;
+    @include screen-width($width-mid) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include screen-width($width-mobile) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}
+.limitedItem-img {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  .imgbox {
+    width: 237px;
+    height: 162px;
+    overflow: hidden;
+    @include screen-width($width-mid) {
+      width: 172px;
+      height: 120px;
+    }
+    @include screen-width($width-mobile) {
+      width: 144px;
+      height: 100px;
+    }
+  }
+}
+
+
+/*------------------------------------*\
+  品牌限時
+\*------------------------------------*/
+.limitedBrand {
+  border-radius: 16px;
+  &-inner {
+    position: relative;
+    overflow: hidden;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    @include screen-width($width-mid) {
+      padding: 20px;
+    }
+    @include screen-width($width-mobile) {
+      padding: 8px;
+    }
+  }
+  &-foot {
+    padding: 15px 8px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    @include screen-width($width-mid) {
+      padding: 4px 4px 12px 4px;
+    }
+  }
+
+  .title-limitedSale {
+    padding: 0 16px;
+    @include screen-width($width-mid) {
+      padding-left: 20px;
+    }
+  }
+
+  // JS
+  .swiper-slide {
+    width: auto;  
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 64px;
+    @include screen-width($width-mid) {
+      display: none;
+    }
+  }
+}
+.limitedBrand-inner:hover {
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+}
+// item 
+.limitedBrandItem {
+  @extend .prodBox;
+  display: block;
+  width: 131px;
+  height: 208px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+    @include screen-width($width-mid) {
+      width: 100%;
+      height: auto;
+    }
+
+  // inner
+  &-inner {
+    padding: 8px 4px;
+    @include screen-width($width-mid) {
+      padding-bottom: 4px;
+    }
+  }
+  .imgbox {
+    width: 131px;
+    height: 100px;
+    overflow: hidden;
+    @include screen-width($width-mid) {
+      width: 100%;
+      height: 0;
+      position: relative;
+      padding-top: 65%;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%)translateY(-50%);
+      }
+    }
+  }
+
+  // text
+  .name {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 48px;
+    margin-bottom: 12px;
+    color: #707070;
+    @include screen-width($width-mid) {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 20px;
+      height: 40px;
+    }
+    @include screen-width($width-mobile) {
+      font-size: 12px;
+      line-height: 16px;
+      height: 32px;
+    }
+  }
+  .point {
+    font-size: 20px;
+    line-height: 32px;
+    color: #5bb350;
+    .icon-hami {
+      width: 24px;
+      height: 24px;
+      background-size: 18px;
+      vertical-align: text-bottom;
+    }
+    @include screen-width($width-mid) {
+      font-size: 14px;
+      line-height: 20px;
+      .icon-hami {
+        width: 20px;
+        height: 20px;
+        background-size: 15px;
+      }
+    }
+  }
+
+  // mid hover
+  @include screen-width($width-mid) {
+    &:hover .imgbox img {
+      transform: translateX(-50%) translateY(-50%) scale(1.1);
+    }
+  }
+
+}
+
+
+
+
+
+
+
+

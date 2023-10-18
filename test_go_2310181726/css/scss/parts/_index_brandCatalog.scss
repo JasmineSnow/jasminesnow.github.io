@@ -1,0 +1,161 @@
+/*------------------------------------*\
+  _index_brandCatalog.scss
+  ___
+  index頁 品牌分類
+\*------------------------------------*/
+
+// 品牌連結
+.brandName {
+  @extend .prodBox, .imgbox--noscale;
+  display: flex;
+  align-items: center;
+  &-name {
+    display: inline-block;
+    @extend .prodBox-name;
+  }
+  .imgbox {
+    flex: 0 0 auto;
+    display: block;
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+
+// 首頁 - 票券分類
+.brandCatalog {
+  padding: 12px 8px;
+  &-area {
+    @extend %primary-gradient;
+    border-radius: 16px;
+  }
+  @include screen-width($width-mid) {
+    padding-bottom: 8px;
+  }
+}
+
+.brandCatalog-title {
+  height: 60px;
+  padding-top: 8px;
+  .name {
+    display: block;
+    font-size: 20px;
+    line-height: 52px;
+    padding: 0 24px;
+    text-align: center;
+    color: #707070;
+    @include transition(color);
+    &:hover, &:active {
+      color: #333;
+    }
+    &.active {
+      font-size: 24px;
+      font-weight: 500;
+      color: #333;
+    }
+  }
+  .swiper {
+    padding-left: 8px;
+  }
+  .swiper-slide {
+    width: auto;
+    &:nth-last-child(1) {
+      padding-right: 12px;
+    }
+  }
+    @include screen-width($width-mid) {
+      height: 44px;
+      padding-top: 4px;
+      .name {
+        padding: 0 12px;
+        line-height: 40px;
+        font-size: 14px;
+        &.active {
+          padding: 0 8px;
+          font-size: 16px;
+        }
+      }
+    }
+    @include screen-width($width-mobile) {
+      height: 40px;
+      .name {
+        line-height: 36px;
+        font-size: 12px;
+        &.active {
+          font-size: 14px;
+        }
+      }
+    }
+}
+
+.brandCatalog-inner {
+  padding: 16px 0 12px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
+  .brandName {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    @extend .fs-h4;
+  }
+  .imgbox {
+    width: 72px;
+    height: 72px;
+    margin-right: 8px;
+  }
+  .btn-box {
+    padding: 0 12px;
+  }
+  .btn {
+    flex: 1 1 100%;
+    display: block;
+    padding: 8px;
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
+    font-weight: 500;
+    color: #5bb350;
+    background: #eaeaea;
+    border: 1px solid #eaeaea;
+    border-radius: 26px;
+    @extend %link-action;
+    &:hover {
+      border-color: #5bb350;
+    }
+    span {
+      padding-right: 28px;
+      background: url(../images/icon-link-3.svg) right center no-repeat;
+      border: none;
+    }
+    &:hover span {
+      border: none;
+    }
+  }
+  .swiper {
+    margin-bottom: 16px;
+    padding: 0 12px;
+  }
+    @include screen-width($width-mid) {
+      .imgbox {
+        width: 62px;
+        height: 62px;
+      }
+      .btn {
+        padding: 0px;
+        font-size: 14px;
+        background-size: 24px;
+      }
+    }
+    @include screen-width($width-mobile) {
+      .imgbox {
+        width: 52px;
+        height: 52px;
+      }
+      .brandName {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+}
