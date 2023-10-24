@@ -1,0 +1,70 @@
+//定義RWD尺寸變動標準
+$large-width: 1440px;
+$mid-width: 1024px;
+$pad-width: 1000px;
+$mobile-width: 768px;
+$small-width: 480px;
+$smaller-width: 320px;
+
+@mixin large-width() {
+  @media all and (max-width: $large-width) {
+    @content;
+  }
+}
+
+@mixin mid-width() {
+  @media all and (max-width: $mid-width) {
+    @content;
+  }
+}
+
+@mixin screen-width($screensize) {
+  @media all and (max-width: $screensize) {
+    @content;
+  }
+}
+
+/*樣式設定
+.class {
+  @include mid-width() {
+  }
+}*/
+
+//定義內容寬度
+$content-width-wide: 1390px;
+$content-width: 1200px;
+$content-width-mid: 1000px;
+
+//定義留白
+$space: 16px;
+
+//定義一行flex
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//定義速度
+%transition-time {
+transition: 0.2s;
+}
+
+/*color*/
+$color-main:#1a1b29;
+$color-white:#ffffff;
+$color-red:#bb1100;
+$color-red02:#e71a10;
+$color-lightGrey:#f5f5f5;
+$color-lightGrey2:#eee;
+$color-grey:#6e6e6e;
+$color-dark:#313131;
+$color-black:#000;
+$color-orange:#e49347;
+$color-lightorange:#fffaf6;
+$color-blue:#0c6cc8;
+$color-darkblue:#04325d;
+
+/*font*/
+$b-radius:4px
+

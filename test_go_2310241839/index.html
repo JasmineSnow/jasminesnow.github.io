@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no" />
+  <title>遠通電收</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href="css/jquery.swiper.css" rel="stylesheet" type="text/css" />
+  <!-- CSS -->
+  <link href="css/index.css" rel="stylesheet" type="text/css" />
+  <!-- JS -->
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/jquery.swiper.js" type="text/javascript"></script>
+  <!-- tab JS -->
+  <link rel="stylesheet" type="text/css" href="css/tabs.css" />
+  <script src="js/cbpFWTabs.js"></script>
+</head>
+
+<body>
+  <div class="smartbanner">
+    <a href="#" class="sb-close"></a>
+    <div class="sb-bx">
+      <div class="sb-con">
+        <div class="sb-logo"></div>
+        <h3>uTagGO-eTag車主專屬</h3>
+        <p>取得 - App Store</p>
+      </div>
+      <div class="sb-button">
+        <a href="https://utaggo.page.link/EYq2" title="" target="_blank">下載</a>
+      </div>
+    </div>
+    
+  </div>
+  <!--popup / 車號搜尋,會員登入 / absolute-->
+  <div class="popup is_hide">
+    <div class="popupBx padd-0 overflow-visible">
+      <a class="popup_close js_popup_close outside"></a>
+      <!--主要資訊 - 登入查詢-->
+      <section class="main-info Mb-0 padd-0">
+        <!-- 頁籤 tabs nav  / 純文字 txtBx-->
+        <div class="tabs">
+          <nav>
+            <ul>
+              <li><a href="#section-1">車號查詢</a></li>
+              <li><a href="#section-2">會員登入</a></li>
+            </ul>
+          </nav>
+          <div class="content-wrap Mb-1">
+            <section id="section-1">
+              <div class="logBx">
+                <p class="cap">登入車號查詢/會員帳號，<br>
+                  可立即使用個人化查詢、儲值、繳費等服務</p>
+                  <ul class="formBx thin-m">
+                    <li>
+                      <div class="inputBx">
+                        <input type="text" placeholder="請輸入欲查詢的車號">
+                        <span class="warn" style="display: block;">車牌號碼，應包含「-」的資料(例如:AB-1234)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inputBx">
+                        <input type="text" placeholder="車主身份證或統一編號">
+                        <span class="warn" style="display: block;">請輸入車主身份證或統一編號</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inputBx">
+                        <div class="flex noWrap align-top m-noflex">
+                          <input type="text" placeholder="請輸入驗證碼">
+                          <div class="verifi-code">
+                            <img src="img/img_verifi.png">
+                          </div>
+                          <a href="#" class="refresh"></a>
+                        </div>
+                        <span class="warn" style="display: block;">請輸入驗證碼</span>
+                      </div>
+                    </li>
+                  </ul>
+
+                <div class="btn">
+                  <a href="#" class="">查詢</a>
+                </div>
+                <a href="#" class="go-apply"><span>立即申請會員帳號</span></a>
+
+              </div>
+            </section>
+            <section id="section-2">
+              <div class="logBx">
+                <p class="cap">登入車號查詢/會員帳號，<br>
+                  可立即使用個人化查詢、儲值、繳費等服務
+                </p>
+                <ul class="formBx thin-m">
+                  <li>
+                    <div class="inputBx">
+                      <input type="text" placeholder="會員帳號">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inputBx">
+                      <input type="password" placeholder="會員密碼">
+                      <!--密碼 顯示 open /隱藏-->
+                      <a href="#" class="eye open"></a>
+                    </div>
+                  </li>
+                  <li class="flex">
+                    <div class="checkboxBx">
+                      <input type="checkbox" id="chk2">
+                      <label for="chk2"><span></span>記住帳號</label>
+                    </div>
+                    <div class="sideBtn">
+                      <a href="#">忘記帳號</a>
+                      <a href="#">忘記密碼</a>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="btn">
+                  <a href="#" class="">登入</a>
+                </div>
+                <a href="#" class="go-apply"><span>立即申請會員帳號</span></a>
+
+              </div>
+            </section>
+
+          </div><!-- /content -->
+        </div>
+      </section>
+    </div>
+
+  </div>
+  <!--全站搜尋-->
+  <div class="searchSite is_hide">
+    <div class="searchSite-Bx">
+      <div class="pagesize flex">
+        <div class="inputBx pst-rlt">
+          <input type="text" placeholder="請輸入關鍵字搜尋">
+          <a href="#" class="site-go">全站搜尋</a>
+        </div>
+        <a href="#" class="js_search_close"></a>
+      </div>
+
+    </div>
+    <div class="searchSite-overlay"></div>
+  </div>
+
+  <!-- page -->
+  <div class="page">
+    <div class="page_cover"></div>
+    <!-- wrapper -->
+    <div class="wrapper">
+      <header>
+        <div class="pagesize">
+          <h1 class="logo" title="遠通電收">
+            <a href="index.html"></a>
+          </h1>
+          <div class="topMenu">
+            <ul class="">
+              <li class="location"><a href="#">服務據點</a></li>
+              <li class="web"><a href="#">English</a></li>
+              <li class="member"> <a class="js_startbtn" href="javascript: void(0)">會員登入</a></li>
+            </ul>
+            <div class="search web">
+              <a href="#" class="ic"></a>
+            </div>
+          </div>
+          <!-- pageMenu button -->
+          <button class="pageMenu-btn">
+            <span class="line line01"></span>
+            <span class="line line02"></span>
+            <span class="line line03"></span>
+          </button>
+        </div>
+      </header>
+      <!-- container -->
+      <div class="container">
+        <!-- swiper -->
+        <div class="index-main">
+          <div class="swiper-container bot-bg">
+            <div class="swiper-wrapper">
+              <!-- swiper img -->
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width: 768px)" srcset="img/banner_1_m.jpg" />
+                  <img src="img/banner_1.jpg" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width:768px)" srcset="img/banner_2_m.jpg" />
+                  <img src="img/banner_2.jpg" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width:768px)" srcset="img/banner_1_m.jpg" />
+                  <img src="img/banner_1.jpg" alt="">
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <!--主要資訊 - 登入查詢-->
+        <section class="main-info bg-red">
+          <div class="pagesize flex flex-end m-wrap">
+            <div class="topBx mobile">
+              <a class="js_startbtn" href="javascript: void(0)">車號查詢 / 會員登入</a>
+            </div>
+            <div class="leftBx web">
+              <!-- 頁籤 tabs nav  / 純文字 txtBx-->
+              <div class="tabs">
+                <nav>
+                  <ul>
+                    <li><a href="#section-1">車號查詢</a>
+                    </li>
+                    <li><a href="#section-2">會員登入</a></li>
+                  </ul>
+                </nav>
+                <div class="content-wrap">
+                  <section id="section-1">
+                    <div class="logBx">
+                      <p class="cap">登入車號查詢/會員帳號，<br>
+                        可立即使用個人化查詢、儲值、繳費等服務</p>
+                      <ul class="formBx thin-m">
+                        <li>
+                          <div class="inputBx">
+                            <input type="text" placeholder="請輸入欲查詢的車號">
+                            <span class="warn" style="display: block;">車牌號碼，應包含「-」的資料(例如:AB-1234)</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="inputBx">
+                            <input type="text" placeholder="車主身份證或統一編號">
+                            <span class="warn" style="display: block;">請輸入車主身份證或統一編號</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="inputBx">
+                            <div class="flex noWrap align-top">
+                              <input type="text" placeholder="請輸入驗證碼">
+                              <div class="verifi-code">
+                                <img src="img/img_verifi.png">
+                              </div>
+                              <a href="#" class="refresh"></a>
+                            </div>
+                            <span class="warn" style="display: block;">請輸入驗證碼</span>
+                          </div>
+                        </li>
+                      </ul>
+
+                      <div class="btn">
+                        <a href="#" class="">查詢</a>
+                      </div>
+                      <a href="#" class="go-apply"><span>立即申請會員帳號</span></a>
+
+                    </div>
+                  </section>
+                  <section id="section-2">
+                    <div class="logBx">
+                      <p class="cap">登入車號查詢/會員帳號，<br>
+                        可立即使用個人化查詢、儲值、繳費等服務
+                      </p>
+                      <ul class="formBx thin-m">
+                        <li>
+                          <div class="inputBx">
+                            <input type="text" placeholder="會員帳號">
+                          </div>
+                        </li>
+                        <li>
+                          <div class="inputBx">
+                            <input type="password" placeholder="會員密碼">
+                            <!--密碼 顯示 open /隱藏-->
+                            <a href="#" class="eye open"></a>
+                          </div>
+                        </li>
+                        <li class="flex noWrap">
+                          <div class="inputBx">
+                            <input type="text" placeholder="請輸入驗證碼">
+                          </div>
+                          <div class="verifi-code">
+                            <img src="img/img_verifi.png">
+                          </div>
+                          <a href="#" class="refresh">
+
+                          </a>
+                        </li>
+                        <li class="flex">
+                          <div class="checkboxBx">
+                            <input type="checkbox" id="chk">
+                            <label for="chk"><span></span>記住帳號</label>
+                          </div>
+                          <div class="sideBtn">
+                            <a href="#">忘記帳號</a>
+                            <a href="#">忘記密碼</a>
+                          </div>
+                        </li>
+                      </ul>
+
+                      <div class="btn">
+                        <a href="#" class="">登入</a>
+                      </div>
+                      <a href="#" class="go-apply"><span>立即申請會員帳號</span></a>
+
+                    </div>
+                  </section>
+
+                </div><!-- /content -->
+              </div>
+            </div>
+            <div class="rightBx">
+              <!--跑馬燈-->
+              <div class="whiteBx marquee">
+               <ul id="marquee-list">
+                  <li><marquee><a href="#">歡迎企業戶、政府機關申請專屬 ETC 商用型共用帳戶，請洽直營門市詢問或客服專線02-77161998</a></marquee></li>
+                  <li><marquee><a href="#">申辦銀行自動儲值，通行費不漏繳，還享9折優惠</a></marquee></li>
+                  <li><marquee><a href="#">更快速了解ETC服務，趕快下載最新ETC服務手冊!</a></marquee></li>
+                </ul>
+      
+              </div>
+              <!--停車資訊-->
+              <div class="whiteBx">
+                <div class="title toLeft m-wrap">
+                  <h2>eTag 智慧停車</h2>
+                  <p class="fsize-ml color-grey m-fsize-m">全台合作停車場 停車費自動繳</p>
+                </div>
+                <ul class="parking-link">
+                  <li>
+                    <div class="imgbox">
+                      <img src="images/ic-parking-1.png">
+                    </div>
+                    <h3>銀行<br>自動儲值</h3>
+                    <a href="#"></a>
+                  </li>
+                  <li>
+                    <div class="imgbox">
+                      <img src="images/ic-parking-2.png">
+                    </div>
+                    <h3>銀行<br>自動儲值</h3>
+                    <a href="#"></a>
+                  </li>
+                  <li>
+                    <div class="imgbox">
+                      <img src="images/ic-parking-3.png">
+                    </div>
+                    <h3>銀行<br>自動儲值</h3>
+                    <a href="#"></a>
+                  </li>
+                </ul>
+              </div>
+              <!--
+              <div class="imgbox radius tC">
+                <img src="img/ad_710x100.png" alt="">
+                <a href="#" class="cover"></a>
+              </div>
+            -->
+              <!-- swiper adBx -->
+              <div class="adBx ad-PSAs">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <!-- swiper img -->
+                    <div class="swiper-slide">
+                      <img src="img/ad_710x100.png" alt="">
+                      <a href="#" class="cover"></a>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/ad_710x100.png" alt="">
+                      <a href="#" class="cover"></a>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/ad_710x100.png" alt="">
+                      <a href="#" class="cover"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--重點資訊-->
+        <section>
+          <div class="pagesize">
+            <div class="title">
+              <h2>重點資訊</h2>
+            </div>
+          </div>
+          <div class="focus-info swiper-space">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <!--1-->
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>查詢交易明細與退費</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-1.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">如何 APP 查詢</a></li>
+                      <li><a href="#">餘額查詢管道</a></li>
+                      <li><a href="#">通行交易明細查詢說明</a></li>
+                      <li><a href="#">查詢、退費服務說明</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>儲值</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-2.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">銀行自動儲值</a></li>
+                      <li><a href="#">超商儲值與其他儲值管道</a></li>
+                      <li><a href="#">儲值服務說明</a></li>
+                      <li><a href="#">eTag用戶簡訊通知服務</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>繳費</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-3.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">eTag用戶儲值抵欠費</a></li>
+                      <li><a href="#">繳費管道</a></li>
+                      <li><a href="#">平信、掛號通知服務</a></li>
+                      <li><a href="#">繳費服務說明</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>異動與申辦</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-4.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">eTag卡申辦、提領</a></li>
+                      <li><a href="#">新車申辦</a></li>
+                      <li><a href="#">中古車申辦</a></li>
+                      <li><a href="#">電話、網站異動</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <!--1-->
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>查詢交易明細與退費</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-1.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">如何 APP 查詢</a></li>
+                      <li><a href="#">餘額查詢管道</a></li>
+                      <li><a href="#">通行交易明細查詢說明</a></li>
+                      <li><a href="#">查詢、退費服務說明</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>儲值</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-2.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">銀行自動儲值</a></li>
+                      <li><a href="#">超商儲值與其他儲值管道</a></li>
+                      <li><a href="#">儲值服務說明</a></li>
+                      <li><a href="#">eTag用戶簡訊通知服務</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>繳費</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-3.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">eTag用戶儲值抵欠費</a></li>
+                      <li><a href="#">繳費管道</a></li>
+                      <li><a href="#">平信、掛號通知服務</a></li>
+                      <li><a href="#">繳費服務說明</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="focusBx">
+                    <h3>異動與申辦</h3>
+                    <div class="ic-focus">
+                      <img src="images/ic-focus-4.png">
+                    </div>
+                    <ul class="focusBx_list">
+                      <li><a href="#">eTag卡申辦、提領</a></li>
+                      <li><a href="#">新車申辦</a></li>
+                      <li><a href="#">中古車申辦</a></li>
+                      <li><a href="#">電話、網站異動</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </section>
+        <!--活動資訊-->
+        <section>
+          <div class="pagesize">
+            <div class="title toLeft m-wrap Mb-08">
+              <h2>活動資訊</h2>
+              <div class="event-more">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#" class="all">全部</a></div>
+                    <div class="swiper-slide"><a href="#">銀行促銷活動</a></div>
+                    <div class="swiper-slide"><a href="#">APP專區</a></div>
+                    <div class="swiper-slide"><a href="#">影片專區</a></div>
+                    <div class="swiper-slide"><a href="#">ETC小百科</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="actBx event-swiper swiper-space">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="actBx_list swiper-slide">
+                  <div class="imgbox">
+                    <img src="img/ind_news_1.jpg">
+                  </div>
+                  <div class="txtbox">
+                    <div class="act-tag">
+                      <div class="act-name">銀行促銷活動</div>
+                      <div class="act-date">2021/07/31 - 2021/12/31</div>
+                    </div>
+                    <h3>遠東商銀eTag聯名卡<br>首辦eTag自動儲值享百元儲值折抵金！</h3>
+                  </div>
+                  <a href="#"></a>
+                </div>
+                <div class="actBx_list swiper-slide">
+                  <div class="imgbox">
+                    <img src="img/ind_news_2.jpg">
+                  </div>
+                  <div class="txtbox">
+                    <div class="act-tag">
+                      <div class="act-name">銀行促銷活動</div>
+                      <div class="act-date">2021/07/31 - 2021/12/31</div>
+                    </div>
+                    <h3>eTag申辦銀行自動儲值<br>
+                      通行費打9折 再送最高600元儲值金！</h3>
+                  </div>
+                  <a href="#"></a>
+                </div>
+                <div class="actBx_list swiper-slide">
+                  <div class="imgbox">
+                    <img src="img/ind_news_3.jpg">
+                  </div>
+                  <div class="txtbox">
+                    <div class="act-tag">
+                      <div class="act-name">APP專區</div>
+                      <div class="act-date">2021/07/31 - 2021/12/31</div>
+                    </div>
+                    <h3>eTag服務全面升級<br>
+                      停車與通行費一指搞定！</h3>
+                  </div>
+                  <a href="#"></a>
+                </div>
+                <div class="actBx_list swiper-slide">
+                  <div class="imgbox">
+                    <img src="img/ind_news_1.jpg">
+                  </div>
+                  <div class="txtbox">
+                    <div class="act-tag">
+                      <div class="act-name">銀行促銷活動</div>
+                      <div class="act-date">2021/07/31 - 2021/12/31</div>
+                    </div>
+                    <h3>遠東商銀eTag聯名卡<br>首辦eTag自動儲值享百元儲值折抵金！</h3>
+                  </div>
+                  <a href="#"></a>
+                </div>
+                <div class="actBx_list swiper-slide">
+                  <div class="imgbox">
+                    <img src="img/ind_news_2.jpg">
+                  </div>
+                  <div class="txtbox">
+                    <div class="act-tag">
+                      <div class="act-name">銀行促銷活動</div>
+                      <div class="act-date">2021/07/31 - 2021/12/31</div>
+                    </div>
+                    <h3>eTag申辦銀行自動儲值<br>
+                      通行費打9折 再送最高600元儲值金！</h3>
+                  </div>
+                  <a href="#"></a>
+                </div>
+                <div class="actBx_list swiper-slide">
+                  <div class="imgbox">
+                    <img src="img/ind_news_3.jpg">
+                  </div>
+                  <div class="txtbox">
+                    <div class="act-tag">
+                      <div class="act-name">APP專區</div>
+                      <div class="act-date">2021/07/31 - 2021/12/31</div>
+                    </div>
+                    <h3>eTag服務全面升級<br>
+                      停車與通行費一指搞定！</h3>
+                  </div>
+                  <a href="#"></a>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="pagesize two-col">
+            <!--最新公告-->
+            <div class="newsBx">
+              <div class="title m-Mb-0">
+                <h2>最新公告</h2>
+                <a href="#" class="more">更多內容</a>
+              </div>
+              <ul class="newsBx_list">
+                <li>
+                  <span class="date">2021/10/05</span>
+                  <p class="focus">振興五倍券不適用於繳納國道通行費、eTag儲值</p>
+                  <a href="#" target="_blank"></a>
+                </li>
+                <li>
+                  <span class="date">2021/09/11</span>
+                  <p class="focus">防疫3招 零接觸為您守護行車安全</p>
+                  <a href="#" target="_blank"></a>
+                </li>
+                <li>
+                  <span class="date">2021/10/12</span>
+                  <p>高公局國慶連假費率調整公告</p>
+                  <a href="#" target="_blank"></a>
+                </li>
+                <li>
+                  <span class="date">2021/10/05</span>
+                  <p>10月系統例行維護公告</p>
+                  <a href="#" target="_blank"></a>
+                </li>
+                <li>
+                  <span class="date">2021/10/05</span>
+                  <p>10月16日11:11~15:59因中華電信系統維護，期間影響申辦、車牌異動及帳號申請服務</p>
+                  <a href="#" target="_blank"></a>
+                </li>
+              </ul>
+
+            </div>
+            <!--最新活動-->
+            <div class="eventBx">
+              <div class="title">
+                <h2>最新活動</h2>
+                <a href="#" class="more">更多內容</a>
+              </div>
+
+              <ul class="eventBx_list">
+                <li>
+                  <p class="focus">【得獎公告】中秋假期申辦國道通行費電子帳單環保愛月球抽哈根達斯</p>
+                  <a href="#" target="_blank"></a>
+                </li>
+                <li>
+                  <p>申辦ETC服務 登錄APP抽iPhone13等好禮</p>
+                  <a href="#" target="_blank"></a>
+                </li>
+              </ul>
+              <!--
+              <div class="imgbox radius tC">
+                <picture>
+                  <source media="(max-width: 768px)" srcset="img/btn-etc-app-m.png" />
+                  <img src="img/btn-etc-app.png" alt="">
+                  <a href="#" class="cover"></a>
+                </picture>
+              </div>
+            -->
+              <!-- swiper adBx -->
+              <div class="adBx ad-event">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <!-- swiper img -->
+                    <div class="swiper-slide">
+                   
+                        <img src="img/btn-etc-app.png" alt="">
+                        <a href="#" class="cover"></a>
+                      
+                    </div>
+                    <div class="swiper-slide">
+                    
+                        <img src="img/btn-etc-app.png" alt="">
+                        <a href="#" class="cover"></a>
+                    
+                    </div>
+                    <div class="swiper-slide">
+                    
+                        <img src="img/btn-etc-app.png" alt="">
+                       
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <section class="today-info bg-grey">
+          <div class="pagesize flex center">
+            <div class="today road">
+              <div class="title Mb-25 m-Mb-1">
+                <h2>即時路況</h2>
+              </div>
+              <p class="fsize-ml Mb-1">快速查看路況、行車速度</p>
+              <a href="#" class="check-traffic">
+                <span class="ic"></span>查看路況</a>
+            </div>
+            <div class="today oil">
+              <div class="title m-wrap m-Mb-0">
+                <h2>今日油價</h2>
+                <span class="fsize-xs">(單位：元/公升)</span>
+              </div>
+              <ul class="oil-price">
+                <li>
+                  <div class="name">92</div>
+                  <div class="txt fsize-xs line">無鉛<br>汽油</div>
+                  <div class="price">18.2</div>
+                  <div class="txt fsize-s">元</div>
+                </li>
+                <li>
+                  <div class="name">98</div>
+                  <div class="txt fsize-xs line">無鉛<br>汽油</div>
+                  <div class="price">18.2</div>
+                  <div class="txt fsize-s">元</div>
+                </li>
+                <li>
+                  <div class="name">95</div>
+                  <div class="txt fsize-xs line">無鉛<br>汽油</div>
+                  <div class="price">19.6</div>
+                  <div class="txt fsize-s">元</div>
+                </li>
+                <li>
+                  <div class="name s-width line">超級柴油</div>
+                  <div class="price">19.6</div>
+                  <div class="txt fsize-s">元</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+      <!--footer-->
+      <footer>
+        <div class="footer-top">
+          <div class="pagesize flex center">
+            <div class="serveBx map">
+              <h3>遠通服務中心</h3>
+              <p>
+                160 個服務據點，為您提供親切專業的服務<br />
+                立即查看最近服務據點為您服務
+              </p>
+              <a href="#" class="">全部據點</a>
+            </div>
+            <div class="serveBx call">
+              <h3>遠通客服中心 02-77161998</h3>
+              <p>
+                Line ID：@etcservice<br />
+                週一至週五09:00~17:30(國定假日除外)
+              </p>
+              <a href="#" class="">全部據點</a>
+            </div>
+            <div class="web">
+              <img src="img/img_qrcode.png" />
+            </div>
+          </div>
+        </div>
+
+        <!--相關選單與連結 / 收合 open-->
+        <div class="footer-sitemap" id="ft-map">
+          <div class="pagesize flex top">
+            <p class="mobile ft-tit">相關選單與連結</p>
+            <a href="#" class="sitemap-toggle"></a>
+            <div class="sitemapBx">
+              <h3>關於遠通</h3>
+              <ul class="sitemap-list two-col">
+                <li><a href="#" target="_blank">董事長的話</a></li>
+                <li><a href="#" target="_blank">總經理的話</a></li>
+                <li>
+                  <a href="#" target="_blank" class="tB">企業資訊</a>
+                  <ul class="">
+                    <li><a href="#" target="_blank">經營起源</a></li>
+                    <li><a href="#" target="_blank">經營願景</a></li>
+                    <li><a href="#" target="_blank">企業標語</a></li>
+                    <li><a href="#" target="_blank">營運財報</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" target="_blank" class="tB">企業里程</a>
+                  <ul class="">
+                    <li><a href="#" target="_blank">遠通新聞</a></li>
+                    <li><a href="#" target="_blank">大事紀要</a></li>
+                    <li><a href="#" target="_blank">國際交流</a></li>
+                    <li><a href="#" target="_blank">活動紀錄</a></li>
+                    <li><a href="#" target="_blank">精英招募</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="sitemapBx">
+              <h3>產品服務</h3>
+              <ul class="sitemap-list">
+                <li><a href="#" target="_blank">ETC智慧科技</a></li>
+                <li>
+                  <a href="#" target="_blank" class="tB">產品介紹</a>
+                  <ul class="">
+                    <li><a href="#" target="_blank">eTag卡</a></li>
+                    <li><a href="#" target="_blank">銀行自動儲值</a></li>
+                    <li><a href="#" target="_blank">eTag</a></li>
+                    <li><a href="#" target="_blank">通行費試算</a></li>
+                    <li><a href="#" target="_blank">通行費表下載</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="sitemapBx">
+              <h3>問題Q&A</h3>
+              <ul class="sitemap-list">
+                <li><a href="#" target="_blank">話題與回應</a></li>
+                <li><a href="#" target="_blank">常見問題</a></li>
+                <li><a href="#" target="_blank">申裝異動</a></li>
+                <li><a href="#" target="_blank">儲值與繳費</a></li>
+                <li><a href="#" target="_blank">通行交易查詢</a></li>
+                <li><a href="#" target="_blank">產品相關</a></li>
+                <li><a href="#" target="_blank">促銷專案</a></li>
+                <li><a href="#" target="_blank">行車與法規</a></li>
+              </ul>
+            </div>
+
+            <div class="sitemapBx">
+              <h3>客服中心</h3>
+              <ul class="sitemap-list">
+                <li><a href="#" target="_blank">服務據點</a></li>
+                <li><a href="#" target="_blank">聯絡我們</a></li>
+                <li><a href="#" target="_blank">下載專區</a></li>
+                <li><a href="#" target="_blank">通行費email服務</a></li>
+                <li><a href="#" target="_blank">電子帳單服務</a></li>
+                <li><a href="#" target="_blank">電子發票說明</a></li>
+                <li><a href="#" target="_blank">eTag偵測異常服務</a></li>
+                <li><a href="#" target="_blank">共用帳戶登入</a></li>
+              </ul>
+            </div>
+            <div class="sitemapBx">
+              <h3>相關連結</h3>
+              <ul class="link-list">
+                <li>
+                  <a href="#" target="_blank">
+                    <img src="img/ft_link_1.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <img src="img/ft_link_2.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <img src="img/ft_link_3.png" />
+                  </a>
+                </li>
+              </ul>
+              <ul class="footer-social">
+                <li>
+                  <a href="#" target="_blank" title="Facebook">
+                    <img src="images/ft-link-fb.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" title="Instagram">
+                    <img src="images/ft-link-ig.png" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" title="Youtube">
+                    <img src="images/ft-link-yt.png" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--聯絡我們-->
+        <div class="footer-bottom">
+          <div class="pagesize">
+            <ul class="footer-link">
+              <li><a href="#">聯絡我們</a></li>
+              <li><a href="#">網站導覽</a></li>
+              <li><a href="#">個人資料保護方式及政策聲明</a></li>
+              <li><a href="#">免責聲明</a></li>
+            </ul>
+            <div class="footer-right">
+              <p class="web">
+                遠通電收為交通部高速公路局所辦理『民間參與高速公路電子收費系統建置及營運案』之
+                『建置營運公司』，並依法辦理高速公路電子收費等業務。<br />
+                Far Eastern Electronic Toll Collection Co, Ltd. All Right
+                Reserved.
+                遠通電收有商標及著作權，未經授權請勿任意重製或轉載。<br />
+                最佳瀏覽解析度1024*768 | 建議瀏覽器版本：IE11以上
+              </p>
+              <p class="mobile">
+                Far Eastern Electronic Toll Collection Co, Ltd. All Right
+                Reserved. 遠通電收有商標及著作權，未經授權請勿任意重製或轉載。
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--goTop-->
+      <div class="goTop jq-goTop">
+        <a href="#" class="goTopBtn">TOP</a>
+      </div>
+    </div>
+  </div>
+  <!-- pageMenu -->
+  <nav id="pageMenu" data-from="right">
+    <div class="searchBx">
+      <div class="searchBx_box">
+        <input type="text" placeholder="請輸入關鍵字搜尋" />
+        <a href="#" class="go"></a>
+      </div>
+    </div>
+    <ul>
+      <li><a href="index.html" class="english">遠通官方網站英文版</a></li>
+      <li class="hasSub">
+        <a href="#">關於遠通</a>
+        <ul>
+          <li><a href="#">董事長的話</a></li>
+          <li><a href="#">總經理的話</a></li>
+          <li class="hasSub">
+            <a href="#">企業資訊</a>
+            <ul>
+              <li><a href="#">經營起源</a></li>
+              <li><a href="#">經營願景</a></li>
+              <li><a href="#">企業標語</a></li>
+              <li><a href="#">營運財報</a></li>
+            </ul>
+          </li>
+          <li class="hasSub">
+            <a href="#">企業里程</a>
+            <ul>
+              <li><a href="#">企業里程1111</a></li>
+              <li><a href="#">企業里程2222222</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="hasSub">
+        <a href="#">產品服務</a>
+        <ul>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+        </ul>
+      </li>
+      <li class="hasSub">
+        <a href="#">客服中心</a>
+        <ul>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+        </ul>
+      </li>
+      <li class="hasSub">
+        <a href="#">問題Q&A</a>
+        <ul>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+        </ul>
+      </li>
+      <li class="hasSub">
+        <a href="#">相關連結</a>
+        <ul>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+          <li><a href="#">第二層</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="bt-btn">
+      <a href="#"> 登出 </a>
+    </div>
+  </nav>
+  <!--cookie-->
+  <div class="cookie-container">
+    <div class="pagesize">
+      <p> 我們紀錄cookie資訊，以提供客製化內容，可優化您的使用體驗，若繼續閱讀本網站內容，即表示您同意我們使用cookie。更多關於隱私保護資訊，請閱覽我們的
+        <a href="#" title="隱私權保護政策">隱私權保護政策</a>。</p>
+      <a href="#" title="我接受" class="cookie-btn">我接受</a>
+    </div>
+  </div>
+  <!-- JS -->
+  <script src="js/main.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function() {
+      //首頁輪播
+      var movieSwiper = new Swiper(".index-main .swiper-container", {
+        loop: true,
+        autoplay: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+      //廣告輪播1
+      var movieSwiper = new Swiper(".ad-PSAs .swiper-container", {
+        loop: true,
+        autoplay: true,
+      });
+      //廣告輪播2
+      var movieSwiper = new Swiper(".ad-event .swiper-container", {
+        loop: true,
+        autoplay: true,
+      });
+      //重點資訊
+      var movieSwiper = new Swiper(".focus-info .swiper-container", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1000: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+      //更多活動資訊
+      var movieSwiper = new Swiper(".event-more .swiper-container", {
+        slidesPerView: "auto",
+      });
+      //活動資訊
+      var movieSwiper = new Swiper(".event-swiper .swiper-container", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1000: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+      //頁籤
+      [].slice.call(document.querySelectorAll('.tabs')).forEach(function(el) {
+        new CBPFWTabs(el);
+      });
+      //會員登入popup按鈕-小網
+      $(function() {
+        var $modal = $('.popup');
+        var HIDE_CLASS = 'is_hide';
+        $('.js_startbtn').on('click', function() {
+          $modal.removeClass(HIDE_CLASS);
+        });
+        $('.js_popup_close , popup').on('click', function() {
+          $modal.addClass(HIDE_CLASS);
+        });
+      });
+      //全站搜尋
+      $(function() {
+        var $modalsearch = $('.searchSite');
+        var HIDE_CLASS = 'is_hide';
+        $('header .search').on('click', function() {
+          $modalsearch.removeClass(HIDE_CLASS);
+        });
+        $('.js_search_close').on('click', function() {
+          $modalsearch.addClass(HIDE_CLASS);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
