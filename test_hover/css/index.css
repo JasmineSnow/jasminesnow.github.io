@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/**/
+/* CSS for 外框架&頁面上方資訊 */
+/**/
+
+/* page */
+.radisBox { padding: 16px; background: #fff; border-radius: 4px; box-shadow: 0 0 8px 0 rgba(98,111,124,0.3); }
+.radisBox.padding_0 { padding: 0; }
+
+h3.subTitle { font-size: 22px; }
+h4 { font-size: 21px; color: #ad8848; }
+.titleNav { display: flex; justify-content: space-between; align-items: center; }
+.titleNav_title {  }
+.titleNav_nav { flex: 0 0 auto; margin-left: 10px; }
+
+a.linkCover { position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 2; }
+
+/* btn */
+.btn {  }
+.btn a { display: inline-block; min-width: 60px; margin: 0 5px 10px 0; padding: 0 10px; line-height: 40px; text-align: center; color: #008764; background: #fff; border: solid 1px #008764; border-radius: 8px; }
+.btn a:nth-last-child(1) { margin: 0; }
+.btn a.on { color: #fff; background: #008764; }
+.btn a.mobile { display: none; }
+/* btn_color */
+.btn .btn_khaki { color: #fff; background: #b5883d; border: none; }
+.btn .btn_gray { color: #fff; background: #b5b5b5; border: none; }
+.btn .btn_graylight { color: #a0a0a0; background: #e0e0e0; border: none; }
+.btn .btn_submit { color: #fff; background: #f08300; /* Old browsers */ background: -moz-linear-gradient(left, #f08300 0%, #f6aa00 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, #f08300 0%,#f6aa00 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, #f08300 0%,#f6aa00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f08300', endColorstr='#f6aa00',GradientType=1 ); /* IE6-9 */
+border: none; box-shadow: 0 0 10px 0 rgba(240,130,0,0.2); }
+/* btn_type */
+.btn_full {  }
+.btn_full a { display: block; min-width: 100px; margin-right: 0; }
+.btn_check { display: flex; justify-content: center; align-items: center; }
+.btn_check a { flex: 1 1 auto; display: block; margin: 0 10px 0 0; height: 40px; line-height: 42px; vertical-align: text-bottom; }
+.btn_round a { border-radius: 20px; }
+.btn_mid a { padding: 0 10px; line-height: 30px; border-radius: 15px; }
+.btn_small a { line-height: 25px; border-radius: 13px; }
+/* btn_圖表 */
+.btn_chart { text-align: right; }
+.btn_chart a { display: inline-block; position: relative; width: 30px; height: 30px; margin-left: 10px; border-radius: 4px; border: solid 1px #f08300; }
+.btn_chart .on {  }
+.btn_chart .list { background: #fff url(../images/btn_chart_01.png) center no-repeat; background-size: 100%; }
+.btn_chart .list.on { background: #f08300 url(../images/btn_chart_01_on.png) center no-repeat; background-size: 100%; }
+.btn_chart .bar { background: #fff url(../images/btn_chart_02.png) center no-repeat; background-size: 100%; }
+.btn_chart .bar.on { background: #f08300 url(../images/btn_chart_02_on.png) center no-repeat; background-size: 100%; }
+.btn_chart .pie { background: #fff url(../images/btn_chart_03.png) center no-repeat; background-size: 100%; }
+.btn_chart .pie.on { background: #f08300 url(../images/btn_chart_03_on.png) center no-repeat; background-size: 100%; }
+.btn_chart .line { background: #fff url(../images/btn_chart_04.png) center no-repeat; background-size: 100%; }
+.btn_chart .line.on { background: #f08300 url(../images/btn_chart_04_on.png) center no-repeat; background-size: 100%; }
+.btn_chart .txt {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* 漲跌標籤 */
+.riseTag {  }
+.riseTag { color: #c00000; }
+.riseTag::before { content: "▲"; padding-right: 2px; font-size: 10px; vertical-align: bottom; }
+.riseTag.down { color: #255540; }
+.riseTag.down::before { content: "▼"; }
+.riseTag { font-weight: 700; }
+
+/**/
+/**/
+/* 資訊區域 */
+.detailArea_setcion { display: flex; align-items: stretch; margin-bottom: 25px; }
+.detailArea_setcion .detail_main { flex: 0 0 auto; width: calc(100% - 425px); margin-right: 25px; }
+.detailArea_setcion .detail_short { flex: 0 0 400px; position:relative; max-width: 400px; margin: 0; }
+/* 區塊 */
+.assetsArea h3 { font-weight: 900; }
+.assetsArea .titleNav { margin-bottom: 15px; }
+.assetsArea_bg01 { padding: 16px 18px; color: #fff; background-image: url(../images/assetsArea_bg_01.jpg); background-size: cover; background-position: left top; }
+.assetsArea_bg01 h3 { color: #fff; }
+.assetsArea_bg02,
+.assetsArea_bg03 { padding: 16px 18px; background-image: url(../images/assetsArea_bg_02.png); background-size: 120px auto; background-position: right bottom; background-repeat: no-repeat; }
+/* 資產_列表 */
+.assets_list_detail { margin-bottom: 15px; padding-bottom: 10px; border-bottom: solid 1px rgba(255,255,255,0.5); }
+.assets_list_detail .money { display: inline-block; margin-right: 20px; font-size: 20px; font-weight: 900; }
+.assets_list_detail .money span { font-size: 40px; line-height: 1.5em; }
+.assets_list_detail .increase { display: inline-block; font-size: 22px; font-weight: 900; }
+.assets_list_detail .increase span { display: inline-block; }
+.assets_list_detail .increase > span:nth-child(1)::after { content: ""; display: inline-block; width: 1px; height: 1em; margin: 0 10px; vertical-align: middle; background: #fff; }
+.assets_list_type { display: flex; justify-content: space-between; align-items: flex-end; }
+.assets_list_type p { font-size: 22px; font-weight: 900; }
+.assets_list_type .typename { padding: 0 20px 0 10px; font-size: 28px; color: #008965; font-weight: 700; }
+.assets_list_type .duedate { display: inline-block; font-size: 16px; font-weight: 400; }
+.assets_list_type .btn { flex: 0 0 auto; }
+/* 資產_列表_table */
+.switchNav { margin-bottom: 5px; }
+.assetsArea_bg02 .titleNav .switchNav { margin: 0; }
+.assetsArea_bg02 .titleNav .switchNav a { margin-bottom: 0; }
+.assetsArea_bg02 .titleNav + .switchNav { display: none; }
+.chartTable { display: flex; flex-wrap: wrap; list-style: none; margin-right: -10px; }
+.chartTable li { flex: 1 0 auto; width:calc(33.3% - 10px); margin: 0 10px 10px 0; background: #fff; border: solid 1px #d2d2d2; border-radius: 4px; }
+.chartTable.full { display: block; margin: 0; }
+.chartTable.full li { width: 100%; }
+.chartTable.full .chartTable_table_inner { flex: 1 1 auto; }
+.chartTable_title { line-height: 30px; text-align: center; font-size: 15px; font-weight: 500; color: #008864; background: #eceddb; }
+.chartTable_table { display: flex; justify-content:center; align-items: stretch; padding: 15px 0; }
+.chartTable_table_inner { flex: 0 0 50%; max-width: 50%; padding: 5px; text-align: center; border-right: solid 1px #dcdcdc; }
+.chartTable_table_inner:nth-last-child(1) { border: none; }
+.chartTable_table_inner p { word-wrap: break-word; word-break: break-all; }
+.chartTable_table_inner p span { display: inline-block; }
+/* 資產_圓餅圖 */
+.assetsArea_bg03 {  }
+.chartPie { display: flex; }
+.chartPie_img { flex: 0 0 auto; align-self: center; width: 120px; margin-right: 35px; }
+.chartPie_inner { width: calc(100% - 120px); }
+/* 資產_圓餅圖_參數比例 */
+.chartPie_detail { display: flex; flex-wrap: wrap; list-style: none; }
+.chartPie_detail li { flex: 0 0 50%; max-width: 50%; margin-bottom: 5px; padding-right: 10px; font-size: 14px; }
+.colorTag { display: inline-block; width: 1em; height: 1em; vertical-align: middle; }
+.colorTag.green01 { background: #00573e; }
+.colorTag.green02 { background: #008965; }
+.colorTag.yellow01 { background: #c2bb00; }
+.colorTag.yellow02 { background: #aba41a; }
+.colorTag.orange01 { background: #f08300; }
+.colorTag.orange02 { background: #f7ab00; }
+
+/* 資產_沒有庫存 */
+.assetsArea__nodata { min-height: 120px; display: flex; justify-content: center; align-items: center; }
+
+/* 提醒事項 */
+.noticeArea { padding-left: 40px; background-image: url(../images/noticeArea_bg_01.png); background-repeat: no-repeat; }
+.noticeArea .titleNav { margin-bottom: 20px; }
+.noticeArea .noticeList { list-style: none; }
+.noticeArea .noticeList li {  }
+.noticeArea .noticeList a { display: flex; color: #626262; }
+.noticeArea .noticeList a span { flex: 1 1 auto;}
+.noticeArea .noticeList .time { flex: 0 0 auto; padding-right: 10px; font-weight: bold; color: #008865; }
+/* 資訊區域_part2 */
+/* 基金輪播 */
+.fundsArea { position: relative; height: 320px; }
+.fundsArea .fundbox { position:relative; display: flex; flex-direction: column; justify-content: space-between; height: 320px; font-family: 'Century Gothic','Noto Sans TC','微軟正黑體','Helvetica Neue',sans-serif; }
+.fundsArea .fundbox h4 { flex: 1 1 auto; padding:0 35px 0 0;}
+.fundsArea .fundbox img { height: 80px; }
+.fundsArea .fundbox .botM1 { margin-bottom: 5px; }
+.fundsArea .radisBox { padding:10px 16px 16px 16px; }
+.fundbox_img_notice { font-size: 87.5%; color: #656565; }
+.funds_detail { display: flex; justify-content: space-between; align-items: center; }
+.funds_detail_price { margin-right: 5px; font-size: 32px; font-weight: 700; }
+.funds_detail_rise p { font-weight: 300; font-size: 14px; }
+.swiper-container { margin: 0 -5px -10px; padding: 0 5px 10px; }
+.favorite_box .fundsArea{ height:auto;}
+.favorite_box .fundsArea::after{ display:block; content:""; clear:both;}
+.favorite_box .fundsArea .fundbox{ float:left; width:23.5%; margin:0 2% 2% 0;}
+.favorite_box .fundsArea .fundbox:nth-child(4n){ margin:0 0 2% 0;}
+.fundsArea .swiper-button-prev, .fundsArea .swiper-button-next{ margin:18px 0 0 0;}
+/* ADS */
+.adsArea .swiper-container{ margin:0; padding:0;}
+.adsArea .imgbox{ overflow:hidden; border-radius:4px;} 
+
+/* other */
+/* 頁面浮動btn */
+.pageBtn { position: fixed; right: 0; bottom: 10px; z-index: 900; width: 100%; transition: 0.2s; }
+.pageBtn .pagesize { position: absolute; bottom:0; right: 0;  /* display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: flex-end; */ overflow: visible; height: 0px; max-width: 1440px; text-align: right; }
+.pageBtn_btn {  }
+/* 頁面浮動btn_顧問 */
+.pageBtn_advisor { position: absolute; bottom:100px; right: 0; display: inline-flex; align-items: center; position: relative; }
+.pageBtn_advisor::before { content: ""; display: block; position: absolute; right: -12px; bottom: 12px; z-index: 1; width: 35px; height: 35px; background: #f08300 url(../images/pageBtn_advisor_01.png); background-size: 100%; border-radius: 18px; }
+.pageBtn_advisor .advisor_text { padding: 7px 20px 7px 12px; margin-right: -10px; text-align: center; line-height: 1.4em; font-size: 14px; font-weight: 500; color: #fff; background: #b5883d; border-radius: 4px; }
+.pageBtn_advisor .advisor_text .name { font-size: 16px; font-weight: 700; }
+.pageBtn_advisor .imgbox { position: relative; overflow: hidden; width: 100px; height: 100px; border: solid 5px #b5883d; border-radius: 50px; }
+.pageBtn_advisor .imgbox img { width: 100%; height: 100%; }
+.pageBtn_advisor a.linkCover { right: -12px; }
+
+/* JS */
+/* JS_swiper */
+.swiper-button-prev,
+.swiper-button-next {  width: 36px; height: 36px; margin-top: -18px; font-size: 14px; border-radius: 18px; color: transparent; background: rgba(44,62,80,0.3) url(../images/arrow_01.png) center no-repeat; background-size: auto 14px; box-shadow: 0 0 10px 0 rgba(0,0,0,0.25); }
+.swiper-button-prev { left: -10px; }
+.swiper-button-next { right: -10px; transform: rotate(180deg); }
+
+
+@media screen and (max-width: 1200px) {
+	.assetsArea_bg02 .titleNav .switchNav { display: none; }
+	.assetsArea_bg02 .titleNav + .switchNav { display: block; }
+	
+	
+}
+
+@media screen and (max-width: 1024px) {
+	/* 基金價格 */
+	.funds_detail_price { font-size: 24px; }
+
+	/* 資訊區域_上方 */
+	.detailArea_setcion .detail_main { width: calc(100% - 275px); }
+	.detailArea_setcion .detail_short { flex: 0 0 250px; max-width: 250px; }
+	.assets_list_type .typename { padding: 0 10px; }
+	/*  */
+	.funds_detail_rise { font-size: 14px; }
+	/* 資產_列表_table */
+	.chartTable { display: block; margin: 0; }
+	.chartTable li { width: 100%; margin: 0 0 15px; }
+	.chartTable li:nth-last-child(1) { margin: 0; }
+	.chartTable_table { padding: 5px 0; }
+	/* 資產_圓餅圖 */
+	.chartPie_inner { width: calc(100% - 105px); }
+	.chartPie_detail li { padding: 0; }
+	.chartPie_img { width: 90px; margin-right: 15px; }
+	/* 提醒事項 */
+	.noticeArea { padding-left: 30px; }
+	/* 資訊區域_下方 */
+	/* 基金輪播 */
+	.fundsArea { height: 200px; }
+	.fundsArea .fundbox { height: 200px; }
+	.fundsArea .fundbox h4 { font-size: 18px;}
+	.fundsArea .fundbox .web { display: none; }
+	.fundsArea .radisBox { padding: 10px; }
+	.fundsArea .fundbox .btn a { padding: 0 10px; }
+	
+}
+
+/*----------------------------------- 小網 -----------------------------------*/
+@media screen and (max-width: 767px) {
+	/* page */
+	.btn a.web { display: none; }
+	.btn a.mobile { display: inline-block; }
+
+	h3.subTitle { font-size: 20px; }
+
+  .titleNav_nav { margin: 0; }
+	/* 資訊區域 */
+	.detailArea_setcion { display: block; }
+	.detailArea_setcion .detail_main { width: 100%; margin: 0 0 20px; }
+  .detailArea_setcion .detail_main .subTitle { line-height: 24px; }
+  .detailArea_setcion .detail_main .subTitle span { display: inline-block; }
+	.detailArea_setcion .detail_short.noticeArea { display: none; }
+	.detailArea_setcion .detail_short { max-width: 100%; }
+	.assetsArea_bg02 .titleNav + .switchNav { display: none; }
+	.assets_list_detail .money { display: block; margin-bottom: 8px; font-size: 18px; }
+	.assets_list_detail .money span { font-size: 30px; }
+	.assets_list_detail .increase { font-size: 1em; }
+	.assets_list_type { display: block; position: relative; }
+	.assets_list_type p { font-size: 1em; }
+	.assets_list_type .typename { font-size: 28px; }
+	.assets_list_type .duedate { display: block; padding-top: 15px; line-height: 30px; font-weight: 900; color: rgba(255,255,255,0.8); }
+	.assets_list_type .btn { position: absolute; right: 0; bottom: 0; }
+	/* 資產_列表_table */
+	.chartTable_table { flex-wrap: wrap; margin-bottom: -15px; }
+	.chartTable_table_inner,
+	.chartTable.full .chartTable_table_inner { flex: 0 0 50%; margin-bottom: 15px; }
+	/* 資訊區域_part2 */
+	/* 基金輪播 */
+	.fundsArea,
+	.fundsArea .fundbox { height: auto; }
+	.fundsArea .funds_detail {  }
+	.fundsArea .funds_detail_price,
+	.fundsArea .funds_detail_rise { flex: 0 0 50%; }
+	.container .favorite_box .fundsArea .fundbox{ float:none; width:100%; margin:0 0 20px 0;}
+	/* 基金價格 */
+	.funds_detail_price { font-size: 28px; }
+	/* 資產_圓餅圖 */
+	.assetsArea_bg03 .switchNav { display: none; }
+	.chartPie { display: block; }
+	.chartPie_img { width: 100%; max-width: 360px; margin: 0 auto 15px; }
+	.chartPie_inner { width: 100%; }
+
+	/*below*/
+	
+
+	/* other */
+	/* 頁面浮動btn */
+	.pageBtn + .footer { padding-top: 60px; }
+	/* 頁面浮動btn_顧問 */
+	.pageBtn_advisor { bottom: 20px; }
+	.pageBtn_advisor .advisor_text { display: none; }
+	.pageBtn_advisor .imgbox { display: none; }
+
+	/* JS */
+	/* JS_swiper */
+	.swiper-button-prev,
+	.swiper-button-next { width: 26px; height: 26px; top: calc(50% - 13px); background-size: auto 10px; }
+	.swiper-button-prev { left: -13px; }
+	.swiper-button-next { right: -13px; }
+}

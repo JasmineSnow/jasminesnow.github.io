@@ -1,0 +1,859 @@
+@charset "UTF-8";
+/**/
+/* CSS for 下方主內容 */
+/**/
+
+h5 { font-size: 20px; }
+h6.sectionTitle { margin-bottom: 30px; padding: 5px 30px; line-height: 35px; text-align: center; font-size: 18px; font-weight: 500; background: #ecedda; }
+
+/* 數字 */
+.JS_countNumWide { display: inline-block; }
+
+/* page */
+/*content*/
+.content {  }
+.contentNav { padding: 30px 0 80px; margin-bottom: -60px;
+background: #04593d; /* Old browsers */ background: -moz-linear-gradient(left, #04593d 0%, #659988 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, #04593d 0%,#659988 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, #04593d 0%,#659988 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04593d', endColorstr='#659988',GradientType=1 ); /* IE6-9 */ }
+.contentNav_link { display: flex; list-style: none; }
+.contentNav_link li { flex: 1 1 auto; position: relative; padding: 0 10px; text-align: center; }
+.contentNav_link li::after { content: ""; display: block; position: absolute; right: 0; top: 12px; width: 1px; height: 22px; background: #fff; }
+.contentNav_link li:nth-last-child(1)::after { content: none; }
+.contentNav_link a { display: inline-block; padding: 10px 0 15px; font-size: 22px; color: #fff; }
+.contentNav_link a.on { border-bottom: solid 3px; }
+/*content_inner*/
+.content_inner { position: relative; padding: 30px 40px; }
+.content_inner.padding_high { padding-top: 60px; padding-bottom: 60px; }
+.contentNav_sub { display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
+.contentNav_sub a { flex: 0 0 auto; min-width: 150px; margin: 0 15px 0 0; padding: 0 10px; font-size: 18px; }
+.contentNav_type { position: absolute; top: 30px; right: 40px; }
+.contentNav_sub span{ display:inline-block; width:26px; height:26px; margin:-5px 0 0 5px; text-align:center; line-height:23px; vertical-align:middle; font-size:12px; border:1px solid #008764; border-radius:50%; box-sizing:border-box;}
+.contentNav_sub a.on span{ border-color:#fff;}
+h5.mobile span{ display:inline-block; width:26px; height:26px; margin:-5px 0 0 5px; text-align:center; line-height:23px; vertical-align:middle; font-size:12px; border:1px solid #313131; border-radius:50%; box-sizing:border-box;}
+/* NAV_第二層 */
+.contentNav_sec { display: flex; list-style: none; }
+.contentNav_sec + .content_inner { border-radius: 10px; border-top-left-radius: 0; box-shadow: 0 4px 2px 0 rgba(98,111,124,0.3); }
+.contentNav_sec li { margin-right: 1px; }
+.contentNav_sec a { display: block; min-width: 170px; padding: 13px; text-align: center; white-space: nowrap; font-size: 18px; color:#008764; background: #ecedda; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+.contentNav_sec a.on { font-weight: 700; color:#04593d; background: #fff; }
+
+
+/* 頁尾區域 */
+.JS_Bottom_area { position: absolute; bottom: 0; left: 0; width: 100%; }
+/* 頁尾區域_確認 */
+.bottomCheck { padding: 25px 0; }
+.bottomCheck .pagesize { display: flex; justify-content: flex-end; align-items: center; }
+.bottomCheck_option { flex: 0 0 auto; margin-right: 15px; }
+.bottomCheck_option > .flex_set{ flex-wrap:wrap; margin:0 0 15px 0;}
+.bottomCheck_option > .flex_set label{ margin:0;}
+.bottomCheck_option > .flex_set span{ flex:1 1 auto;}
+.bottomCheck_text { flex: 1 1 auto; display: flex; justify-content: flex-end; }
+.bottomCheck_text input[type="password"] { max-width: 420px; height: 50px; line-height: 50px; margin-right: 20px; }
+.bottomCheck_text .btn { flex: 0 0 auto; }
+
+/* 區塊置中 */
+.centerArea { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.centerArea_inner { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.centerArea_inner.tC { align-items: center; text-align: left; }
+.centerArea_inner .tC { align-self: center; }
+.centerArea_inner .formboxList,
+.centerArea_inner .formArea { width: 100%; max-width: 600px; }
+
+hr.line { height: 1px; margin: 25px 0; background: url(../images/hr_01.png) ; border:none; }
+
+/* 文章 */
+.articleBox p { line-height: 180%; }
+
+/* 邊框區域 */
+.borderBox { position: relative; padding: 25px; border: solid 1px #008764; border-radius: 4px; }
+.borderBox_title { position: absolute; top: -12px; left:0; width: 100%; text-align: center; }
+.borderBox_title span { display: inline-block; padding: 0 10px; font-size: 20px; font-weight: bold; color: #008764; background: #fff; }
+
+/* 捲動區域 */
+.scrollBox { max-height: 300px; padding: 30px 30px 30px 40px; line-height: 30px; font-size: 15px; border:solid 1px #d2d2d2; border-radius: 4px; }
+.mCSB_inside > .mCSB_container { margin-right: 20px; }
+.mCSB_scrollTools { width: 8px; }
+.mCS-dark.mCSB_scrollTools .mCSB_draggerRail { background: transparent; }
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { width: 8px; margin: 0; background-color: rgba(230,230,230,0.75); }
+.mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar { background-color: rgba(200,200,200,1); }
+
+/* imgbox_幣別 */
+.imgbox_currency { width: 30px; height: 30px; overflow: hidden; border-radius: 15px; }
+.imgbox_currency img { width: 100%; height: 100%; }
+
+/* input */
+.inputMulti { display: flex; }
+.inputMulti input,
+.inputMulti select { margin-right: 10px; }
+.inputMulti *:last-child { margin: 0; }
+.inputMulti .formbox_input_item { flex: 1 1 auto; }
+.inputMulti .num { flex: 0 0 auto; }
+.inputMulti_add .num { width: 95px; }
+.inputMulti_phone .num { width: 65px; }
+/* input_含提示文字 */
+.textInputNum { position:relative;}
+.textInputNum input { padding:0 35px 0 15px; background:#f2f2f2; border-radius:8px; box-sizing:border-box;}
+.textInputNum span { position:absolute; top:50%; transform:translateY(-50%); right:10px;}
+.textInputNum span:last-child { margin-right: 0; }
+
+/* input_info_純資訊不可編輯 */
+.input_info input[type="text"] { padding: 0; color: #313131; -webkit-text-fill-color: #313131; background-color: transparent; }
+
+/* select */
+.ulSelect { display: flex; align-items: center; position: relative; margin-bottom: 10px; }
+.ulSelect_notice { flex: 1 1 auto; margin-right: 15px; }
+.ulSelect_text { flex: 0 0 auto; margin-right: 15px; text-align: right; color: #b5883d; }
+.ulSelect_btn { flex: 0 0 160px; display: block; padding: 0 35px 0 5px; line-height: 35px; color: #fff; background: #b5883d url(../images/arrow_03.png) right 12px center no-repeat; background-size: auto 8px; }
+.ulSelect_btn.open { background: #b5883d url(../images/arrow_04.png) right 12px center no-repeat; background-size: auto 8px; }
+.ulSelect ul { width: 160px; display: none; position: absolute; top: 35px; right: 0; padding: 15px 5px 15px 15px; list-style: none; background: #fff; border: solid 1px #c9c9c9; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.ulSelect .open + ul { z-index: 10; }
+.ulSelect li { font-size: 15px; }
+.ulSelect li input[type="checkbox"]+label .icon { width: 15px; height: 15px; margin-top: 5px; background: #ececec; border: solid 1px #c9c9c9; border-radius: 0; }
+.ulSelect li input[type="checkbox"]:checked + label .icon { background: #ececec url(../images/check_02.png) center no-repeat; background-size: 100%; }
+.ulSelect li input[type="checkbox"]:checked + label .text { font-weight: 400; }
+
+/*btn*/
+.content .btn a { padding: 0 15px; }
+.btn_main { display: flex; justify-content: center; align-items: center; }
+.btn_main a { display: block; min-width: 200px; margin: 0 20px 0 0; line-height: 50px; font-size: 20px; }
+.btn_main.full {  }
+.btn_main.full a { width: 100%; max-width: 420px; }
+/*fold_btn*/
+.fold_btn { display: block; width: 36px; height: 36px; border-radius: 18px; color: transparent; background: rgba(44,62,80,0.3) url(../images/arrow_03.png) center no-repeat; background-size: auto 8px; box-shadow: 0 0 10px 0 rgba(0,0,0,0.25); }
+/*btn_expand*/
+.btn_expand{ position:absolute; right:0; top:50%; transform:translateY(-50%);}
+.btn_expand a{ display:block; width:48px; height:48px; background:url(../images/arrow_02.png) center center no-repeat; background-size:auto 8px;}
+.btn_expand.show a{ transform:rotate(180deg);}
+.listTit + .btn_expand{ top:25px;}
+.listBox.mobile li .btn_expand{ right:-15px;}
+.expand_box{ position:relative; display:none; padding:15px; background:#f1f2df;}
+.expand_box thead { background: #f1f2df; }
+.tableBox tr.expand_box.show{ display:table-row;}
+.tableBox tr.expand_box > td{ padding:15px 40px;}
+.tableBox tr.expand_box:nth-child(odd) > td{ background:#f1f2df;}
+.tableBox tr.expand_box tr:nth-child(odd) > td{ background:#e5e5d3;}
+tr.expand_box td > div, tr.expand_box td > table, tr.expand_box td > ul, tr.expand_box td > p{ position:relative; z-index:1;}
+tr.expand_box td > table, tr.expand_box td > ul.formboxList{ margin:15px 0;}
+tr.expand_box .fundInfo{ text-align:left;}
+tr.expand_box input[type="checkbox"] + label, tr.expand_box input[type="radio"] + label{ display:inline-flex; flex:0 0 auto;}
+tr.expand_box input[type="text"], tr.expand_box select{ background-color:#fff; border:none;}
+.expand_box > td::before, .expand_box > td::after, .mobile .expand_box::before, .mobile .expand_box::after{ position:absolute; left:0; right:0; top:-2px; content:""; display:block; width:100%; height:auto; padding:4% 0 0 0; background: url(../images/bg_expand_box.jpg) no-repeat center center; background-size: 100% auto; z-index:0;}
+.expand_box > td::after, .mobile .expand_box::after{ top:auto; bottom:-2px; transform:rotate(180deg);}
+.expand_box .type_tit{ margin:15px 0 0 0;}
+.expand_box .type_tit + table{ margin:0 0 15px 0;}
+.listBox .expand_box{ border:none;}
+.listBox .expand_box li{ display:block;}
+.listBox .expand_box ul + .fundInfo > div::after{ display:none;}
+
+/* ul */
+ul.point { list-style: none; margin:0 0 30px 0; padding-left: 15px; }
+ul.point li { position: relative; text-align:justify;}
+ul.point li::before { content: ""; display: block; position: absolute; top: 10px; left: -14px; width: 6px; height: 6px; background: #b5883d; border-radius: 3px; }
+.point a{ color:#b5883d; text-decoration:underline;}
+
+/* table */
+table { width: 100%; }
+table tr {  }
+table tr:nth-child(1) { border: none; }
+table th { padding: 5px 5px; line-height: 30px; }
+table td { position:relative; padding: 10px 5px; line-height: 30px; }
+.table_yellow { /*table-layout : fixed;*/ }
+.table_yellow tr { border-bottom: solid 1px #dcdcdc; }
+.table_yellow tr:nth-child(odd) { background: #fef4de; }
+.table_yellow th { color: #fff; background: #f6a900; }
+.table_yellow td { font-weight: 300; }
+/* table_資料 */
+.table_data {  }
+.table_data tr { border-bottom: solid 1px #d2d2d2; }
+.table_data > tr:nth-child(odd) td, div.tableBox .table_data tr.bg_gray td { background: #f7f7f7; }
+.content_inner .table_data tr.bg_pink td{ background: #faeded; }
+.table_data th { color: #008764; border-top: solid 1px #008764; border-bottom: solid 1px #008764; }
+
+
+/*金額*/
+.NumMoney { font-size: 24px; font-weight: 700; color: #000; }
+/*金額_漲跌*/
+.NumChange { font-weight: 700; color: #c00000; }
+/*.NumChange::before { content: "+"; }*/
+.NumChange.down { color: #255540; }
+/*.NumChange.down::before { content: "-"; }*/
+
+/* 輸入 */
+.formbox { display: flex; align-items: flex-start; }
+.formbox_title { flex: 0 0 7em; flex-basis:auto; margin-right: 10px; padding: 8px 0; line-height: 24px; font-size: 18px; font-weight: 500; color: #2c3e50; }
+.formbox_title.wide { flex: 0 0 12em; }
+.formbox_title span{ font-size:14px;}
+.formbox_inner { flex: 1 1 auto; flex-basis:100%; margin-right: 15px; padding: 0; line-height: 40px; }
+.formbox_inner.half { flex: 0 1 50%; }
+.formboxList li.full .formbox_inner.half > select{ width:100%;}
+.formbox_inner.auto { flex: 0 0 auto; }
+.formbox_inner:last-child { margin: 0; }
+.formbox_inner p { line-height: 130%; }
+.formbox_inner input[type="checkbox"] + label,
+.formbox_inner input[type="radio"] + label { padding: 3px 0; line-height: 24px; vertical-align: middle; }
+.formbox_inner span{ margin:0 5px;}
+.formbox.input .formbox_title {  }
+.formbox.input .formbox_inner { padding: 0; text-align:left;}
+
+.titleWidthFix .formbox_title { flex: 0 0 8.5em; }
+
+.formboxList { display: flex; flex-wrap: wrap; margin-right: -15px; list-style: none; }
+.formboxList li { flex: 0 0 calc(50% - 15px); width: calc(50% - 15px); margin: 0 15px 15px 0; }
+.formboxList li.full { flex: 1 1 100%; }
+.formboxList li.full .formbox_inner > select{ width:50%;}
+
+/* 輸入_選項 */
+.formboxList_mid { list-style: none; }
+.formboxList_mid .formbox { justify-content: flex-end; }
+.formboxList_mid .formbox_title { flex: 0 0 auto; width:7em; }
+.formboxList_mid .formbox_inner { flex: 0 0 auto; width: 60%; }
+.centerArea .formboxList_mid { align-self: center; }
+.centerArea .formboxList_mid .formbox_inner { flex: 1 1 auto; }
+
+/* 輸入_選擇日期 */
+.selectDate { display: inline-block; position: relative; }
+input.selectDate_input { display: inline-block; max-width: 160px; background: #f2f2f2 url(../images/arrow_02.png) right 13px center no-repeat; background-size: auto 8px; }
+.selectDate_calendar { position: absolute; top: calc(100% + 10px); left: 0; z-index: 901; overflow: hidden; width: 260px; background: #fff; border-radius: 4px; box-shadow: 0 0 10px 0 rgba(0,0,0,0.15); }
+.selectDate_calendar_header { padding: 6px 35px; font-size: 18px; text-align: center; color: #fff; background: #008764; }
+.selectDate_calendar_inner {  }
+.selectDate_calendar_inner table { table-layout: fixed; }
+.selectDate_calendar_inner td { padding: 2px; line-height: 26px; text-align: center; font-size: 12px; }
+.selectDate_calendar_inner .dayWeek { font-weight: 700; color: #008764; background: #f2f3f7; }
+.selectDate_calendar_inner .dayNum td { padding: 4px 2px; }
+.selectDate_calendar_inner .dayNum a { display: inline-block; width:26px; text-align: center; }
+.selectDate_calendar_inner a.on { color: #fff; background: #f08300; border-radius: 13px; }
+/* 僅大網 */
+@media screen and (min-width: 768px) {
+  .selectDate_calendar_inner .dayNum a:hover { color: #f08300; }
+  .selectDate_calendar_inner a.on:hover { color: #fff; background: #ff991c; }
+}
+
+/* 輸入_隱碼 */
+.formbox_inner input::-ms-clear,
+.formbox_inner input::-ms-reveal { display: none; }
+.formbox_inner .btn_eye { display: block; width: 40px; height: 40px; background: url(../images/btn_eye_show.png) center center no-repeat; }
+.formbox_inner .btn_eye.hide { background: url(../images/btn_eye_hide.png) center center no-repeat; }
+
+.formbox_input_item,
+.input_info { position: relative; }
+.formbox_input_item input[type="text"], .formbox_input_item input[type="password"],
+.input_info input[type="text"], .input_info input[type="password"]
+{ padding-right: 45px; }
+.formbox_input_item .btn_eye,
+.input_info .btn_eye { position: absolute; top: 0; right: 0; }
+
+/* 步驟 */
+.applyStep { display: flex; justify-content: flex-end; list-style: none; margin:0 0 30px 0;}
+.applyStep li { position: relative; margin-left: 20px; padding: 0 12px; line-height: 30px; font-size: 15px; color: #959595; background: #f2f2f2; border-radius: 15px; }
+.applyStep li::before { content: ""; display: block; position: absolute; top: calc(50% - 1px); left: -20px; width:20px; height: 2px; background: #f3dda9; }
+.applyStep li::after { content: ""; position: absolute; top: calc(50% - 5px); left: -6px; width: 0; height: 0; border-style: solid; border-width: 5px 0 5px 6px; border-color: transparent transparent transparent #f3dda9;
+	 }
+.applyStep li:first-child::before,
+.applyStep li:first-child::after { content: none; }
+.applyStep li.on { font-weight: 700; color: #fff; background: #f08200; }
+.applyStep li.done { font-weight: 700; color: #f08200; }
+.applyStep li .num::after { content: ". "; }
+
+/* 區塊 */
+/* 基金詳細清單 */
+.fundDetail { list-style: none; }
+.fundDetail li,
+.fundDetail_item { display: flex; align-items: stretch; justify-content: space-between; margin-bottom: 20px; padding: 20px 5px; border: solid 1px #d2d2d2; border-radius: 4px; }
+/* 基金詳細清單 */
+.fundDetail li > div,
+.fundDetail li > p,
+.fundDetail_item > div,
+.fundDetail_item > p { max-width: 20%; }
+.fundDetail_inner { flex: 1 1 auto; padding: 0 15px; line-height: 1.5em; text-align: center; border-right: solid 1px #d2d2d2; }
+.fundDetail_inner:nth-last-child(1) { border: none; }
+.fundDetail_inner.title { flex: 0 0 auto; text-align: left; }
+.fundDetail_inner.link { flex: 0 0 auto; align-self: center; }
+.fundDetail_inner p { word-wrap: break-word; }
+.fundDetail_inner span { display: inline-block; }
+.fundDetail_name { margin-bottom: 10px; font-size: 21px; font-weight: 500; color: #255540; }
+.fundDetail_kind { margin-bottom: 5px; font-weight: 500; }
+.fundDetail_currency { float: left; margin:0 10px 5px 0; }
+.fundDetail_currency .imgbox { display: inline-block; margin-right: 5px; vertical-align: middle; }
+.fundDetail_currency span { vertical-align: middle; font-size: 18px; font-weight: 700; }
+/* .fundDetail_inner .btn { float: right; } */
+.fundDetail_inner .btn a { min-width: 80px; font-size: 15px; }
+.fundDetail_title { margin-bottom: 10px; white-space: nowrap; font-size: 20px; font-weight: 700; color: #55576d; }
+
+/* 基金詳細清單_API */
+.fundDetailIinfo { 
+  /*border-top: solid 1px #d2d2d2; font-size: 14px; color: #888;*/
+  padding: 4px 10px; font-size: 18px; line-height: 1.5em; background: #f3f3f3; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.fundDetailIinfo + .fundDetail_item,
+.fundDetailIinfo + .fundDetailTable { border-top-left-radius: 0; border-top-right-radius: 0; }
+
+/*基金損益*/
+.fundProfit { position: relative; background: #fef6e5; border: solid 1px #f7ab00; border-radius: 4px; }
+.fundProfit_head { padding: 20px 30px; }
+.fundProfit_hidden { display: none; background: #fffcf7; border-radius: 4px; }
+.fundProfit_inner {  border-top: solid 1px #f7ab00; padding: 30px; }
+.fundProfit .fold_btn { position: absolute; bottom: -24px; left: calc(50% - 18px); }
+.fundProfit.open .fold_btn { transform: rotate(180deg); }
+.fundProfit_box { display: flex; }
+.fundProfit_item { flex: 1 1 25%; text-align: center; border-right: solid 1px #d2d2d2; }
+.fundProfit_item:nth-last-child(1) { border: none; }
+.fundProfit_title { margin-bottom: 10px; font-size: 20px; font-weight: 700; color: #55576d; }
+.fundProfit_text { font-size: 24px; font-weight: 700; color: #f08300; }
+
+/*基金損益_卡片式*/
+.fundDetailCard { display: flex; flex-wrap: wrap; align-items: stretch; list-style: none; margin: 0 -15px -10px 0; }
+.fundDetailCard > li { flex: 0 0 calc(25% - 15px); width: calc(25% - 15px); display: flex; flex-direction: column; align-items: flex-start; margin: 0 15px 20px 0;  }
+.fundDetailCard_type { flex: 0 0 auto; display: inline-block; padding: 5px 20px; font-weight: 500; color: #008864; background: #eceddb; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.fundDetailCard_box { flex: 1 1 auto; display: flex; flex-direction: column; width: 100%; padding: 16px; border: solid 1px #d2d2d2; border-radius: 4px; border-top-left-radius: 0; }
+.fundDetailCard_box h5 { font-size: 20px; font-weight: 700; color: #55576d; }
+.fundDetailCard_box_upper { flex: 0 0 auto; margin-bottom: 15px; padding-bottom: 15px; border-bottom: solid 1px #d2d2d2; }
+.fundDetailCard_box_down { flex: 1 1 auto; }
+.fundDetailCard_box_btn { flex: 0 0 auto; }
+.fundDetailCard_name { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.fundDetailCard_name p { margin-right: 10px; font-size: 21px; font-weight: 500; color: #255540; }
+.fundDetailCard_name .imgbox_currency { flex: 0 0 auto; }
+.fundDetailCard_box_switch { display: flex; justify-content: space-between; }
+.fundDetailCard_box_switch .btn { flex: 0 0 auto; }
+.fundDetailCard_box_switch .btn a { font-size: 15px; margin-bottom: 0; }
+.fundDetailCard_risk { display: flex; justify-content: space-between; }
+.fundDetailCard_risk h5 { margin-bottom: 8px; }
+.fundDetailCard_risk_text {  }
+.fundDetailCard_risk_text .num { margin-bottom: 5px; }
+.fundDetailCard_risk_text .num span { display: inline-block; }
+.fundDetailCard_risk_text .num .NumChange{ display:block;}
+.fundDetailCard_risk_img { flex: 0 0 auto; }
+.fundDetailCard_risk_img .imgbox { width: 60px; margin-bottom: 8px; }
+.fundDetailCard_risk_img p { line-height: 1.3em; text-align: center; font-size: 14px; color: #f08300; }
+/*基金損益_卡片式_圓餅圖*/
+.fundDetailCard_box_down .chartPie { margin-bottom: 10px; }
+.fundDetailCard_box_down .chartPie_img { width: 80px; margin-right: 15px; }
+.fundDetailCard_box_down .chartPie_inner { width: calc(100% - 95px); }
+.fundDetailCard_box_down .chartPie_detail { display: block; }
+.fundDetailCard_box_down .chartPie_detail li { max-width: 100%; padding: 0; font-size: 12px; }
+.fundDetailCard_box_down .btn_check a { font-size: 18px; }
+/*基金損益_卡片式_趨勢*/
+table.trendDetail { width: 100%; margin-bottom: 10px; }
+table.trendDetail th,
+table.trendDetail td { padding: 0; line-height: 26px; font-weight: 500; }
+table.trendDetail th { text-align: left; }
+table.trendDetail td { width: 70px; text-align: right; }
+
+/* 風險等級 */
+.riskArea { display: flex; flex-direction: row-reverse; color: #fff; background: #008764; border: solid 1px #008764; border-radius: 4px; }
+.riskArea_inner { flex: 1 1 auto; display: flex; justify-content: center; align-items: center; padding: 30px; }
+.riskArea_level { flex: 0 0 240px; background: #fff; }
+.riskArea_inner p { line-height: 180%;; font-size: 17px; color: #c0fde7; }
+.riskArea_inner span { font-size: 20px; font-weight: 700; color: #fff; }
+.riskArea_inner_level { flex: 0 0 auto; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 120px; height: 120px; margin-right: 25px; text-align: center; background: #007757; border-radius: 60px; }
+.riskArea_inner_level span { display: block; font-size: 24px; }
+.riskArea_inner_text {  }
+.riskArea_inner_text p { margin-bottom: 10px; padding-bottom: 10px; border-bottom: solid 1px #80c3b2; }
+.riskArea_inner_text p:last-child { margin-bottom: 0; padding-bottom: 0; border: none; }
+.riskArea_inner_text span { display: inline-block; }
+.riskArea_level .riskNum{ padding:25px 0 0 0; text-align:center; color:#007145;}
+.riskArea_level .riskNum span{ margin:0 5px 0 0; font-size:30px; font-weight:bold; font-style:italic;}
+.riskArea_level .imgbox{ text-align:center;}
+.riskArea_level .imgbox img{ margin:0 auto;}
+
+/* 資料列表 */
+.dataList { list-style: none; margin:0 0 15px 0; padding: 15px; border: solid 1px #ccccd3; border-radius: 4px; }
+.dataList:last-child{ margin:0;}
+.dataList li { position:relative; display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 12px; border-bottom: solid 1px #ccccd3; }
+.dataList li:last-child { margin: 0; padding: 0; border-bottom: none; }
+.dataList_title { font-size: 18px; font-weight: 700; color: #2c3e50; }
+.dataList_text{ text-align:right;}
+
+/* JS_單張卡片滑動 */
+.slideArea, .fundsArea { position: relative; }
+.slideArea .swiper-slide{ border-radius:4px; border:solid 1px #ccccd3;}
+.swiper-pagination{ position:static; margin:0 0 15px 0;}
+.swiper-pagination-current::before{ content:"第"; margin:0 4px;}
+.swiper-pagination-total::before{ content:"共"; margin:0 4px;}
+.swiper-pagination-current::after, .swiper-pagination-total::after{ content:"筆"; margin:0 4px;}
+.slideArea .swiper-slide .formboxList_mid, .listBox .listTit + .formboxList_mid, .listBox .set_box .dataList{ margin:0; border-radius:0; border:none;}
+.fundsArea .swiper-pagination{ display:none;}
+
+/*searchType*/
+.searchType{ margin:20px 0 0 0;}
+.searchType::after{ content:""; display:block; width:100%; height:auto; margin:30px 0 0 0; padding:4% 0 0 0; background:url(../images/bg_searchtype.jpg) no-repeat center center; background-size:100% auto;}
+.searchType .formboxList{ margin:0 0 20px 0; padding:0; justify-content:center;}
+.searchType.type02 .formboxList{ display:block; width:50%; margin:0 auto;}
+.searchType.type02 .formboxList li{ flex:0 0 auto; width:auto;}
+
+/*tableBox*/
+.tableBox{ position:relative; margin:0 0 30px 0;}
+.tableBox table{ width:100%; margin:0 0 20px 0;}
+.tableBox th, .tableBox td{ text-align:center; vertical-align:middle;}
+.tableBox th{ padding:5px 0; color:#008764; border-top:1px solid #008764; border-bottom:1px solid #008764;}
+.tableBox th ul li:last-child{ border:none;}
+.tableBox td{ border-bottom:1px solid #d2d2d2;}
+.tableBox tr:nth-child(odd) > td{ background:#f2f3f7;}
+.tableBox td label, .tableBox input[type="radio"] + label .icon{ display:block; margin:0 auto;}
+.tableBox ul li{ list-style:none;}
+.tableBox ul li span{ margin:0 5px;}
+.tableBox .tableTotal td{ position:relative; background:#fef6e5; border-top:1px solid #f08300; border-bottom:1px solid #f08300;}
+.tableBox .tableTotal td::before{ position:absolute; left:0; right:0; top:0; width:100%; height:1px; content:""; background:#f08300;}
+.tableBox .tableTotal .tableTotal_tit{ padding:0 11% 0 0; text-align:right; color:#f08300;}
+.btn_array{ display:inline-block; vertical-align:middle; width:10px; height:20px; margin:-2px 0 0 5px; background:url(../images/array_n.png) no-repeat center; background-size:100% auto;}
+.btn_array.ba_01{ background-image:url(../images/array_t.png);}
+.btn_array.ba_02{ background-image:url(../images/array_d.png);}
+.link{ color:#f08200; text-decoration:underline;}
+.btn_test::before{ display:inline-block; vertical-align:middle; width:25px; height:20px; margin:-4px 5px 0 0; background:url(../images/icon_mail.png) no-repeat center center; background-size: 100% auto; content:"";}
+.btn_test{ margin:0 0 0 15px; padding:0 0 5px 0; line-height:20px; color:#008764; border-bottom:1px solid #008764;}
+.tableBox .btn .btn_submit,
+.tableBox .btn .btn_graylight { width:auto; min-width:auto; height:40px; line-height:40px; font-size:18px;}
+.tableBox .btn .btn_graylight { cursor: default; }
+
+/*listBox*/
+.listBox{ display:none;}
+
+/*changeItem-異動項目*/
+.changeBox{ float:left; width:49%; margin:0 2% 20px 0; padding:20px 25px; border:1px solid #d2d2d2; border-radius:4px;}
+.changeBox:nth-child(even), .changeBox:last-child{ margin:0 0 20px 0;}
+.changeBox .formboxList{ display:block; margin:0;}
+.changeBox .formboxList li{ width:100%; margin:0 0 15px 0;}
+.changeTie{ margin:0 0 15px 0;}
+.changeTie input[type="checkbox"] + label .text{ color:#008764; font-weight:bold; font-size:18px;}
+.change03 .formbox_title{ flex:1 1 auto;}
+
+/*columns-左右兩欄*/
+.changeItem::after, .columns::after{ display:block; content:""; clear:both;}
+.columns ul{ display:inline-block; width:48%; margin:0 2% 0 0;}
+.columns ul:last-child{ margin:0;}
+.columns .formboxList li{ width:100%;}
+.searchType .columns{ margin:0 0 15px 0;}
+
+/*pageControl-換頁*/
+.pageControl{ text-align:center;}
+.pageControl li{ display:inline-block; width:25px; height:25px; vertical-align:middle;}
+.pageControl li a{ display:block; width:100%; height:100%; text-align:center; color:#9e9e9e; background-repeat:no-repeat; background-position:center; background-size:110% auto; border-radius:4px;}
+.pageControl li a:hover, .pageControl li.on a{ color:#fff; background-color:#a1a548;}
+.pageControl .prev01 a{ background-image:url(../images/icon_prev_01_n.png);}
+.pageControl .prev01 a:hover{ background-image:url(../images/icon_prev_01_h.png); background-color:#fff; }
+.pageControl .prev02 a{ background-image:url(../images/icon_prev_02_n.png);}
+.pageControl .prev02 a:hover{ background-image:url(../images/icon_prev_02_h.png); background-color:#fff;}
+.pageControl .next01 a{ background-image:url(../images/icon_next_01_n.png);}
+.pageControl .next01 a:hover{ background-image:url(../images/icon_next_01_h.png); background-color:#fff;}
+.pageControl .next02 a{ background-image:url(../images/icon_next_02_n.png);}
+.pageControl .next02 a:hover{ background-image:url(../images/icon_next_02_h.png); background-color:#fff;}
+
+/*caption-標題後說明*/
+.caption{ margin:-10px 0 20px 0; text-align:center; color:#2c3e50;}
+.caption span{ margin:0 10px;}
+
+/*totalBox-總計*/
+.totalBox{ margin:-20px 0 40px 0;}
+.totalBox ul{ text-align:right;}
+.totalBox ul li{ display:inline-block; margin:0 0 0 20px; vertical-align:middle; color:#313131; font-weight:bold; list-style:none;}
+.totalBox ul li span{ margin:0 5px; color:#f08300; font-weight:bold; font-size:20px;}
+
+/*formbox_unit-含單位輸入欄位*/
+.formbox_unit{ position:relative;}
+.formbox_unit .unit{ position:absolute; right:15px; top:50%; transform:translateY(-50%);}
+
+/*fundInfo-數值*/
+.fundInfo > div{ display:inline-block; margin:0 15px 0 0; vertical-align:middle; color:#313131; font-weight:bold;}
+.fundInfo > div::after{ display:inline-block; vertical-align:middle; width:1px; height:15px; background:#a5a5a5; content:"";}
+.fundInfo > div:last-child::after{ display:none; margin:0;}
+.fundInfo > div span{ margin:0 15px; font-weight:normal;}
+
+
+/*formbox_flex-組合*/
+.formbox_flex{ display:flex; align-items:center;}
+.formbox_flex select, .formbox_flex input{ flex:1 1 auto; flex-basis:100%;}
+.formbox_flex .btn_test, .formbox_flex label{ flex:0 0 auto;}
+.formbox_flex img{ flex:0 0 auto; flex-basis:auto; display:block; margin:0 0 0 10px;}
+
+
+
+/*changeDetail-變更細節*/
+.changeDetail h6{ display:inline-block; margin:0 1px 0 5px; vertical-align:middle; font-weight:normal;}
+.changeDetail h6:first-child::after{ display:inline-block; margin:-5px 1px 0 5px; vertical-align:middle; content:">"}
+
+/*tabBox-頁籤*/
+.tabBox .contentNav_fou{ overflow:hidden; width:40%; margin:0 auto 30px auto; border-radius:4px; border:1px solid #ad8848;}
+.tabBox .contentNav_fou li{ float:left; width:25%; height:40px; line-height:40px; text-align:center; border-right:1px solid #ad8848; list-style:none;}
+.tabBox .contentNav_fou li:last-child{ border:none;}
+.tabBox .contentNav_fou li a{ display:block; width:100%; height:100%; color:#ad8848;}
+.tabBox .contentNav_fou li a:hover, .tabBox .contentNav_fou li a.on{ color:#fff; background:#ad8848;}
+.tabBox .select_array{ display:none;}
+
+/*fundBlock-內頁基金資訊*/
+.fundBlock{ margin:0 0 30px 0;}
+.fundBlock .fundDetail li > div{ max-width:auto; width:calc(100% / 6);}
+
+/*warningTxt-警示文字*/
+.warningTxt{ margin:0 0 20px 0; padding:5px 0; text-align:center; color:#f08300; border:1px solid #f08300; border-radius:5px;}
+.warningTxt::before{ display:inline-block; width:25px; height:25px; margin:-5px 10px 0 0; vertical-align:middle; background:url(../images/icon_warning.png) no-repeat center center; content:""; background-size:100% auto;}
+
+/*signIn-登入會員*/
+.signIn{ padding:40px 35px; background:#fff url(../images/bg_signin.png) no-repeat center top; background-size:100% auto; border-radius:10px; box-shadow:0 0 6px 0px rgba(0,0,0,0.1);}
+.signIn::after{ display:block; content:""; clear:both;}
+.signIn .inputBox{ float:right; display:inline-block; width:590px; margin:0 0 30px 0; padding:40px 35px; background:#fff; border-radius:10px; box-shadow:0 0 6px 0px rgba(0,0,0,0.1); box-sizing:border-box;}
+.signIn .inputBox h2{ margin:0 0 30px 0; text-align:center; color:#008764; font-size:22px;}
+.signIn .inputBox .formboxList{ flex-wrap:wrap; margin:0 0 20px 0;}
+.signIn .inputBox .formboxList li{ flex:1 1 auto; width:100%; margin:0 0 15px 0;}
+.signIn .inputBox .formbox_title{ flex:0 0 130px;}
+.signIn .inputBox .formbox_inner p { margin:10px 0 0 0; line-height:22px; text-align:justify; word-break:break-all;}
+.signIn .inputBox .formbox_inner p a{ margin:0 5px; color:#008764; text-decoration:underline;}
+.signIn .inputBox .formbox_keyboard { position:relative; }
+.signIn .inputBox .btn_keyboard{ position:absolute; right:5px; top:5px; color:#008764; height:30px; padding:0 5px; line-height:30px; background:#fff; border:1px solid #008764; border-radius:4px;}
+.signIn .inputBox .btn_keyboard::before{ display:inline-block; vertical-align:middle; width:20px; height:20px; margin:-5px 5px 0 0; background:url(../images/icon_keyboard.png) no-repeat center center; background-size:100% auto; content:"";}
+.signIn .inputBox .keyboardBox{ display:none; position:absolute; left:0; right:0; top:40px; overflow:hidden; padding:15px 15px 5px 15px; background:#fff; border-radius:4px; box-shadow:0 0 6px 0px rgba(0,0,0,0.2); z-index:2;}
+.signIn .inputBox .keyboardBox > div{ overflow:hidden;}
+.signIn .inputBox .keyboardBox a{ display:block; float:left; width:7.75%; margin:0 2.5% 2.5% 0; padding:0.5% 0; line-height:normal; text-align:center; color:#959595; border:1px solid #d2d2d2; box-sizing:border-box; border-radius:4px;}
+.signIn .inputBox .keyboardBox a:nth-child(10n), .signIn .inputBox .keyboardBox .btn a:last-child{ margin:0 0 2.5% 0;}
+.signIn .inputBox .keyboardBox .btn{ text-align:right;}
+.signIn .inputBox .keyboardBox .btn a{ float:right; width:18%; margin:0 0 2.5% 2.5%; padding:0.8% 0; color:#fff; border:none; box-shadow:0 0 10px 0 rgba(240,130,0,0.2);
+background: #f08300;
+background: -moz-linear-gradient(left, #f08300 0%, #f6aa00 100%);
+background: -webkit-linear-gradient(left, #f08300 0%,#f6aa00 100%);
+background: linear-gradient(to right, #f08300 0%,#f6aa00 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f08300', endColorstr='#f6aa00',GradientType=1 );
+}
+.signIn .inputBox .keyboardBox .alphabet + .btn{ margin:-10% 0 0 0;}
+.signIn .inputBox .keyboardBox .number{ clear:both;}
+.signIn .inputBox .keyboardBox .number a{ color:#b6883d; border-color:#b6883d;}
+.signIn .inputBox .btn_main a{ width:100%;}
+.signIn .inputBox .btn_main + a{ display:block; margin:0 0 15px 0; text-align:center; cursor:pointer;}
+.signIn .inputBox a + p { display:block; text-align:center; font-size:14px;}
+.signIn .noticeBox{ clear:both; font-size:14px; text-align:justify;}
+.signIn .noticeBox h5{ margin:0 0 10px 0; font-size:16px;}
+.signIn .noticeBox p{ margin:0 0 10px 0;}
+.signIn .noticeBox ul li{ margin:0 0 10px 0; list-style:none; color:#626262;}
+.signIn .noticeBox ul li:last-child{ margin:0;}
+
+.signIn .btn_caption { margin-right: 0; }
+
+/*signIn-登入會員_小鍵盤+隱碼*/
+.signIn .inputBox .formbox_function { position: relative; display: flex; align-items: center; margin: 0; background: #f2f2f2; border-radius: 8px; }
+.signIn .inputBox .formbox_function input { flex: 1 1 auto; }
+.signIn .inputBox .formbox_function input::-ms-clear,
+.signIn .inputBox .formbox_function input::-ms-reveal { display: none; }
+.signIn .inputBox .formbox_function .btn_eye { flex: 0 0 auto; }
+.signIn .inputBox .formbox_function .btn_keyboard { flex: 0 0 auto; position: static; margin-right: 5px; }
+
+
+/*caption_toggle-提示文字 可點按*/
+.caption_toggle { position: relative; cursor: pointer; }
+.caption_toggle::after {
+  content: ""; display: inline; top: 6px; padding-right: 24px; background: url(../images/btn_caption_toggle.png) 2px center no-repeat; background-size: 20px 20px;
+}
+.caption_toggle_hidden { cursor: default; display: none; position: absolute; top: 4px; left: 100%; z-index: 5; width: 220px; padding: 5px 10px; word-break: break-all; font-size: 14px; color:#313131; background-color:#f2f2f2; border-radius:4px; box-shadow:0 1px 4px 1px rgba(0,0,0,0.2); }
+.caption_toggle_hidden a { color: #008764; border-bottom: solid 1px; }
+.caption_toggle:hover .caption_toggle_hidden { display: block; }
+
+
+@media screen and (max-width: 1200px) {
+
+	/*content_inner*/
+	.contentNav_sub a { flex: 1 1 auto; min-width: auto; margin-right: 10px; }
+	.contentNav_type { position: static; margin-bottom: 15px; }
+
+	/* 基金詳細清單 */
+	.fundDetail_inner { padding: 0 10px; }
+	.fundDetail_currency { float: none; margin-bottom: 10px; }
+	.fundDetail_inner .btn { float: none; }
+
+	/*基金損益_卡片式*/
+	.fundDetailCard {  }
+	.fundDetailCard > li { flex: 0 0 calc(33.3% - 15px); width: calc(33.3% - 15px); }
+}
+
+@media screen and (max-width: 1024px) {
+	/*content*/
+	.content_inner,
+	.content_inner.padding_high { padding: 20px; }
+	.content_inner.padding_high { padding-bottom: 30px; }
+
+	.contentNav_sec a { min-width: auto; }
+
+	/* 頁尾確認 
+	.bottomCheck .pagesize { display: block; }
+	.bottomCheck_option { margin-bottom: 15px; }*/
+	.bottomCheck_option {  }
+	.bottomCheck .btn a { min-width: 100px; }
+	.bottomCheck_text .btn_main a { min-width: 140px; }
+
+	/* 數字_漲幅 */
+	.NumMoney { font-size: 20px; word-break: break-all; }
+
+	.fundDetail_inner { padding: 0 5px; }
+
+	/* 基金損益 */
+	.fundProfit_head { padding: 20px 0px; }
+	.fundProfit_title { font-size: 18px; }
+	/*基金損益_卡片式*/
+	.fundDetailCard {  }
+	.fundDetailCard > li { flex: 0 0 calc(50% - 15px); width: calc(50% - 15px); }
+
+  /* 基金詳細清單 */
+  .fundDetail_title { font-size: 18px; }
+	.fundDetail_title span { display: block; }
+
+	/* 風險等級 */
+	.riskArea_inner { flex-direction: column; }
+	.riskArea_inner_level { margin: 0 auto 10px; }
+
+	/*基金損益*/
+	.fundProfit_inner { padding: 25px 15px; }
+
+
+}
+
+/*----------------------------------- 小網 -----------------------------------*/
+@media screen and (max-width: 767px) {
+	h6.sectionTitle{ margin:0 0 15px 0;}
+	/*content*/
+	.content {  }
+	.content_inner { padding: 20px 15px; }
+	.contentNav { display: none; margin:0; }
+
+	.contentNav_sub { display: none; }
+	.contentNav_sec { display: none; }
+	.contentNav_sec + .content_inner { border-radius: 4px; box-shadow: 0 0 8px 0 rgba(98,111,124,0.3); }
+	.contentNav_type { margin: 0 0 -38px; }
+	/* 頁尾確認 */
+	.bottomCheck {  }
+	.bottomCheck .pagesize { display: block; }
+	.bottomCheck_option { margin-bottom: 15px; }	
+	.bottomCheck_text { display: block; }
+	.bottomCheck_text input[type="password"] { max-width: 100%; margin: 0 0 20px; }
+	.bottomCheck_text .btn { max-width: 100%; }
+	
+
+	/* imgbox_幣別 */
+	.imgbox_currency { width: 24px; height: 24px; }
+
+	/* input */
+	.inputMulti { display: block; }
+	.inputMulti input,
+	.inputMulti select { margin-bottom: 15px; }
+	/* input_地址 */
+	.inputMulti_add { display: block; }
+	.inputMulti_add .num { display: inline-block; width: 150px; margin-bottom: 10px; }
+	/* input_表單 */
+	.formboxList,
+	.formbox { display: block; }
+	.formboxList { margin: 0; }
+	.formboxList li { position:relative; width: 100%; margin: 0 0 15px; padding-bottom: 15px; border-bottom: solid 1px #ccccd3; }
+	.formboxList li.full .formbox_inner > select{ width:100%;}
+	.formbox_title { margin: 0 0 10px; padding:0; }
+	.formbox_inner { line-height: 150%; margin: 0 0 10px; padding:0; }
+	.formbox_data,
+	.formboxList_mid .formbox_data { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap:wrap;}
+	.formbox_data .formbox_title,
+	.formboxList_mid .formbox_data .formbox_title,
+	.formbox_data .formbox_inner,
+	.formboxList_mid .formbox_data .formbox_inner { width: auto; line-height: 28px;  }
+	.formbox_data .formbox_title { margin: 0 15px 0 0; }
+	.formbox_data .formbox_text p{ text-align:right;}
+	.formboxList_mid .formbox_data .formbox_inner, .formbox_data .formbox_inner .btn_set{ text-align:right;}
+	
+	/* input_日曆 */
+	.selectDate_calendar { width: 240px; }
+
+	/* 輸入_選項 */
+	.formboxList_mid { overflow:hidden; margin:0 0 15px 0;}
+	.formboxList_mid:last-child{ margin:0;}
+	.formboxList_mid li { position:relative; margin: 0 0 15px; padding-bottom: 15px; border-bottom: solid 1px #ccccd3; }
+	.formboxList_mid li:last-child{ margin:0; padding:0; border-bottom:none;}
+	.formboxList_mid .formbox_title,
+	.formboxList_mid .formbox_inner { width: 100%; }
+	.centerArea .formboxList_mid .formbox_inner { flex: 0 0 auto;}
+	.formboxList_mid + .btn_main{ width:100%; padding:15px; border-top:solid 1px #ccccd3; box-sizing:border-box;}
+	.swiper-container .formboxList_mid{ padding:15px;}
+
+
+	/* btn */
+	.btn_main { max-width: 400px; margin-left: auto; margin-right: auto; }
+	.btn_main a { flex: 1 1 50%; min-width: 0; border-radius: 4px; }
+
+	/* select */
+	.ulSelect { display: flex; flex-direction: column; align-items: flex-start; position: relative; margin-bottom: 10px; }
+	.ulSelect_notice { order: 3; }
+	.ulSelect_text { order: 2; margin: 0 0 5px; text-align: left; }
+	.ulSelect_btn { order: 1; flex: 0 0 auto; width: calc(100% - 120px); line-height: 30px; margin-bottom: 5px; padding-left: 10px; text-align: left; font-size: 15px; font-weight: 700; }
+	.ulSelect ul { top: 30px; left: 0; right: auto; width: calc(100% - 120px); }
+	.ulSelect .contentNav_type { position: absolute; right: 0; top: 0; }
+	.ulSelect .contentNav_type a { margin-left: 5px; }
+
+	/* 區塊置中 */
+	.centerArea { display: block; }
+	.centerArea_inner { display: block; }
+	.centerArea_inner .formboxList { max-width: 100%; }
+
+	/* 捲動區域 */
+	.scrollBox { padding: 15px 10px 15px 15px; }
+	.mCSB_inside > .mCSB_container { margin-right: 15px; }
+
+	/* 基金詳細清單 */
+	.js_detailSwiper { position: relative; margin-bottom: 15px; }
+	.fundDetailTable { padding: 18px; border: solid 1px #d2d2d2; border-radius: 4px; }
+	.fundDetailTable_section { position: relative; padding: 12px 0; border-bottom: solid 1px #d2d2d2; }
+	.fundDetailTable_section.title { padding-top: 0; }
+	.fundDetailTable_section.last { border: none; }
+	.fundDetailTable_item { display: flex; justify-content: space-between; }
+	.fundDetailTable_item .NumChange { font-size: 18px; }
+	.fundDetailTable_th { margin-right: 10px; }
+	.fundDetailTable_td {  }
+	.fundDetail_kind { display: inline-block; margin: 0 8px 0 0; vertical-align: middle; }
+	.fundDetail_currency { display: inline-block; margin: 0; }
+	.fundDetail_currency span { font-size: 16px; }
+	.fundDetailTable_section.title .btn { position: absolute; right: 0; bottom: 10px; }
+	.fundDetailTable_section.title .btn a { font-size: 14px; }
+	.fundDetail_title { margin: 0; font-size: 18px; }
+	.fundDetailTable_item .riseTag { font-size: 18px; }
+  
+	/* 基金詳細_圓餅圖 */
+	.fundDetailCard_box_down .chartPie_img { width: 100px; margin: 0 auto 10px; }
+
+	/*基金損益*/
+	.fundProfit_slider { position: relative; }
+	.fundProfit_slider .swiper-button-prev { top: 50%; left: -25px; }
+	.fundProfit_slider .swiper-button-next { top: 50%; right: -25px; }
+	.fundProfit_head { padding: 0; }
+	.fundProfit_box { display: block; padding: 0 20px; }
+	.fundProfit_item { display: flex; justify-content: space-between; padding: 10px 0; border: none; border-bottom: solid 1px #d2d2d2; }
+	.fundProfit_title { flex: 0 0 auto; text-align: left; font-size: 18px; margin: 0 10px 0 0; }
+	.fundProfit_text { flex: 1 1 auto; white-space: pre-wrap; text-align: right; font-size: 22px; }
+	/*基金損益_卡片式*/
+	.fundDetailCard {  }
+	.fundDetailCard > li { width: 100%; }
+	/* 步驟 */
+	.applyStep { justify-content: center; margin-bottom: 20px; }
+	.applyStep li { min-width: 30px; padding: 0 8px; text-align: center; font-size: 14px; }
+	.applyStep li .num::after { content: none; }
+	.applyStep li.done { font-weight: 400; color: #f08200; }
+	.applyStep .text { display: none; }
+	.applyStep .on { padding: 0 15px; }
+	.applyStep li.on .num::after { content: ". "; }
+	.applyStep .on .text { display: inline; }
+	.applyStep li:first-child{ margin:0;}
+
+	
+	/* 風險等級 */
+	.riskArea { display: block; }
+	.riskArea_level .imgbox { margin: 0 auto; }
+	.riskArea_inner { padding: 30px 20px; }
+	.riskArea_inner_level { width: 140px; height: 140px; border-radius: 70px; }
+	.riskArea_inner_level p { font-size: 20px; }
+	.riskArea_inner_level span { font-size: 28px; }
+	
+	/* JS_單張卡片滑動 */
+	.fundsArea .swiper-pagination{ display:block;}
+
+	/*searchType*/ 
+	.searchType{ margin:0 0 15px 0;}
+	.searchType::after{margin:20px 0 0 0;}
+	.searchType.type02 .formboxList{ width:100%; }
+	
+	/*tableBox*/
+	.tableBox{ display:none;}
+
+	/*listBox*/
+	.listBox{ display:block; margin:0 0 30px 0;}
+	.listBox .listSet{ overflow:hidden; position:relative; margin:0 0 15px 0; border:1px solid #d2d2d2; border-radius:5px;}
+	.fund_input.expand_box .listBox:last-child, .listBox .listSet:last-child, .listBox .listAll:last-child{ margin:0;}
+	.listBox .listAll{ margin:0 0 15px 0;}
+	.listBox .listTit{ padding:10px 15px;}
+	.listBox .listSet .formboxList_mid{ margin:0; padding:15px;}
+	.listBox .listTit ~ .formboxList_mid{ display:none; background:#f2f2f2; border-top:1px solid #d2d2d2;}
+	.listBox .formboxList_mid li:last-child{ margin:0; padding:0; border:none;}
+	.listBox .formbox_inner{ flex:1 0 auto; max-width:100%; text-align:right;}
+	.listTit input + label{ display:inline-block; vertical-align:middle;}
+	.listTit input + label .text{ margin:-4px 0 0 0; color:#008764; font-weight:bold;}
+	.listTit .text + .text{ display:block; padding:0 0 0 32px;}
+	.listBox .swiper-container{ position:static;}
+	.listBox > .set_box{ border:1px solid #d2d2d2; border-radius:5px;}
+	.listBox .fundProfit_head .fundProfit_item{ padding:15px 0;}
+	.listBox .fundProfit_head .fundProfit_title{ color:#2c3e50; font-size:18px;}
+	.listBox .fundProfit_head .fundProfit_text{ color:#313131; font-size:16px; font-weight:normal;}
+	.select_array{ margin:0 0 15px 0;}
+	.listBox .list_total{ margin:0 0 15px 0; text-align:center;}
+	.listBox .formbox_inner p{ margin:5px 0 0 0;}
+	/*changeItem-異動項目*/
+	.changeItem{ display:block;}
+	.changeBox{ float:none; width:100%; margin:0 0 20px 0; padding:15px;}
+	.changeBox .formboxList li:last-child{ margin:0; border:none;}
+	.changeList .formbox_title{flex:0 0 auto;}
+	.changeList .formbox_inner{ flex:0 0 auto; max-width:65%; text-align:right; word-break:break-all;}
+	
+	/*columns-左右兩欄*/
+	.columns ul{ display:block; width:100%; margin:0;}
+	
+	/*txtbr-小網時換行*/
+	.txtbr{ display:block;}
+	
+	/*totalBox-總計*/
+	.totalBox ul{ text-align:left;}
+	.totalBox ul li{ display:block; margin:0 0 10px 0;}
+	.totalBox ul li:last-child{ margin:0;}
+	
+	/*fundInfo-數值*/
+	.fundInfo{ margin:10px 0 0 0;}
+	.fundInfo > div{ font-size:15px; margin:0 5px 0 0;}
+	.fundInfo > div span{ margin:0 10px;}
+	
+	/*tabBox-頁籤*/
+	.tabBox .contentNav_fou{ display:none;}
+	.tabBox .select_array{ display:block;}
+	
+	/*fundBlock-內頁基金資訊*/
+	.fundBlock{ margin:20px 0;}
+	.fundBlock .fundDetail li{ display:block; padding:0 15px;}
+	.fundBlock .fundDetail li > div{ max-width:100%; width:100%; padding:15px 0; border-right:none; border-bottom:1px solid #d2d2d2}
+	.fundBlock .fundDetail li > div:last-child{ border:none;}
+	.fundBlock .fundDetail_inner{ display:flex; flex-wrap:nowrap; text-align:left;}
+	.fundBlock .fundDetail_title{ flex:0 0 auto; }
+	.fundBlock .fundDetail_num{ flex:1 1 auto; text-align:right;}
+	.fundBlock .NumMoney{ font-size:18px;}
+	
+	/*point*/
+	ul.point br{ display:none;}
+	
+	/*warningTxt-警示文字*/
+	.warningTxt{ position:relative; padding:5px 15px 5px 45px; text-align:justify; font-size:14px;}
+	.warningTxt::before{ position:absolute; left:10px; top:50%; transform:translateY(-50%); margin:0;}
+	
+	/*signIn-登入會員*/
+	.signIn{ padding:20px 15px;}
+	.signIn .inputBox{ float:none; display:block; width:100%; margin:35% 0 20px 0; padding:0; background:rgba(0,0,0,0); box-shadow:none;}
+	.signIn .inputBox h2{ margin:0;}
+	.signIn .inputBox .btn_keyboard{ display:none;}
+
+  /*caption_toggle-提示文字 可點按*/
+  .caption_toggle_hidden { top: 100%; left: 0; }
+}
+
+@media screen and (max-width: 640px) {
+  /* 基金詳細清單_小網 */
+	.fundDetail_currency { margin-bottom: 10px; }
+	.fundDetailTable_section.title .btn { position: static; }
+}
+
+@media screen and (max-width: 400px) {
+	/*基金損益*/
+	.fundProfit_head .fundProfit_title { font-size: 16px; }
+	.fundProfit_head .fundProfit_title span { display: block; }
+	.fundProfit_head .fundProfit_text { font-size: 20px; }
+
+}
+
+@media screen and (max-width: 321px) {
+	/*listBox*/
+	.formbox_data .formbox_title{ margin:0;}
+	.changeList .formbox_inner, .listBox .formbox_inner{ max-width:60%;}
+	.listBox .formbox_inner.formbox_w100{ width:100%; max-width:100%;}
+	.link{ font-size:14px;}
+	
+	/*fundInfo-數值*/
+	.fundInfo > div::after{ display:none;}
+	
+	/*step*/
+	.applyStep .on{ padding:0 8px;}
+}
+
+@media screen and (max-width: 319px) {
+  .formbox_verify { display: block; }
+  .formbox_verify input { margin-bottom: 10px; }
+  .formbox_verify img { margin-left: 0; }
+}

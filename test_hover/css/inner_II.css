@@ -1,0 +1,496 @@
+/*-----base-----*/
+.inner_II{ position:relative;}
+/*txt*/
+select.special{ color:#008764; font-size:18px; font-weight:bold; }
+.special-bor { border: 2px solid #d9d200; }
+.weight_bold{ font-weight:bold;}
+body .txt_left{ text-align:left;}
+.size12{ font-size:12px;}
+/*tit*/
+.inner_tit{ margin:0 0 20px 0; color:#008764; font-weight:bold; font-size:20px; word-wrap: break-word; }
+.type_tit{ position:relative; height:45px; text-align:center; line-height:45px; color:#fff; background-color:#008764;}
+.type_tit.fund{ padding:0 25px; text-align:left;}
+.type_tit.fund label, .type_tit.fund .fundInfo{ display:inline-block; vertical-align:middle;}
+.type_tit.fund label{ margin:-7px 5px 0 0;}
+.type_tit.fund input[type="checkbox"] + label .icon, .type_tit.fund input[type="checkbox"]:checked + label .icon{ background-color:#008764; border:2px solid #fff;}
+.type_tit.fund .fundInfo > div{ color:#fff;}
+.type_tit.fund .fundInfo > div::after{ background:#fff;}
+.sort_tit{ overflow:hidden; margin:0 0 30px 0; padding:0 0 15px 0; color:#b08449; font-size:18px; border-bottom:1px solid #b08449;}
+.sort_tit span{ float:right; color:#2c3e50; font-size:14px;}
+/*btn*/
+.link{ margin:0 0 0 5px; color:#f08200; text-decoration:underline;}
+.btn_add{ position:absolute; right:15px; top:50%; transform:translateY(-50%); display:block; width:24px; height:24px; background:url(../images/btn_add.png) no-repeat center center; background-size:100% auto;}
+.btn_delete{ position:absolute; right:15px; top:50%; transform:translateY(-50%); display:block; width:24px; height:24px; background:url(../images/btn_delete.png) no-repeat center center; background-size:100% auto;}
+.btn_event{ text-indent:100%; white-space:nowrap; overflow:hidden; display:block; width:24px; height:24px; margin:0 auto; background:url(../images/btn_event.png) no-repeat center center; background-size:100% auto;}
+.btn_filter{ margin:0 0 20px 0; line-height:35px; color:#b5883d;}
+.btn_filter a{ display:inline-block; height:35px; margin:0 15px 0 0; padding:0 15px; line-height:35px; vertical-align:middle; color:#fff; background:#b5883d;}
+.btn_filter a::after{ display:inline-block; width:18px; height:18px; margin:0 0 0 10px; vertical-align:middle; background:url(../images/icon_filter.png) no-repeat center center; background-size:100% auto; content:"";}
+/* .btn_set{ text-align:center;}
+.btn_set a{ display:inline-block; width:25px; height:25px; margin:0 10px 0 0; background-repeat:no-repeat; background-position:center center; background-size:100% auto;}
+.btn_set a:last-child{ margin:0;}
+.btn_set a:hover{ opacity:0.7;}
+.btn_set a.delete{ background-image:url(../images/icon_delete.png);}
+.btn_set a.edit{ background-image:url(../images/icon_edit.png);} */
+.btn_set{ display: inline-block; text-align:center; }
+.btn_set a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 0 8px;
+  padding: 0 16px;
+  text-align: center;
+  color: #fff;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+.btn_set a:nth-last-child(1) { margin-bottom: 0; }
+.btn_set .delete { background: #c2bb00; }
+.btn_set .edit { background: #f19149; }
+.btn_set a:hover,
+.btn_set a:active {
+  opacity: 0.7;
+}
+
+
+.btn_main.btn_download{ position:absolute; right:215px; top:0; z-index:2;}
+.btn_main.btn_download a{ min-width:100px; height:35px; line-height:35px; font-size:16px; border-radius:4px;}
+/*popup*/
+.popup_area .searchType{ margin:0;}
+.popup_area .searchType .formboxList{ display:block; padding:0;}
+.popup_area .searchType li{ width:100%; margin:0;}
+.popup_area .searchType .formbox_title, .popup_area .searchType .formbox_inner{ width:auto;}
+.popup_area .searchType .formbox_inner{ flex:1 1 auto;}
+
+
+/*btn_caption-提示文字*/
+[tooltip]{ position:relative;}
+[tooltip]::after{ overflow:hidden; display:none; position:absolute; padding:5px 10px; line-height:normal; font-size:14px; white-space:nowrap; border-radius:4px; z-index:5; content:attr(tooltip); box-shadow:0 1px 4px 1px rgba(0,0,0,0.2);}
+[tooltip]:hover::after{ display:block;}
+[tooltip][placement="caption_p"]::after{ overflow:visible; left:0; top:30px; width:200px; height:auto; white-space:normal; text-align:justify; word-break:break-all;}
+[tooltip][effect="caption_e"]::after{ color:#313131; background-color:#f2f2f2;}
+.btn_caption{ display:inline-block; width:20px; height:20px; margin:-2px 5px 0 5px; vertical-align:middle; text-align:center; line-height:20px; background:url(../images/btn_caption.png) no-repeat center center; background-size:100% auto; border-radius:15px;}
+span + .btn_caption{ margin:4px 0 0 0;}
+
+
+/*formboxList-輸入內容*/
+.inner_II .order_select .formbox_title, .inner_II .order_how .formbox_title{ flex:0 0 170px;}
+.inner_II .formboxList{ display:block; margin:0;}
+.inner_II .formboxList li{ width:100%; margin:0 0 15px 0;}
+.inner_II .formboxList input[type="text"], .inner_II .formboxList select{ flex-basis:auto; min-width:50%; width:auto; max-width:inherit; box-sizing:border-box;}
+.inner_II .selectDate, .inner_II .textInputNum{ flex-basis:100%; min-width:50%; width:auto; margin:0 0 0 5px; max-width:inherit; box-sizing:border-box;}
+.inner_II .selectDate input[type="text"]{ width:100%; flex-basis:100%;}
+.inner_II .formboxList_mid .textInputNum{ width:50%;}
+.inner_II .textInputNum input[type="text"]{ width:100%;}
+.inner_II span + .textInputNum{ min-width:46%;}
+input[type="radio"] + label:last-child{ margin:0;}
+
+
+/*multiple_choice-複選*/
+.multiple_choice{ display:flex; flex-wrap:wrap; margin:15px 0;}
+.multiple_choice a{ min-width:100px; height:40px; margin:0 15px 0 0; text-align:center; line-height:38px; color:#313131; background-color:#ecedda; border:1px solid #d9d200; border-radius:8px; box-sizing:border-box;}
+.multiple_choice a:last-child{ margin:0;}
+.multiple_choice a:hover, .multiple_choice a.select{ color:#fff; background-color:#c2bb00;}
+.multiple_choice + input{ margin:0 0 15px 0;}
+
+
+/*flex_set-組合*/
+.flex_set{ display:flex; align-items:center; min-width:50%;}
+.flex_set:last-child{ margin:0;}
+.flex_set a, .flex_set span{ flex:0 0 auto; flex-basis:auto;}
+.flex_set .textInputNum{ flex:0 1 auto;}
+.searchType .flex_set .btn_main a{ min-width:auto; width:130px; height:40px; line-height:40px; font-size:18px;}
+.searchType .flex_set .btn_main{ margin:0 0 0 15px;}
+/*套件css*/
+.vdp-datepicker__calendar span{ margin:0;}
+.multiselect__content li.multiselect__element{ width:100%; margin:5px 0 0 0;}
+.multiselect__option--highlight{ color:#008764; background:#ecedda;}
+.multiselect__option--selected.multiselect__option--highlight{ color:#f08300; background:#fef6e5;}
+.multiselect__tag{ background:#f08300;}
+.multiselect__tag-icon{ border-radius:0 5px 5px 0;}
+.multiselect__tag-icon:hover{ background: #f6aa00;}
+.multiselect__tag-icon:after{ color:#fff;}
+
+
+/*-----我要下單-申購-----*/
+/*提示文字*/
+.remark{ margin:15px 0 0 0; font-size:13px;}
+.hint{ margin:10px 0 0 0; color:#e60012; font-size:13px;}
+.hint p{ margin:0 0 10px 0;}
+.hint p:last-child{ margin:0;}
+.hint input[type="checkbox"] + label .icon{ width:20px; height:20px; margin:2px 4px 0 0; border-color:#e60012;}
+.hint input[type="checkbox"]:checked + label .icon { background-color:#e60012; }
+/*order_type-申購*/
+.order_type .order_box{ flex:1 1 auto; margin:0 20px 20px 0; border:1px solid #008764; border-radius:5px;}
+.order_type .order_box:last-child{ margin:0 0 20px 0;}
+.order_type .formboxList{ margin:0; padding:20px;}
+/*ot03-單筆+定時(不)定額*/
+.ot03.flex_set{ align-items:stretch;}
+.order_type.ot03 .order_box{ max-width:49%; flex-basis:49%;}
+.order_type.ot03 .formbox_title{ flex:0 0 105px;}
+.order_type.ot03 .selectDate, .order_type.ot03 .textInputNum{ width:100%;}
+.order_type.ot03 .sum_box{ display:block;}
+.order_type.ot03 .sum_cell{ margin:0 0 15px 0;}
+.order_type.ot03 label.input{ flex:1 1 auto; flex-basis:auto;}
+/*ot04-時來運轉*/
+.order_type.ot04 .order_box{ margin:0 0 20px 0;}
+.add_set{ margin:0 0 15px 0;}
+/*sum_set-扣款金額-*/
+.sum_set{ flex-wrap:nowrap; align-items:flex-start; margin:0 0 20px 0;}
+.sum_set .sum_tit{ flex:0 0 auto; align-items:flex-start; flex-basis:auto;}
+.sum_set .sum_box{ flex:1 1 auto; display:flex; align-items:flex-start; flex-basis:100%;}
+.sum_set .sum_cell{ display:flex; flex-wrap:nowrap; min-width:inherit;}
+.sum_set .sum_cell:last-child{ margin:0;}
+.sum_set span + .btn_caption{ margin:-4px 5px 0 0;}
+/*sum_mother-母基金扣款金額*/
+.sum_mother label{ margin:0 0 10px 0;}
+/*rate_list-手續費率*/
+.inner_II ul.rate_list li{ margin:0; padding:0; line-height:30px; list-style:none; border:none;}
+
+
+/*------我的收藏清單-----*/
+.favorite_box .btn_chart{ margin:0 0 20px 0;}
+
+
+/*------投資行事曆-----*/
+.invest_calendar{}
+/*月份*/
+.month_content{ margin:0 0 35px 0; text-align:center; color:#787878;}
+.month_content > div{ display:inline-block; vertical-align:middle;}
+.month_content .on{ margin:0 40px;}
+.month_content .year{ margin:0 0 10px 0; font-size:30px; font-family:Arial;}
+.month_content .month{ font-size:20px;}
+.month_content .btn_pre, .month_content .btn_next{ width:35px; height:35px;}
+.month_content .btn_pre a, .month_content .btn_next a{ display:block; width:100%; height:100%; background:url(../images/icon_arrow_calendar.png) no-repeat center center; background-size:100% auto;}
+.month_content .btn_next a{ transform:rotate(180deg);}
+/*日期*/
+.day_content{ display:table; width:100%;}
+.day_content > ul{ display:table-row;}
+.day_content > ul > li{ display:table-cell; width:14%;}
+.day_content .week_set{ text-align:center; line-height:35px; color:#535353; font-size:16px; background:#e0e0e0; list-style:none;}
+.day_content .week_set .end{ color:#fff; background:#008864;}
+.day_content .day_set li{ height:150px; padding:10px 15px; box-sizing:border-box; border-right:1px solid #c9c9c9; border-bottom:1px solid #c9c9c9;}
+.day_content .day_set li:first-child{ border-left:1px solid #c9c9c9;}
+.day_content .day_set li.on{ background:#eceddb;}
+.day_content .day_set .day{ margin:0 0 10px 0; color:#535353; font-weight:bold;}
+.day_content .day_set .event_txt{ margin:0 0 10px 0; padding:5px 10px; color:#fff; font-size:14px; line-height:20px; background:#f08300; border-radius:4px;}
+
+
+/*------專屬顧問------*/
+.adviser_box .adviser_info{ margin:0 0 10px 0;}
+.adviser_info::after{ content:""; display:block; width:100%; height:auto; margin:20px 0 0 0; padding:4% 0 0 0; background: url(../images/bg_searchtype.jpg) no-repeat center center; background-size:100% auto;}
+.adviser_info > div{ display:inline-block; vertical-align:middle;}
+.adviser_info .img{ position:relative; overflow:hidden; width:100px; height:100px; margin:0 25px 0 0; background:#f2f2f2; border-radius:50%; border:5px solid #c49f63;}
+.adviser_info .img img{ position:relative; display:block; width:100%; height:auto; z-index:2;}
+.adviser_info .img::before{ position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); display:block; width:55px; height:55px; margin:0 auto 0 auto; background:url(../images/icon_service.png) no-repeat center center; background-size:100% auto; content:""; z-index:1;}
+.adviser_info .txt{ position:relative; padding:0 45px 0 25px; border-left:1px solid #d2d2d2;}
+.adviser_info .txt h4{ font-size:18px;}
+.adviser_info .txt p{ margin:0;}
+.adviser_info .txt p span{ margin:0 0 0 10px;}
+.btn_phone{ position:absolute; width:30px; height:30px; right:0; bottom:5px;}
+.btn_phone a{ display:block; width:100%; height:100%; background:url(../images/icon_phone.png) no-repeat center center; background-size:100% auto;}
+.adviser_input .formboxList li.full .formbox_inner > select{ width:100%; margin:0;}
+
+
+/*------給付方式-----*/
+.order_time{ position:absolute; right:0; top:0; color:#959595;}
+.payment span::after{ display:inline-block; width:1px; height:14px; margin:-4px 10px 0 10px; vertical-align:middle; background:#535353; content:"";}
+.payment span:last-child::after{ display:none;}
+
+
+/*-----贖回/轉申購-----*/
+.fundBlock{ overflow:hidden; border:solid 1px #d2d2d2; border-radius:4px;}
+/*fund_main*/
+.fund_main{ align-items:stretch; padding:15px 0;}
+.fund_name{ flex:0 0 auto; border-right:solid 1px #d2d2d2;}
+.fund_name .fundDetail_inner{ display:flex; align-items:center;}
+.fund_info.expand_box{ flex:1 0 auto; display:flex; padding:0; background:#fff;}
+.fund_info.expand_box .fundDetail_inner{ width:16.6%;}
+.fundBlock .fund_main .fundDetail li{ margin:0; padding:0; border:none;}
+/*fund_iniput*/
+.fund_input.expand_box, .fund_table{ padding:30px 40px 20px 40px; background:#fff; border-top:solid 1px #d2d2d2;}
+.fund_input.expand_box::before, .fund_table::before{ position:absolute; left:0; right:0; top:-1px; content:""; display:block; width:100%; height:auto; padding:4% 0 0 0; background:url(../images/bg_searchtype.jpg) no-repeat center center; background-size:100% auto; z-index:0;}
+.fund_input.expand_box > ul, .fund_input.expand_box > div{ position:relative; z-index:1;}
+.fund_input.expand_box .listBox input[type="text"]{ margin:10px 0 0 0; background:#f2f2f2;}
+.fund_table{ position:relative;}
+.estimate .estimate_num input[type="text"]{ text-align:center; color:#f08200; font-size:18px; background:#fff; border:solid 1px #d2d2d2;}
+.estimate .estimate_num{ color:#f08200; font-size:18px;}
+.estimate .estimate_num::after{ display:inline-block; vertical-align:middle; width:1px; height:18px; margin:0 15px; background:#d2d2d2; content:"";}
+.estimate .estimate_num input[type="text"]{ width:150px;}
+.estimate .flex_box:last-child::after{ display:none;}
+.pay_set + .hint{ padding:0 0 15px 125px;}
+/*popup*/
+.popup_input ul{ list-style:none;}
+.popup_input ul li{ display:inline-block; margin:0 0 15px 0;}
+.popup_input .give, .popup_input select{ flex:1 1 auto;}
+.popup_input .full{ display:block;}
+.popup_input .flex_set{ margin:0 0 15px 0;}
+.popup_input input[type="checkbox"] + label{ margin:0 0 10px 0;}
+.popup_input .flex_set span{ margin:0 5px;}
+.popup_input .flex_set .textInputNum{ width:100%;}
+
+
+/*-----購物車-----*/
+.shoppin_txt{ margin:0 0 30px 0; text-align:center; font-size:18px;}
+.shoppin_txt.fail{ color:#e60012;}
+.shoppin_txt::before{ display:block; width:130px; height:130px; margin:0 auto 20px auto; background-repeat:no-repeat; background-position:center center; background-size:100% auto; content:"";}
+.shoppin_txt.success::before{ background-image:url(../images/icon_success.png);}
+.shoppin_txt.fail::before{ background-image:url(../images/icon_fail.png);}
+.shoppin_txt.notice::before{ background-image:url(../images/icon_notice.png);}
+
+
+/*-----可增減表格-----*/
+.bg_green th{ position:relative; color:#fff; font-weight:bold; background-color:#008764;}
+.bg_green th::after{ position:absolute; right:0; top:50%; transform:translateY(-50%); display:inline-block; width:1px; height:20px; vertical-align:middle; background:#80c3b2; content:"";}
+.bg_green th:last-child::after{ display:none;}
+.table_add + .tableBox{ overflow:auto; padding:50px 0 0 0;}
+.table_add + .tableBox tr:nth-child(odd) > td{ background:#fff;}
+.table_add + .tableBox .table_data th ul li:first-child span{ margin:-6px 0 0 0;}
+.table_add + .tableBox .table_data ul li span{ display:block; font-size:14px;}
+/*增加項目*/
+.table_add{ position:absolute; right:0; top:0; width:200px; z-index:4;}
+.table_add + table{ clear:both;}
+.table_add .table_add_tit{ position:relative; height:35px; padding:0 0 0 15px; line-height:35px; color:#fff; text-align:left; background:#b5883d; box-sizing:border-box; cursor:pointer;}
+.table_add .table_add_tit::after{ position:absolute; right:0; top:0; width:35px; height:35px; background:url(../images/arrow_03.png) no-repeat center center; background-size:50%; content:"";}
+.table_add .table_add_tit:hover{ opacity:0.8;}
+.table_add .table_add_tit.show::after{ transform:rotate(180deg);}
+.table_add_list{ display:none; background-color:#fff; border:1px solid #c9c9c9; border-bottom:none;}
+.table_add_list h6{ padding:5px 15px; font-size:15px; color:#000; font-weight:normal; line-height:20px; text-align:center; background-color:#ececec; border-bottom:1px solid #c9c9c9;}
+.table_add_list ul{ padding:10px 15px 5px 15px; border-bottom:1px solid #c9c9c9; list-style:none;}
+.table_add_list ul li{ margin:0 0 5px 0;}
+.table_add_list ul li:last-child{ margin-bottom:0;}
+.table_add_list input[type="checkbox"] + label{ line-height:20px;}
+.table_add_list input[type="checkbox"] + label .icon{ width:20px; height:20px; background-color:#ececec; vertical-align:top; border:1px solid #c9c9c9; border-radius:0;}
+.table_add_list input[type="checkbox"]:checked + label .icon{ background-image:url(../images/icon_checkbox.png); background-repeat:no-repeat; background-size:100% auto;}
+.table_add .table_add_tit.show ~ .table_add_list{ display:block;}
+
+
+/*-----table_凍結_history_||_01_01-----*/
+.table_add + .table_fix {
+  overflow: visible;
+}
+.table_fix > .table_data > thead {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #fff;
+}
+.table_fix-tr {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  z-index: 3;
+}
+.table_fix-tr + .expand_box thead {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  z-index: 3;
+}
+
+
+.table_fix_ty1 > .table_data > thead {
+  top: 0;
+}
+.table_fix_ty1 .table_fix-tr {
+  top: 136px;
+}
+.table_fix_ty1 .table_fix-tr + .expand_box thead {
+  top: 217px;
+}
+
+.table_fix_ty2 > .table_data > thead {
+  height: 112px;
+  top: 0;
+}
+.table_fix_ty2 .table_fix-tr {
+  height: 81px;
+  top: 112px;
+}
+.table_fix_ty2 .table_fix-tr + .expand_box thead {
+  top: 193px;
+}
+
+
+/*-----月份選擇-----*/
+.month_opt .web{ overflow:hidden; display:flex; max-width:800px; margin:0 auto 20px auto; border:1px solid #008764; border-radius:50px;}
+.month_opt .web a{ flex:1 1 auto; height:40px; text-align:center; line-height:40px; color:#008764; font-size:15px; border-right:1px solid #008764;}
+.month_opt .web a:last-child{ border-right:none;}
+.month_opt .web a:hover, .month_opt .web a.on{ color:#fff; background-color:#008764;}
+.month_opt .mobile{ margin:0 0 20px 0; color:#008764; background-color:#fff; border:1px solid #008764;}
+
+
+/*-----無資料-----*/
+.noinfo{ margin:80px 0; text-align:center;}
+.noinfo::before{ display:inline-block; width:100px; height:100px; margin:0 0 10px 0; background:url(../images/icon_info.png) no-repeat center center; background-size:100% auto; content:"";}
+.noinfo p{ color:#aba41a; font-size:20px;}
+
+
+/*-----聲明-----*/
+.state{ margin:0 0 20px 0;}
+.state ul > li{ list-style:decimal inside; padding:0 0 0 18px; text-indent:-18px;}
+.state ol{ padding:0 0 0 20px; text-indent:0;}
+.state ol > li{ list-style:lower-alpha;}
+
+
+/*-----提醒-----*/
+.notice_top {
+  padding-top: 6px;
+}
+
+/*-----小圖示-----*/
+.notice_img {
+  color: #b5b5b5;
+}
+.notice_img span {
+  vertical-align: middle;
+}
+.notice_img img {
+  height: 1em;
+  vertical-align: middle;
+  padding: 0 4px;
+}
+
+
+@media screen and (max-width: 1023px) {
+  /*------給付方式-----*/
+  .order_time{ position:static; margin:0 0 15px 0;}
+}
+
+@media screen and (max-width: 767px) {
+  /*-----base-----*/
+  /*tit*/
+  .type_tit.fund{ height:auto; margin:0 0 20px 0; padding:10px 15px; line-height:normal;}
+  .type_tit.fund label, .type_tit.fund .fundInfo{ vertical-align:top;}
+  .type_tit.fund label{ margin:0 5px 0 0;}
+  .type_tit.fund .fundInfo{ margin:0;}
+  .type_tit.fund .fundInfo > div{ display:block; margin:0 0 5px 0;}
+  .type_tit.fund .fundInfo > div:last-child{ margin:0;}
+  .type_tit.fund .fundInfo > div::after{ display:none;}
+  /*btn*/
+  .btn_main.btn_download{ position:static; width:100%; margin:0 0 20px 0;}
+    
+  /*formboxList-輸入內容*/
+  .inner_II .formboxList input[type="text"], .inner_II .formboxList select{ width:100%; box-sizing:border-box;}
+  .inner_II .formbox.input .formbox_inner > .selectDate:first-child{ width:100%;}
+  .inner_II .formboxList_mid .textInputNum{ width:auto;}
+  .inner_II .listBox .formbox_title{ flex:0 0 auto;}
+  .inner_II span + .textInputNum{ min-width:auto;}
+    
+  /*multiple_choice-複選*/	
+  .multiple_choice a{ min-width:30%; margin:0 10px 10px 0;}
+  .multiple_choice a:nth-child(3n){ margin:0 0 10px 0;}
+
+  /*flex_set-組合*/
+  .flex_set .textInputNum{ flex:1 1 auto;}
+  .flex_set.flex_box{ margin:10px 0 0 0;}
+  .flex_set.flex_box .textInputNum{ width:30%;}
+
+    
+  /*-----我要下單-申購-----*/	
+  /*order_type-申購*/
+  .order_type.ot03{ display:block;}
+  .order_type.ot03 .order_box{ max-width:100%; margin:0 0 15px 0;}
+  .order_type.ot03 .formboxList li:last-child{ margin:0; padding:0; border:none;}
+  /*sum_set-扣款金額-*/
+  .sum_set{ display:block;}
+  .sum_set .sum_tit{ margin:0 0 10px 0;}
+  .sum_set .sum_box{ display:block;}
+  .sum_set .sum_cell{ margin:0 0 15px 0;}
+  .sum_set .sum_cell .textInputNum{ min-width:auto;}
+  .add_set span + .textInputNum{ min-width:auto;}
+  /*rate_list-手續費率*/
+  .inner_II ul.rate_list li{ text-align:right;}
+    
+  /*tableBox*/
+    
+  /*listBox*/
+  .listTit p{ margin:0;}
+    
+    
+  /*------投資行事曆-----*/
+  /*月份*/
+  .month_content{ position:relative; margin:20px 0 15px 0;}
+  .month_content .btn_pre, .month_content .btn_next{ position:absolute; left:0; top:50%; transform:translateY(-50%);}
+  .month_content .btn_next{ left:auto; right:0;}
+  .month_content .on{ margin:0 auto;}
+  /*日期*/
+  .day_content{ margin:0 0 15px 0;}
+  .day_content > ul > li{ height:40px; line-height:40px;}
+  .day_content .week_set{ background:#fff;}
+  .invest_calendar .day_content .week_set li{ color:#008864; font-weight:bold;}
+  .invest_calendar .day_content .week_set .end{ color:#f18b12; background:#fff;}
+  .day_content .week_set span{ display:none;}
+  .invest_calendar .day_content .day_set li{ height:40px; padding:0; text-align:center; line-height:40px; border:none; cursor:pointer;}
+  .day_content .day_set li.on{ background-color:#fff;}
+  .day_content .day_set li.on .day{ color:#f18b12;}
+  .day_content .day_set li.event{ background:#fff url(../images/icon_star.png) no-repeat center center; background-size:80% auto;}
+  .day_content .day_set .day{ margin:0; font-weight:normal;}
+  .day_content .day_set .event_txt{ display:none;}
+  /*mobile_event-小網內容*/
+  .mobile_event p{ margin:0 0 20px 0; text-align:right;}
+  .mobile_event p::before{ display:inline-block; width:15px; height:15px; margin:-4px 5px 0 0; vertical-align:middle; background:url(../images/icon_star.png) no-repeat center center; background-size:100% auto; content:"";}
+  .mobile_event .event_con{ padding:10px 15px; background:#eceddb;}
+  .mobile_event .event_date{ margin:0 0 5px 0; color:#008764; font-weight:bold;}
+  .mobile_event .event_con ul li{ margin:0 0 5px 0; list-style:none;}
+  .mobile_event .event_con ul li:last-child{ margin:0;}
+  .mobile_event .event_con ul li::before{ display:inline-block; width:5px; height:5px; margin:0 10px 0 0; vertical-align:middle; background:#f18b12; border-radius:50%; content:"";}
+    
+
+  /*------專屬顧問------*/
+  .adviser_info{ text-align:center;}
+  .adviser_info > div{ display:block;}
+  .adviser_info .img{ margin:0 auto 20px auto;}
+  .adviser_info .txt{ width:225px; margin:10px auto 0 auto; padding:0 25px 0 0; text-align:left; border-left:none; box-sizing:border-box;}
+  .adviser_info hr{ height:1px; background:#d2d2d2; border:none;}
+    
+
+
+    
+    
+  /*-----贖回/轉申購-----*/
+  /*fund_main*/
+  .fund_main, .fund_info, .fund_info.expand_box, .estimate, .pay_set{ display:block;}
+  .fund_main{ padding:0;}
+  .fund_name{ padding:10px 15px; border-right:none;}
+  .fund_name .fundDetail_num{ text-align:left;}
+  .fund_name .NumMoney{ color:#008764;}
+  .fund_info.expand_box{ display:none; padding:0 15px; background:#f2f2f2; border-top:solid 1px #d2d2d2; border-bottom:solid 1px #d2d2d2;}
+  .fund_info.expand_box .fundDetail_inner{ flex-wrap:wrap; width:100%; padding:15px 0; border-bottom:solid 1px #d2d2d2; border-right:none;}
+  .fund_info.expand_box .fundDetail_inner:last-child{ border:none;}
+  .fund_info.expand_box .tBig{ width:100%; text-align:right; font-size:15px;}
+  .fundBlock .fund_main .fundDetail li{ padding:0 15px;}
+  /*fund_iniput*/
+  .fund_input.expand_box, .fund_table{ padding:15px;}
+  .fund_input.expand_box ul:last-child li:last-child{ margin:0; padding:0; border:none;}
+  .estimate .estimate_num input[type="text"]{ width:100%; margin:0 0 10px 0;}
+  .estimate .estimate_num::after{ display:none;}
+  .pay_set{ text-align:right;}
+  .pay_set label{ width:100%; margin:0 0 10px 0;}
+  .pay_set input{ margin:0 0 10px 0;}
+  .pay_list .formbox.input .formbox_inner{ justify-content:flex-start; text-align:left;}
+  .pay_list .formbox.input .formbox_inner p{ margin:10px 0 0 0; text-align:right;}
+  .pay_list .formbox.input .formbox_inner input[type="text"], .pay_list .formbox.input .formbox_inner select{ margin:10px 0 0 0; border:solid 1px #d2d2d2;}
+  .fund_table .type_tit{ margin:0 0 15px 0;}
+  .fund_table .listBox{ margin:0 0 20px 0;}
+  .fund_table .listBox:last-child{ margin:0;}
+    
+    
+  /*-----月份選擇-----*/
+  .month_opt .web{ display:none;}
+
+  /*  */
+  .btn_set a {
+    display: inline-block;
+  }
+
+  /*-----提醒-----*/
+  .notice_top {
+    margin-bottom: 10px;
+  }
+  
+}
+
+
+/*-----for ie10 、ie11-----*/
+@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){
+.btn_expand{ transform:translateY(-30%);}
+}
