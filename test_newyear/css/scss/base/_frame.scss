@@ -1,0 +1,355 @@
+/*------------------------------------*\
+  天地
+\*------------------------------------*/
+
+/*------------------------------------*\
+  popup
+\*------------------------------------*/
+@import "_frame-popup";
+
+
+
+/*------------------------------------*\
+  天地框架
+\*------------------------------------*/
+// 頁面
+.page {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  @include screen-width($width-mobile) {
+    font-size: 1rem;
+    line-height: 1.45em;
+  }
+}
+.wrapper {
+  // padding-top: 77px;
+  background: #910F0F;
+  @include screen-width($width-mobile) {
+    // padding-top: 62px;
+  }
+}
+.pagesize {
+  margin: 0 auto;
+  max-width: ($pagesize + $pagesize-padding +$pagesize-padding);
+  padding-left: $pagesize-padding;
+  padding-right: $pagesize-padding;
+  @include screen-width($width-max) {
+    padding-left: 40px; padding-right: 40px;
+  }
+  @include screen-width($width-mid) { 
+    padding-left: 24px; padding-right: 24px;
+  }
+  @include screen-width($width-mobile) {
+    padding-left: 16px; padding-right: 16px;
+  }
+}
+// container
+.container {
+    position: relative;
+    background: url(../images/index-bg.png) top center no-repeat;
+    background-size: 100% auto;
+    &::before,&::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &::before {
+      background: url(../images/index-bg-deco-1.png) top center repeat-y;
+      background-size: 100% auto;
+    }
+    &::after {
+      background: url(../images/index-bg-deco-2.png) top center repeat-y;
+      background-size: 100% auto;
+    }
+    @include screen-width($width-mobile) {
+      background: none;
+      &::before,&::after {
+        content: none;
+      }
+    }
+}
+.js_containerAnimated {
+  &.container::before,
+  .kvArea .kvArea-deco.deco-1 {
+    animation: bg_ball infinite 5s linear;
+  }
+  &.container::after,
+  .kvArea .kvArea-deco.deco-2 {
+    animation: bg_ball infinite 5s linear;
+    animation-delay: 2.5s;
+  }
+}
+@keyframes bg_ball {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% { opacity: 0; }
+}
+
+/*------------------------------------*\
+  header
+\*------------------------------------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  .pagesize {
+    height: 98px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @include screen-width($width-mobile) {
+      height: 55px;
+      justify-content: flex-end;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+  h1 {
+    margin-right: 24px;
+    @include screen-width($width-large) {
+      margin-right: 16px;
+    }
+    @include screen-width($width-mobile) {
+      margin-right: 0;
+    }
+  }
+  .logo {
+    flex: 0 0 auto;
+    display: block;
+    width: 160px;
+    height: 48px;
+    background: url(../images/frame/logo-hamivideo.png) center left no-repeat;
+    background-size: 100% auto;
+    @include screen-width($width-mobile) {
+      width: 72px;
+      height: 36px;
+      background: url(../images/frame/logo-hamivideo-m.png) center left no-repeat;
+      background-size: 100% auto;
+    }
+  }
+  .link-log {
+    @extend .btn, .btn-m, .btn-primary;
+    flex: 0 0 auto;
+    margin: 0;
+    @include screen-width($width-large) {
+      min-width: 100px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    @include screen-width($width-mid) {
+      min-width: 58px;
+      padding: 8px 12px;
+      font-size: 1rem;
+      line-height: 1.5em;
+    }
+  }
+  @include screen-width($width-mobile) {
+    h1 {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.openmenu header,
+header.js_scroll {
+  @extend %shadow;
+  background-color: #910f0f;
+}
+
+.activeNav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  height: 66px;
+  margin-right: 24px;
+  text-align: right;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 66px;
+    background-color: #fff;
+  }
+  @include screen-width($width-mid) {
+    margin-right: 12px;
+  }
+  a {
+    @extend .fs-l;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 24px;
+    color: #fff;
+    @include screen-width($width-large) {
+      margin-right: 14px;
+    }
+    @include screen-width($width-mid) {
+      font-size: 18px;
+      margin-right: 12px;
+    }
+  }
+  &--menu {
+    @include screen-width($width-large) {
+      margin-right: 14px;
+    }
+    @include screen-width($width-mobile) {
+      display: none;
+    }
+  }
+  &--login {
+    flex: 0 0 auto;
+    margin-right: 0;
+    &::after {
+      content: none;
+    }
+    @include screen-width($width-mobile) {
+      a {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.pageMenu-btn {
+  display: none;
+}
+
+// mobile
+@include screen-width($width-mobile) {
+  // menu
+  .pageMenu-btnbox {
+    height: 40px;
+    margin-left: 16px;
+    padding : 8px 0 8px 15px;
+    border-left: solid 1px #fff;
+  }
+  .pageMenu-btn {
+    display: block;
+    position: static;
+    top: 16px;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/frame/header-pagemenu.svg) center center no-repeat;
+    background-size: 100% 100%;
+  }
+  #pageMenu {
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+  .page.openmenu #pageMenu {
+    top: 55px;
+    transition-delay: 0.2s;
+  }
+  .page.openmenu .js_scroll ~ #pageMenu {
+    transition-delay: 0s;
+  }
+  .pageMenu-inner {
+    background-color: #640000;
+  }
+  .pageMenu_nav {
+    padding: 0 16px;
+    color: #fff;
+    li {
+      border-bottom: solid 1px #910f0f;
+      &:nth-last-child(1) {
+        border: none;
+      }
+    }
+    a {
+      display: block;
+      padding: 8px;
+      text-align: center;
+      font-size: 1.125rem;
+      line-height: 1.45em;
+      font-weight: 700;
+    }
+  }
+}
+
+.logo,
+.pageMenu-btn {
+  span {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: transparent;
+  }
+}
+
+/*------------------------------------*\
+  footer
+\*------------------------------------*/
+footer {
+  display: flex;
+  padding: 68px 0;
+  font-family: 'Microsoft JhengHei','PingFang TC', Helvetica, arial, sans-serif;
+  background-color: #000;
+  @include screen-width($width-mobile) {
+    padding: 20px 0;
+  }
+  .pagesize {
+    max-width: 375px;
+    padding: 0 10px;
+    color: #888;
+    text-align: center;
+    @include screen-width($width-mobile) {
+      color: #fff;
+    }
+  }
+  a {
+    @include transition(color);
+    &:hover,
+    &:active {
+      color: #ccc;
+    }
+  }
+}
+.footer_link {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.footer_info {
+  display: block;
+  margin: 22px auto;
+  width: fit-content;
+  padding: 0 10px;
+  font-size: 0.75rem;
+  line-height: 1.5em;
+  border: solid 1px;
+  border-radius: 18px;
+  @include screen-width($width-mobile) {
+    margin: 13px auto;
+  }
+}
+.footer_copyright {
+  font-size: 0.75rem;
+}
+
+
+
+
+
+

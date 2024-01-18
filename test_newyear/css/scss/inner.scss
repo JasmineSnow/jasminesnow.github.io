@@ -1,0 +1,24 @@
+/*------------------------------------*\
+  必要CSS檔
+\*------------------------------------*/
+//external
+@import "external/_pagemenu";
+
+// base & reset
+@import "base/_reset";
+@import "base/_common";
+// 天地
+@import "base/_frame";
+
+/*------------------------------------*\
+  需要的部分樣式 放置於parts/
+\*------------------------------------*/
+// @import "parts/_btn";
+// @import "parts/_chip";
+
+
+// /*------------------------------------*\
+//   此頁樣式
+// \*------------------------------------*/
+@import "page/_slogan.scss";
+@import "page/_inner";
