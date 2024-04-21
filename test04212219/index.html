@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>鼎喆國際商務法律事務所</title>
   <!-- favicon-->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/frame/favicon.ico" type="image/x-icon">
   <meta property="og:type" content="website" />
   <meta property="og:title" content="鼎喆國際商務法律事務所" />
   <meta name="description" content="鼎喆是一家擁有整合30年人脈資源及豐富實戰力，有效提供全方位智慧解決之道，創造互利共贏的平台。">
@@ -17,9 +17,11 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="720" />
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="css/aos.css">
-  <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/aos.css"/>
+  <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/pagemenu.js"></script>
 </head>
 
 <body>
@@ -217,8 +219,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="groupTeam-button-prev"></div>
-                <div class="groupTeam-button-next"></div>
+                <div class="swiper-button swiper-button--prev"></div>
+                <div class="swiper-button swiper-button--next"></div>
               </div>
             </div>
           </div>
@@ -309,9 +311,47 @@
                       </div>
                     </a>
                   </div>
+                  <div class="swiper-slide">
+                    <a class="newsItem" href="#">
+                      <div class="newsItem-img">
+                        <img src="images/news/news-003.jpg">
+                      </div>
+                      <div class="newsItem-inner">
+                        <div class="newsItem-info">
+                          <p class="time">2024/04/01</p>
+                        </div>
+                        <div class="newsItem-text">
+                          <h3 class="title">歡迎美國SurgiBox共同創辦人暨董事長、執行長Dr. Mike HM Teodorescu蒞臨本所參訪</h3>
+                          <p class="text">
+                            在非常時期和特殊地區，手術環境的缺乏性對於患者生命安全帶來極大的威脅。缺乏適當的醫療環境、設施和專業人員會使得醫療行為變得困難甚至無法實施，從而增加傷亡的風險。在這些地區，如戰場或偏遠地區，手術的重要性更加突顯，它很可能成為挽救生命的唯一方式。
+                          </p>
+                        </div>
+                        <div class="newsItem-goto"><span>more</span></div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="newsItem" href="#">
+                      <div class="newsItem-img">
+                        <img src="images/news/news-003.jpg">
+                      </div>
+                      <div class="newsItem-inner">
+                        <div class="newsItem-info">
+                          <p class="time">2024/04/01</p>
+                        </div>
+                        <div class="newsItem-text">
+                          <h3 class="title">歡迎美國SurgiBox共同創辦人暨董事長、執行長Dr. Mike HM Teodorescu蒞臨本所參訪</h3>
+                          <p class="text">
+                            在非常時期和特殊地區，手術環境的缺乏性對於患者生命安全帶來極大的威脅。缺乏適當的醫療環境、設施和專業人員會使得醫療行為變得困難甚至無法實施，從而增加傷亡的風險。在這些地區，如戰場或偏遠地區，手術的重要性更加突顯，它很可能成為挽救生命的唯一方式。
+                          </p>
+                        </div>
+                        <div class="newsItem-goto"><span>more</span></div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-                <div class="news-button-prev"></div>
-                <div class="news-button-next"></div>
+                <div class="swiper-button swiper-button--prev"></div>
+                <div class="swiper-button swiper-button--next"></div>
               </div>
             </div>
           </div>
@@ -393,12 +433,13 @@
     </div>
   </nav>
   <!-- JS -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/pagemenu.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/aos.js"></script>
+  <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
   <script>
     (function(){
+      
+      AOS.init();
+      
       function scrollToArea(elem) {
         var headerH = $("header").outerHeight();
         var $body = window.opera ? document.compatMode == "CSS1Compat" ? $("html") : $("body") : $("html,body");
@@ -414,14 +455,13 @@
         scrollToArea(this);
       });
 
-      AOS.init();
       const groupSwiper = new Swiper('.groupTeam .swiper', {
         slidesPerView:1,
         slidesPerGroup: 1,
         spaceBetween: 20,
         navigation: {
-          nextEl: '.groupTeam-button-next',
-          prevEl: '.groupTeam-button-prev',
+          nextEl: '.groupTeam .swiper-button--next',
+          prevEl: '.groupTeam .swiper-button--prev',
         },
         breakpoints: {
           '600': {
@@ -442,8 +482,8 @@
         slidesPerView: 1,
         spaceBetween: 20,
         navigation: {
-          nextEl: '.news-button-next',
-          prevEl: '.news-button-prev',
+          nextEl: '.newsArea .swiper-button--next',
+          prevEl: '.newsArea .swiper-button--prev',
         },
         breakpoints: {
           '768': {

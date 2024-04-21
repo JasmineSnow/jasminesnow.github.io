@@ -16,6 +16,44 @@ $space-pd: 40px;
   }
 }
 
+
+
+// JS
+.swiper-button {
+  position: absolute;
+  right: 36px;
+  width: 52px;
+  height: 28px;
+  background: url(../images/index/arrow-slide.png);
+  background-size: 100% auto;
+  @include transition(background);
+  cursor: pointer;
+  &:hover, &:focus {
+    background: url(../images/index/arrow-slide-on.png);
+    background-size: 100% auto;
+  }
+  @include screen-width($screen-xl) {
+    right: 0;
+  }
+  @include screen-width($screen-mobile) {
+    width: 38px;
+    height: 20px;
+  }
+  &--prev {
+    transform: rotate(180deg);
+  }
+}
+.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: default;
+  &:hover, &:focus {
+    background: url(../images/index/arrow-slide.png);
+    background-size: 100% auto;
+  }
+}
+
+
+
 /*--------------------------*/
 // kvArea
 .kvArea {
@@ -394,6 +432,10 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
       font-size: 1rem;
       line-height: 28px;
     }
+    @include screen-width($screen-xs) {
+      font-size: 15px;
+      // line-height: 24px;
+    }
     &::after {
       content: "";
       display: block;
@@ -419,6 +461,9 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
       justify-content: flex-start;
       padding: 32px;
     }
+    @include screen-width($screen-xs) {
+      padding: 24px;
+    }
   }
   .icon {
     flex: 0 0 auto;
@@ -433,6 +478,11 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
       width: 50px;
       height: 50px;
     }
+    @include screen-width($screen-xs) {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
   }
   .title {
     font-size: 24px;
@@ -443,6 +493,9 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
     @include screen-width($screen-mobile) {
       font-size: 20px;
     }
+    @include screen-width($screen-xs) {
+      font-size: 18px;
+    }
   }
   .row--team {
     left: 24px;
@@ -451,6 +504,7 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
     }
     @include screen-width($screen-mobile) {
       left: 0;
+      transform: translate3d(0, 50px, 0);
     }
     &::after {
       background: url(../images/index/index-group-bg-1.png);
@@ -472,6 +526,7 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
     @include screen-width($screen-mobile) {
       right: 0;
       top: -24px;
+      transform: translate3d(0, 50px, 0);
     }
     &::after {
       background: url(../images/index/index-group-bg-2.png);
@@ -486,6 +541,8 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
     }
   }
 }
+
+
 
 .groupTeam {
   margin-bottom: -20px;
@@ -650,51 +707,21 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
       span { display: inline-block; }
     }
   }
-  &-button-next, &-button-prev {
-    position: absolute;
-    right: 36px;
-    width: 52px;
-    height: 28px;
-    background: url(../images/index/arrow-slide.png);
-    background-size: 100% auto;
-    @include transition(background);
-    cursor: pointer;
-    &:hover, &:focus {
-      background: url(../images/index/arrow-slide-on.png);
-      background-size: 100% auto;
-    }
-    @include screen-width($screen-xl) {
-      right: 0;
-    }
-    @include screen-width($screen-mobile) {
-      width: 38px;
-      height: 20px;
-    }
-  }
-  &-button-prev {
+  .swiper-button--prev {
     bottom: calc(50% + 12px);
-    transform: rotate(180deg);
     @include screen-width($screen-mobile) {
       right: calc(50% + 16px);
       top: auto;
       bottom: 0;
     }
   }
-  &-button-next {
+  .swiper-button--next {
     top: calc(50% + 12px);
     @include screen-width($screen-mobile) {
       right: auto;
       left: calc(50% + 16px);
       top: auto;
       bottom: 0;
-    }
-  }
-  .swiper-button-disabled {
-    opacity: 0.5;
-    cursor: default;
-    &:hover, &:focus {
-      background: url(../images/index/arrow-slide.png);
-      background-size: 100% auto;
     }
   }
 }
@@ -798,7 +825,7 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
 
 /*--------------------------*/
 .newsArea {
-  padding: 100px 0 40px;
+  padding: 100px 0 30px;
   @include screen-width($screen-mobile) {
     padding: calc(9.5vw + 20px) 0 30px;
   }
@@ -809,12 +836,27 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
       margin-bottom: 10px;
     }
   }
+  .swiper {
+    padding-bottom: 60px;
+    @include screen-width($screen-mobile) {
+      padding-bottom: 40px;
+    }
+  }
   .swiper-wrapper {
     align-items: stretch;
   }
   .swiper-slide {
     height: auto;
     align-self: stretch;
+  }
+  .swiper-button {
+    bottom: 0;
+  }
+  .swiper-button--prev {
+    right: calc(50% + 16px);
+  }
+  .swiper-button--next {
+    left: calc(50% + 16px);
   }
 }
 .tabBox {
@@ -828,6 +870,9 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
   @include screen-width($screen-s) {
     justify-content: space-around;
   }
+  @include screen-width($screen-xs) {
+    justify-content: space-between;
+  }
   a {
     display: block;
     position: relative;
@@ -837,6 +882,9 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
     @include screen-width($screen-mobile) {
       font-size: 20px;
       line-height: 40px;
+    }
+    @include screen-width($screen-xs) {
+      font-size: 18px;
     }
     &::after {
       content: "";
