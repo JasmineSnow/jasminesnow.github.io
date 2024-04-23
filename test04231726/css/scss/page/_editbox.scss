@@ -1,0 +1,39 @@
+/*------------------------------------*\
+  editbox
+\*------------------------------------*/
+
+
+.editbox {
+  font-size: 22px;
+  line-height: 40px;
+  @include screen-width($screen-mobile) {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  p {
+    margin-bottom: 24px;
+    @include screen-width($screen-mobile) {
+      margin-bottom: 18px;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  .img--row {
+    display: flex;
+    gap: 0 40px;
+    img {
+      flex: 1 1 auto;
+      max-width: 50%;
+    }
+    @include screen-width($screen-mobile) {
+      flex-direction: column;
+      gap: 20px 0;
+    }
+  }
+}
+
+
+
+
+
