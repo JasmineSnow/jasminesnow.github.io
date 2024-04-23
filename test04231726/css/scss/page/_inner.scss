@@ -381,7 +381,13 @@
   .memberHead-list > li {
     position: relative;
     padding-left: 1em;
+    font-size: 22px;
+    line-height: 32px;
     font-weight: 400;
+    @include screen-width($screen-mobile) {
+      font-size: 18px;
+      line-height: 30px;
+    }
     &::before {
       content: '‧';
       position: absolute;
