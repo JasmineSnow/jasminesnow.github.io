@@ -381,12 +381,13 @@
   .memberHead-list > li {
     position: relative;
     padding-left: 1em;
+    font-weight: 400;
     &::before {
       content: '‧';
       position: absolute;
       left: 0;
       top: 0;
-      color: $primary;
+      color: #a7978b;
     }
   }
 }
