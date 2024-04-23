@@ -275,7 +275,7 @@
     left: 60px;
     width: 316px;
     min-height: 316px;
-    padding: 72px 40px 40px;
+    padding: 60px 28px 40px 40px;
     color: #fff;
     background: $secondary;
     @extend %fs-subTit;
@@ -285,7 +285,7 @@
     @include screen-width($screen-lg) {
       width: 240px;
       min-height: 240px;
-      padding: 40px 32px 32px;
+      padding: 40px 24px 32px 32px;
       font-size: 24px;
     }
     @include screen-width($screen-mobile) {
@@ -367,7 +367,7 @@
     padding: 0 0 24px;
   }
   &-box {
-    margin-left: 313px;
+    margin-left: 314px;
     padding-left: 36px;
     border-left: solid 2px $secondary;
     @include screen-width($screen-lg) {
