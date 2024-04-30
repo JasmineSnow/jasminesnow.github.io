@@ -140,6 +140,21 @@
       padding-top: 18px;
       padding-bottom: 12px;
     }
+    
+    .subtitle {
+      margin-bottom: 24px;
+      font-size: 30px;
+      line-height: 1.6em;
+      font-weight: 700;
+      color: $primary-600;
+      @include screen-width($screen-lg) {
+        font-size: 24px;
+      }
+      @include screen-width($screen-mobile) {
+        margin-bottom: 16px;
+        line-height: 1.33em;
+      }
+    }
   }
   &-title {
     position: relative;
@@ -684,9 +699,6 @@ $newsTagColor: (
       opacity: 0.4;
     }
   }
-}
-.featureList {
-
 }
 
 .about-inner {

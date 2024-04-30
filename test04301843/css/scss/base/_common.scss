@@ -269,7 +269,7 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
 // 4大
 .featureArea {
   position: relative;
-  padding: 100px 0 80px;
+  padding: 100px 0 100px;
   color: #fff;
   background-color: $primary;
   @include screen-width($screen-mobile) {
@@ -317,7 +317,7 @@ $msgNotion-icon: ('wisdom', 'win', 'value', 'benefit', 'innovation', 'trust');
     gap: 40px 0;
   }
   li {
-    flex: 1 1 25%;
+    flex: 1 1 33.3%;
     text-align: justify;
   }
   .num {
