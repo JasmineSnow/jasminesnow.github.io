@@ -350,7 +350,6 @@
       }
     }
     .title {
-      font-weight: 700;
       @include screen-width($screen-mobile) {
         font-size: 18px;
         line-height: 30px;
@@ -359,7 +358,10 @@
         display: block;
       }
       .name {
+        display: block;
+        margin-bottom: 16px;
         font-size: 48px;
+        font-weight: 700;
         line-height: 1.3em;
         @include screen-width($screen-lg) {
           font-size: 36px;
