@@ -1,0 +1,10 @@
+@charset "UTF-8";
+// base & reset
+@import "base/_variables";
+@import "base/_reset";
+// 天地
+@import "base/_pagemenu";
+@import "base/_frame";
+@import "base/_common";
+// 頁面
+@import "page/_index";
