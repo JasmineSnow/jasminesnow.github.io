@@ -1,0 +1,101 @@
+@charset "UTF-8";
+// base & reset
+@import "base/_lang-en";
+
+
+
+/*------------------------------------*\
+  inner
+\*------------------------------------*/
+// about
+.about-inner {
+  text-align: justify;
+  @media all and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 2em;
+  }
+}
+
+
+
+// tabBox
+@media all and (min-width: 768px) {
+  .tabBox {
+    gap: 0 24px;
+    a {
+      font-size: 21px;
+      line-height: 2.5em;
+    }
+  }
+  #groupArea_4 .groupArea-title:after {
+    top: 150px;
+  }
+}
+
+@media all and (max-width: 1024px) and (min-width: 768px) {
+  .tabBox--group a {
+    font-size: 16px;
+    line-height: 2.25em;
+  }
+  .groupItem-text .title {
+    font-size: 24px;
+  }
+  .groupArea-list {
+    gap: 40px 30px;
+  }
+}
+
+
+
+// groupArea
+@media all and (min-width: 768px) {
+  .groupArea-title {
+    padding-right: 60px;
+    padding-left: 20px;
+    &:after {
+      left: 20px;
+    }
+    h3 {
+      width: 220px;
+      font-size: 30px;
+    }
+  }
+}
+@media all and (max-width: 1024px) and (min-width: 768px) {
+  .groupArea-title h3 {
+    width: 180px;
+    font-size: 28px;
+  }
+}
+@include screen-width($screen-mobile) {
+  .groupArea-title h3 {
+    font-size: 24px;
+    span {
+      display: inline-block;
+      margin-right: 0.4em;
+    }
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .memberHead-title {
+    font-size: 24px;
+    .title .name {
+      font-size: 40px;
+    }
+  }
+}
+@media all and (max-width: 1200px) and (min-width: 768px) {
+  .memberHead-title {
+    font-size: 18px;
+  }
+}
+@include screen-width($screen-mobile) {
+  .memberHead-title {
+    width: 220px;
+    .title {
+      font-size: 1rem;
+      line-height: 1.5em;
+    }
+  }
+}
