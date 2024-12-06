@@ -1,0 +1,873 @@
+/*------------------------------------*\
+  index頁
+\*------------------------------------*/
+
+
+// title
+.areaTitle {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #666;
+  text-align: center;
+  @include screen($width-mobile) {
+    font-size: 28px;
+  }
+  .word {
+    color: $color-main;
+  }
+}
+
+
+
+/*------------------------------------*\
+  KV
+\*------------------------------------*/
+.indexKv {
+  position: relative;
+  &-bg--side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    @include screen($width-mid) {
+      display: none;
+    }
+  }
+  &-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    border-bottom-left-radius: 80px;
+    @include screen($width-mid) {
+      width: 100%;
+      border-bottom-left-radius: 50px;
+    }
+  }
+  &-area {
+    @extend .pagesize;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0 60px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @include screen($width-xl) {
+      gap: 0 40px;
+    }
+    @include screen($width-mid) {
+      display: block;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+    @include screen($width-mobile) {
+      padding: 0;
+    }
+  }
+  &-slide {
+    flex: 1 1 auto;
+    position: relative;
+    width: 800px;
+    max-width: 60%;
+    @include screen($width-mid) {
+      max-width: 100%;
+      margin: 0 auto 40px;
+    }
+    @include screen($width-mobile) {
+      margin: 0;
+    }
+  }
+  &-inner {
+    position: relative;
+    z-index: 2;
+    @include screen($width-mid) {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    @include screen($width-mobile) {
+      padding: 40px 20px;
+    }
+  }
+  .kvBn {
+    @extend .imgbox;
+    @include screen($width-mobile) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.indexKv {
+  .swiper {
+    overflow-y: hidden;
+    border-radius: 40px;
+    box-shadow: -4px 10px 20px 6px rgba(100,100,100,0.05);
+    @include screen($width-mobile) {
+      border-radius: 0;
+    }
+  }
+  .swiper-slide {
+    overflow: hidden;
+  }
+  &-slide-nav {
+    @extend .slideNav;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: -25px;
+    padding: 13px 8px;
+    background: #fff;
+    border-radius: 25px;
+    transform: translateX(-50%);
+    box-shadow: -2px 8px 20px 0 rgba(0,0,0,0.1);
+    @include screen($width-mobile) {
+      left: auto;
+      right: 0;
+      transform: translateX(0);
+      border-radius: 25px 0 0 25px;
+    }
+  }
+  .swiper-pagination {
+    font-size: 14px;
+    color: #939393;
+  }
+  .swiper-pagination-current {
+    color: $text-dark;
+  }
+  .swiper-button-next, 
+  .swiper-button-prev {
+    position: static;
+    width: 24px;
+    height: 24px;
+  }
+}
+// search
+.indexKv-search {
+  flex: 0 0 auto;
+  margin-bottom: 24px;
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: $color-main;
+    margin-bottom: 18px;
+  }
+  .inputSearch {
+    display: flex;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 0 30px 30px 30px;
+    box-shadow: 0 3px 0 0 rgba(0,0,0,0.1);
+    @include screen($width-mobile) {
+      padding-right: 10px;
+      box-shadow: 0 5px 0 0 rgba(0,0,0,0.1);
+    }
+  }
+  input {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    color: $text-dark;
+    padding: 0 24px;
+    @include screen($width-mobile) {
+      height: 50px;
+      line-height: 50px;
+    }
+  }
+  .btn {
+    flex: 0 0 auto;
+    display: block;
+    min-width: 0;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background: url(../images/index/inputSearch-btn.png) center center no-repeat;
+    background-size: 50% 50%;
+    @include screen($width-mobile) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+// search tag
+.searchTag {
+  flex: 0 0 auto;
+  font-weight: 500;
+  padding: 5px 20px;
+  background-color: #fff;
+  border: solid 2px $color-gray;
+  border-radius: 20px;
+  transition: 0.2s;
+  @include screen($width-mobile) {
+    padding: 4px 18px;
+  }
+  &:hover, &:focus {
+    color: #fff;
+    background-color: $color-main;
+    border-color: $color-main;
+  }
+  &--pin {
+    position: relative;
+    color: $color-main;
+    padding-right: 30px;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -5px;
+      right: -7px;
+      width: 30px;
+      height: 35px;
+      background: url(../images/index/searchTag-pin.png) right top no-repeat;
+      background-size: contain;
+      transition: top 0.2s;
+    }
+    &:hover::after, &:focus::after {
+      top: 7px;
+    }
+    @include screen($width-mobile) {
+      padding-right: 22px;
+    }
+  }
+  &-box {
+    min-height: 134px;
+    margin-bottom: 10px;
+    @include screen($width-mid) {
+      min-height: auto;
+      margin-bottom: 40px;
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px 10px;
+    @include screen($width-mobile) {
+      gap: 10px 5px;
+    }
+  }
+}
+
+// appicon
+.appicon-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  @include screen($width-xl) {
+    gap: 16px;
+  }
+  @include screen($width-mobile) {
+    gap: 16px 2px;
+  }
+}
+.appicon-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  @include screen($width-mid) {
+  }
+  .appicon-img {
+    flex: 0 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 120px;
+    padding-top: 33.2%;
+    margin-right: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 2px 8px 20px 0 rgba(0,0,0,0.1);
+    @include screen($width-xl) {
+      max-width: 80px;
+      height: 60px;
+      padding: 0;
+      margin-right: 10px;
+    }
+    @include screen($width-mobile) {
+      margin-right: 4px;
+    }
+    @include screen($width-xs) {
+      max-width: 70px;
+      height: 48px;
+    }
+  }
+  img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+    object-fit: cover;
+    @include transition(transform);
+  }
+  .name {
+    display: block;
+    @include screen($width-mid) {
+    }
+    @include screen($width-xs) {
+    }
+  }
+  .name {
+    font-size: 18px;
+    font-weight: 500;
+    color: $text-dark;
+    @include transition(color);
+    @include screen($width-large) {
+      font-size: 16px;
+    }
+    @include screen($width-mid) {
+      padding: 0;
+      margin: 0;
+    }
+    @include screen($width-mobile) {
+      font-size: 15px;
+    }
+    @include screen($width-xs) {
+    }
+  }
+  // .text {
+  //   flex: 1 1 auto;
+  //   color: #666;
+  //   line-height: 22px;
+  //   @include screen($width-xl) {
+  //     font-size: 15px;
+  //   }
+  //   @include screen($width-mid) {
+  //     font-size: 13px;
+  //     line-height: 18px;
+  //   }
+  //   @include screen($width-xs) {
+  //     font-size: 14px;
+  //   }
+  // }
+  // .txt {
+  //   display: block;
+  // }
+  
+  @include web-only {
+    &:hover, &:focus {
+      img {
+        transform: scale(1.05);
+      }
+      .name {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+  indexNav
+\*------------------------------------*/
+.indexNav {
+  @extend .pagesize;
+  padding-top: 100px;
+  padding-bottom: 105px;
+  @include screen($width-mobile) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @include screen($width-xs) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &-inner {
+    position: relative;
+  }
+  &-item {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: $text-gray;
+    @include transition(color);
+    &:hover, &:focus {
+      color: $color-main;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -1px;
+      top: calc(50% - 25px);
+      width: 1px;
+      height: 50px;
+      border-right: dotted 2px #bbb;
+      @include screen($width-mobile) {
+        content: none;
+      }
+    }
+    img {
+      max-width: 100px;
+      margin: 0 auto 24px;
+      @include transition(transform);
+    }
+    span {
+      display: block;
+    }
+    @include web-only {
+      &:hover, &:focus {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+    @include screen($width-mobile) {
+      padding: 36px 0;
+    }
+  }
+  .swiper {
+    margin: 0 80px;
+    @include screen($width-mid) {
+      margin: 0 40px;
+    }
+    @include screen($width-mobile) {
+      margin: 0 30px;
+    }
+  }
+  .swiper-wrapper {
+    // @include web-only {
+    //   justify-content: center;
+    // }
+  }
+  .swiper-slide {
+    width: auto;
+    @include web-only {
+      width: 170px;
+    }
+  }
+  .swiper-slide:nth-last-child(1) .indexNav-item::after {
+    content: none;
+  }
+  .swiper-button-prev {
+    left: 34px;
+    @include screen($width-mid) {
+      left: 0;
+    }
+  }
+  .swiper-button-next {
+    right: 34px;
+    @include screen($width-mid) {
+      right: 0;
+    }
+  }
+  @include screen($width-mobile) {    
+    .swiper-wrapper {
+      height: 346px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-size: auto 20px;
+    }
+  }
+}
+
+
+/*------------------------------------*\
+  newsAdArea
+\*------------------------------------*/
+.newsAdArea {
+  padding: 100px 0;
+  background-color: #fbfbfb;
+  @include screen($width-mid) {
+    padding: 80px 0;
+  }
+  @include screen($width-mobile) {
+    padding: 60px 0;
+  }
+  .pagesize {
+    display: flex;
+    gap: 0 50px;
+    @include screen($width-mid) {
+      display: block;
+    }
+  }
+}
+// news
+.indexNews {
+  flex: 1 1 auto;
+  max-width: calc(100% - 520px);
+  @include screen($width-mid) {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  @include screen($width-mobile) {
+    margin-bottom: 18px;
+  }
+  .indexNews {
+    &-title {
+      display: flex;
+      border-bottom: solid 1px #ddd;
+      margin-bottom: 18px;
+    }
+  }
+  .tabNav {
+    flex: 1 1 auto;
+    max-width: calc(100% - 40px);
+    a {
+      display: block;
+      position: relative;
+      font-size: 1.25em;
+      line-height: 1.5em;
+      white-space: nowrap;
+      color: #999;
+      padding: 15px 20px;
+      @include transition(color);
+      @include screen($width-mobile) {
+        padding: 12px 10px;
+      }
+      &:hover, &:focus {
+        color: $color-main;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: transparent;
+        @include transition(background-color);
+      }
+      &.on {
+        font-weight: 500;
+        color: $color-main;
+        &::after {
+          background-color: $color-main;
+        }
+      }
+    }
+    .swiper {
+      position: relative;
+      padding-right: 40px;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(to right, rgba(251,251,251,0) 0%, rgba(251,251,251,1) 100%);
+      }
+    }
+    .swiper-slide {
+      width: auto;
+    }
+  }
+  .btn-more {
+    flex: 0 0 auto;
+    height: 60px;
+    width: 40px;
+    background: url(../images/index/index-more.png) center center no-repeat;
+    background-size: 30px;
+    @include transition(opacity);
+    &:hover, &:focus {
+      opacity: 0.75;
+    }
+    @include screen($width-mobile) {
+      height: 54px;
+    }
+  }
+}
+
+.newsList {
+  list-style: none;
+  li {
+    border-bottom: solid 1px #ddd;
+    @extend %last-no-border;
+  }
+  a {
+    display: flex;
+    gap: 0 10px;
+    padding: 20px 0;
+    &:hover, &:focus {
+      color: $color-main;
+    }
+  }
+  .chip {
+    flex: 0 0 auto;
+    min-width: 76px;
+    background-color: #fff;
+  }
+  .text {
+    flex: 1 1 auto;
+    font-size: 1.125em;
+    overflow: hidden; text-overflow : ellipsis; white-space : nowrap;
+  }
+  .time {
+    color: #999;
+  }
+  @include screen($width-mobile) {
+    a {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 13px 0 10px;
+    }
+    .chip {
+      order: 1;
+    }
+    .time {
+      order: 2;
+    }
+    .text {
+      flex: 0 0 auto;
+      width: 100%;
+      order: 3;
+      padding-top: 10px;
+    }
+  }
+}
+// ad
+.newsAd {
+  &-box {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+    width: 470px;
+    @include screen($width-mid) {
+      flex-direction: row;
+      gap: 0 40px;
+      width: 100%;
+    }
+    @include screen($width-mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 18px 0;
+    }
+  }
+  &-item {
+    display: block;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+
+/*------------------------------------*\
+  客服
+\*------------------------------------*/
+.indexCs {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 0;
+  @include screen($width-mid) {
+    padding: 100px 0 130px;
+  }
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  &::before {
+    top: 180px;
+    right: calc(50% + 370px);
+    width: 362px;
+    height: 372px;
+    background: url(../images/index/indexCs-deco-1.svg) right top no-repeat;
+    background-size: contain;
+    transform-origin: top right;
+    animation: moving01 15s linear infinite;
+    @include screen($width-mobile) {
+      width: 220px;
+      height: 225px;
+      top: auto;
+      bottom: 0;
+      right: auto;
+      left: -35px;
+    }
+  }
+  &::after {
+    top: 34px;
+    left: calc(50% + 280px);
+    width: 457px;
+    height: 434px;
+    background: url(../images/index/indexCs-deco-2.svg) left bottom no-repeat;
+    background-size: contain;
+    transform-origin: center center;
+    animation: moving01 15s linear infinite;
+    @include screen($width-mobile) {
+      top: 20px;
+      width: 300px;
+      height: 280px;
+      left: auto;
+      right: -140px;
+    }
+  }
+  &-inner {
+    @extend .pagesize;
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+  }
+  &-box {
+    padding: 60px 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 3px 9px 20px 6px rgba(100,100,100,0.05);
+    @include screen($width-mobile) {
+      padding: 40px 8px;
+    }
+  }
+  .areaTitle {
+    margin-bottom: 40px;
+  }
+}
+@keyframes moving01 {
+  0% {
+    transform: translate(0,0) rotate(0) scale(1);
+  }
+  25% {
+    transform: translate(10px,10px) rotate(10deg) scale(0.95);
+  }
+  50% {
+    transform: translate(20px,5px) rotate(0) scale(0.95);
+  }
+  75% {
+    transform: translate(5px,10px) rotate(-10deg) scale(1);
+  }
+  100% {
+    transform: translate(0,0) rotate(0) scale(1);
+  }
+}
+
+$indexContact-icon: ('phone', 'mail', 'msg', 'time');
+@each $name in $indexContact-icon {
+  .indexContact-item.icon--#{$name} {
+    background: url(../images/index/indexContact-#{$name}.png) center top no-repeat;
+    background-size: 45px auto;
+  }
+}
+.indexContact {
+  display: flex;
+  gap: 0 20px;
+  &-item {
+    flex: 1 1 auto;
+    text-align: center;
+    padding-top: 60px;
+  }
+  &-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  &-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: $text-dark;
+    word-break: break-all;
+  }
+  .word {
+    display: inline-block;
+  }
+  @include screen($width-mobile) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 8px;
+    &-name {
+      font-size: 20px;
+    }
+    &-text {
+      font-size: 15px;
+      &.mail {
+        font-size: 16px;
+      }
+      &.phone {
+        font-size: 18px;
+      }
+    }
+  }
+  @include screen($width-xs) {
+    &-text {
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+/*------------------------------------*\
+  客服
+\*------------------------------------*/
+.indexEvent {
+  @include screen($width-mobile) {
+    margin-top: -30px;
+  }
+  .areaTitle {
+    margin-bottom: 30px;
+  }
+  .tabNav {
+    margin-bottom: 40px;
+    @include screen($width-mobile) {
+      margin-left: -20px;
+      margin-right: -20px;
+      .swiper {
+        padding: 0 20px;
+      }
+    }
+    &-btn {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      color: $text-dark;
+      padding: 10px 10px;
+      border-bottom: solid 4px transparent;
+      transition: color 0.2s, border-color 0.2s;
+      &:hover, &:focus {
+        color: $color-main;
+      }
+      &.on {
+        color: $color-main;
+        border-color: $color-main;
+      }
+      @include screen($width-mobile) {
+        padding: 10px 0;
+      }
+    }
+    // .swiper-wrapper {
+    //   justify-content: center;
+    //   @include screen($width-mobile) {
+    //     justify-content: flex-start;
+    //   }
+    // }
+    .swiper-slide {
+      width: auto;
+    }
+  }
+}
+.indexEvent-slide {
+  @extend .eventLink-slide;
+}
+
+
+/*------------------------------------*\
+  活動
+\*------------------------------------*/
+// .indexEvent {
+//   padding-bottom: 150px;
+//   @include screen($width-mid) {
+//     padding-bottom: 100px;
+//   }
+// }
+
+
+
+
+
+

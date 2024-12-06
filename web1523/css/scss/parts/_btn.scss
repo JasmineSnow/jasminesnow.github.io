@@ -1,0 +1,226 @@
+/*------------------------------------*\
+  _btn.scss
+  ___
+  按鈕
+\*------------------------------------*/
+
+/*------------------------------------*\
+  按鈕顏色
+\*------------------------------------*/
+@each $name, $value in $btn-theme {
+  $class: map-get($value, class);
+  $color: map-get($value, color);
+  $bg: map-get($value, bg);
+  $border: map-get($value, border);
+  $bg-hover: map-get($value, bg-hover);
+  .btn--#{$class} {
+    color: $color;
+    background: $bg;
+    border: solid 2px;
+    border-color: $border;
+  }
+};
+
+
+/*------------------------------------*\
+  btn
+\*------------------------------------*/
+.btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 20px;
+  &.tL { justify-content: flex-start; }
+  &.tR { justify-content: flex-end; }
+  &.gap-s {
+    gap: 10px;
+  }
+  // &.d-block {
+  //   display: block;
+  //   .btn {
+  //     display: block;
+  //     margin-right: 0;
+  //   }
+  // }
+  @include screen($width-mobile) {
+    &.m-d-block {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px 0;
+      .btn {
+        max-width: 100%;
+      }
+    }
+    &.m-tL { justify-content: flex-start; }
+  }
+}
+
+.btn {
+  @extend %btnHover;
+  display: inline-block;
+  text-align: center;
+  min-width: 170px;
+  line-height: 28px;
+  padding: 4px 20px;
+  border-radius: 20px;
+  &.w-auto {
+    min-width: 0;
+  }
+  &.w-xs { min-width: 100px; letter-spacing: 0; }
+  &.w-s { min-width: 120px; }
+  &.w-m { min-width: 140px; }
+  &.w-l { min-width: 200px; }
+  @include screen($width-mobile) {
+    &.m-w-s { min-width: 120px; }
+  }
+}
+
+/*------------------------------------*\
+  按鈕尺寸
+  height 40 50
+\*------------------------------------*/
+.btn-chk { //50
+  min-width: 140px;
+  font-size: 18px;
+  padding: 9px 20px;
+  border-radius: 30px;
+  &-wide {
+    @extend .btn-chk;
+    min-width: 200px;
+  }
+  @include screen($width-mobile) {
+    &.m-btn-m {
+      font-size: 1rem;
+      padding: 4px 20px;
+    }
+  }
+}
+
+.btn-s {
+  font-size: 14px;
+  padding: 2px;
+  padding-bottom: 2px;
+}
+.btn-text {
+  display: inline-block;
+  min-width: 0;
+  padding: 0 8px;
+  border: solid 1px;
+  border-radius: 6px;
+}
+
+
+// 有icon
+.btn-iconText {
+  min-width: 120px;
+  padding-left: 20px;
+  padding-right: 10px;
+  .text {
+    display: inline-block;
+    padding-right: 30px;
+  }
+}
+$btn-iconText: (
+  'download', 'more',
+);
+@each $name in $btn-iconText {
+  .btn-iconText .icon-#{$name} {
+    background: url(../images/btn-icon-#{$name}.png) right center no-repeat;
+    background-size: auto 30px;
+  }
+}
+.btn--line-main {
+  &.btn-iconText .icon-more {
+    background: url(../images/btn-icon-more-main.png) right center no-repeat;
+    background-size: auto 30px;
+  }
+}
+
+
+
+
+$btn-iconSmall: (
+  "share": $color-main,
+  "file": #c93,
+  "word": #a72d92,
+  "pdf": #12527e,
+);
+@each $name, $color in $btn-iconSmall {
+  .btn-icon.icon-#{$name} {
+    color: $color;
+    .icon {
+      background: url(../images/btn-icon-#{$name}.png) right -1px center no-repeat;
+      background-size: auto 30px;
+    }
+  }
+}
+
+.btn-icon {
+  @extend .btn-text;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  min-width: 30px;
+  height: 30px;
+  padding: 0;
+  .icon {
+    display: inline-block;
+    height: 28px;
+    min-width: 28px;
+  }
+  .text {
+    margin: 0 6px 0 12px;
+    padding-right: 30px;
+  }
+}
+
+
+
+/*------------------------------------*\
+  action link
+\*------------------------------------*/
+.actlink{
+  @extend %btnHover;
+  display: inline-block;
+}
+
+.actlink-clear {
+  line-height: 1.5em;
+  padding-left: 1.5em;
+  background: url(../images/actlink-clear.png) left center no-repeat;
+  background-size: 1.5em auto;
+}
+
+.actlink-back {
+  line-height: 1.5em;
+  padding-left: 1.5em;
+  background: url(../images/actlink-back.png) left center no-repeat;
+  background-size: 1.5em auto;
+}
+
+.actlink-goto {
+  font-size: 18px;
+  color: $color-main;
+  padding-right: calc(1.5rem + 10px);
+  background: url(../images/actlink-goto.png) right center no-repeat;
+  background-size: 1.5rem auto;
+  &.fs-xxl {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.actlink-goout {
+  padding-right: calc(1.5em);
+  background: url(../images/actlink-goout.png) right 0.25em center no-repeat;
+  background-size: 1em auto;
+}
+
+.actlink-refresh {
+  color: $color-main;
+  line-height: 1.5em;
+  padding-left: 1.5em;
+  background: url(../images/actlink-refresh.png) left center no-repeat;
+  background-size: 1.5em auto;
+}
