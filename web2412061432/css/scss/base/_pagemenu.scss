@@ -1,0 +1,267 @@
+/* --------------------------------------- */
+// 變數
+// 牽涉較多的變數建議從這邊修改
+// 其餘CSS可直接覆蓋
+/* --------------------------------------- */
+// menu寬度
+$pagemenu_width: 100%;
+
+// 開關動畫的transition time
+%pagemenu_transition-time {
+  transition: 0.2s;
+}
+
+/* --------------------------------------- */
+/* page */
+/* --------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  @extend %pagemenu_transition-time;
+  z-index: 2;
+}
+.page_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  // background: rgba(0, 0, 0, 0.3);
+  z-index: -2;
+}
+.openmenu {
+  position: fixed;
+}
+.page.openmenu .page_cover {
+  z-index: 1001;
+  top: 60px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter:blur(24px);
+  transition: background-color 0.2s;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+/* --------------------------------------- */
+/* menu */
+/* --------------------------------------- */
+#pageMenu {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  opacity: 0;
+  width: 0;
+  max-height: calc(100vh - 50px);
+  background: #fff;
+  @extend %pagemenu_transition-time;
+}
+// .page--hasTopAd ~ #pageMenu {
+//   top: 110px;
+//   max-height: calc(100vh - 110px);
+// }
+
+//menu長出
+.openmenu ~ #pageMenu {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: none;
+  overflow-y: auto;
+}
+.openmenu ~ #pageMenu {
+  display: block;
+}
+.show-up.openmenu {
+  
+}
+
+
+
+/* menu_按鈕 */
+.pageMenu-btn {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: $bg-second;
+  background-size: 24px;
+  outline: none;
+  border: none;
+  @extend %pagemenu_transition-time;
+}
+$line-width: 24px;
+$line-height: 3px;
+$line-space: 5px;
+.pageMenu-btn .line {
+  display: block;
+  position: absolute;
+  left: calc(50% - $line-width / 2);
+  width: $line-width;
+  height: $line-height;
+  background-color: $color-main;
+  border-radius: 2px;
+  @extend %pagemenu_transition-time;
+}
+.pageMenu-btn .line01 {
+  top: calc(50% - $line-height * 1.5 - $line-space);
+}
+.pageMenu-btn .line02 {
+  top: calc(50% - $line-height / 2);
+}
+.pageMenu-btn .line03 {
+  top: calc(50% + $line-height / 2 + $line-space);
+}
+.openmenu .pageMenu-btn {
+  left: -50px;
+}
+
+// close
+.pageMenu-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  width: 50px;
+  height: 50px;
+  background: url(../images/frame/header-close.png) center center no-repeat;
+  background-size: 20px auto;
+  @extend %pagemenu_transition-time;
+}
+.openmenu .pageMenu-close {
+  z-index: 2;
+}
+
+
+/* --------------------------------------- */
+.pageMenu-nav {
+  display: flex;
+  gap: 0 12px;
+  padding: 0 20px;
+  background-color: $bg-main;
+  @include screen($width-small) {
+    gap: 0 6px;
+  }
+  @include screen($width-xs) {
+    gap: 0 3px;
+    padding: 0 12px;
+  }
+  a {
+    flex: 1 1 auto;
+    display: block;
+    height: 56px;
+    line-height: 56px;
+    font-size: 18px;
+    letter-spacing: 0;
+    text-align: center;
+    border-bottom: solid 4px transparent;
+    @include screen($width-xs) {
+      font-size: 17px;
+    }
+    &.open {
+      font-weight: 500;
+      color: $color-main;
+      border-bottom-color: $color-main;
+    }
+  }
+}
+
+
+/* menu_清單 */
+.pageMenu-list {
+  list-style: none;
+  & > li {
+    border-bottom: solid 1px #ddd;
+  }
+  a {
+    display: block;
+    position: relative;
+    z-index: 2;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $text-dark;
+    padding: 0 20px;
+    text-decoration: none;
+    &.open {
+      color: $color-main;
+    }
+  }
+  .list-sub {
+    background-color: $bg-second;
+    a {
+      height: auto;
+      font-size: 17px;
+      line-height: 30px;
+      font-weight: 400;
+      color: #686868;
+      padding: 5px 20px;
+      border-bottom: none;
+    }
+  }
+}
+
+
+/* --------------------------------------- */
+//第二層選單
+/* --------------------------------------- */
+.pageMenu-list .hasSub {
+  position: relative;
+  // button {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   width: 50px;
+  //   height: 50px;
+  //   cursor: pointer;
+  //   outline: none;
+  //   border: none;
+  //   @extend %pagemenu_transition-time;
+  // }
+  .hasSub-btn {
+    background: url(../images/frame/pagemenu-arrow.png) right 20px center no-repeat;
+    background-size: auto 20px;
+  }
+  &.open {
+    .hasSub-btn {
+      position: relative;
+      color: $color-main;
+      background: url(../images/frame/pagemenu-arrow-open.png) right 20px center no-repeat;
+      background-size: auto 20px;
+      box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 48px;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 12px 10px 0 10px;
+        border-color: #fff transparent transparent transparent;
+      }
+    }
+    .list-sub {
+      padding: 10px 0;
+    }
+  }
+}

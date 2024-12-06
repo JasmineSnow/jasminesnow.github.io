@@ -1,0 +1,34 @@
+/*------------------------------------*\
+  必要CSS檔
+  ---
+  如果SASS編譯出現子資料夾的檔案，請檢查設定
+  "savePath": "~/../../css" //輸出資料夾
+\*------------------------------------*/
+// base & reset
+@import "base/_variables";
+@import "base/_reset";
+@import "base/_common";
+@import "base/_pagemenu";
+// 天地
+@import "base/_frame";
+
+/*------------------------------------*\
+  需要的部分樣式 放置於parts/
+\*------------------------------------*/
+@import "parts/_btn";
+@import "parts/_chip";
+@import "parts/_input";
+@import "parts/_table";
+@import "parts/_calendar";
+
+
+/*------------------------------------*\
+  此頁樣式
+\*------------------------------------*/
+@import "page/_inner";
+
+
+/*------------------------------------*\
+  編輯器
+\*------------------------------------*/
+@import "parts/_editbox";
