@@ -801,6 +801,7 @@
     right: 5px;
   }
   @include screen($width-mobile) {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -810,6 +811,7 @@
     width: 100%;
     padding: 60px 20px 40px;
     &.open {
+      display: block;
       z-index: 1000;
     }
     
