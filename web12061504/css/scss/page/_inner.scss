@@ -566,6 +566,7 @@
 }
 
 .innerContent {
+  position: relative;
   overflow-x: hidden;
   margin-top: -190px;
   @include screen($width-mobile) {
