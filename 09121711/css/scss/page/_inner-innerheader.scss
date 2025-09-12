@@ -341,8 +341,7 @@
     &.open {
       display: block;
       z-index: 1000;
-      // -webkit-transform: translateZ(1px);
-      // -webkit-backface-visibility: hidden; fail
+      -webkit-transform: translateZ(1px);
     }
     
     &::before {
@@ -364,8 +363,6 @@
       background: #fff;
       overflow-y: auto;
       border-radius: 20px;
-      -webkit-transform: translateZ(1px);
-      -webkit-backface-visibility: hidden;
     }
     .nav-inner {
       padding: 0;

@@ -26,9 +26,9 @@ body {
 html {
   /*safari內網頁的字體不會無緣無故變大*/
   -webkit-text-size-adjust: 100%;
-  /*safari內網頁滑動起來不會卡卡的*/
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
+  // /*safari內網頁滑動起來不會卡卡的*/
+  // -webkit-overflow-scrolling: touch;
+  // overflow-scrolling: touch;
 }
 a {
   color: inherit;
