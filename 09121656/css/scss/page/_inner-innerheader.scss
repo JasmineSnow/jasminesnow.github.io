@@ -341,8 +341,8 @@
     &.open {
       display: block;
       z-index: 1000;
-      // -webkit-transform: translateZ(1px);
-      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(1px);
+      // -webkit-backface-visibility: hidden; fail
     }
     
     &::before {
