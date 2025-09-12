@@ -1,0 +1,89 @@
+/*------------------------------------*\
+  reset
+\*------------------------------------*/
+body, div, h1, h2, h3, h4, h5, h6, form, input, select, textarea, label, p, blockquote, th, td, iframe, button, a, header, footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+  word-wrap:break-word;
+}
+body {
+  // font: 16px/150% 'Noto Sans', 'Noto Sans TC', 'Helvetica Neue', Helvetica, '微軟正黑體', sans-serif;
+  font-size: 16px;
+  // line-height: 1.5em;
+  font-family: 'Noto Sans', 'Noto Sans TC', 'Helvetica Neue', Helvetica, '微軟正黑體', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: $text-color;
+  background: #fff;
+}
+// h1, h2, h3, h4, h5, h6 {
+//   font-size: 1rem;
+// }
+html {
+  /*safari內網頁的字體不會無緣無故變大*/
+  -webkit-text-size-adjust: 100%;
+  // /*safari內網頁滑動起來不會卡卡的*/
+  // -webkit-overflow-scrolling: touch;
+  // overflow-scrolling: touch;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  color: inherit;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+ul, ol {
+  padding-left: 2em;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+  word-wrap: break-word;
+}
+li {
+  box-sizing: border-box;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #fff;
+  th, td {
+    height: 50px;
+    padding: 9px 8px;
+    word-break: break-word;
+    @include screen($width-mobile) {
+      height: 40px;
+    }
+  }
+  thead {
+    th {
+      font-weight: 500;
+    }
+  }
+}
+input, button, textarea, select, optgroup, option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+img {
+  /*防止chrome將圖片縮放時平滑化處理*/
+  image-rendering: -webkit-optimize-contrast;
+  max-width: 100%;
+}
+
+.page {
+  background: #fff;
+}
