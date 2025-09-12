@@ -341,7 +341,7 @@
     &.open {
       display: block;
       z-index: 1000;
-      // transform: translateZ(1px);
+      -webkit-transform: translateZ(1px);
     }
     
     &::before {
