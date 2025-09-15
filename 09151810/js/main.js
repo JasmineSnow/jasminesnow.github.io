@@ -31,13 +31,13 @@ $(window).on("load resize", function() {
 function open_innerContentNav() {
   $('.innerContent-switch').addClass('open');
   $('.innerContent-nav').addClass('open');
-  $('body').addClass('body_pop');
+  $('body').addClass('body_noScroll');
   return false;
 }
 function close_innerContentNav() {
   $('.innerContent-switch').removeClass('open');
   $('.innerContent-nav').removeClass('open');
-  $('body').removeClass('body_pop');
+  $('body').removeClass('body_noScroll');
   return false;
 }
 
