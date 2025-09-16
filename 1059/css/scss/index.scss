@@ -1,0 +1,36 @@
+/*------------------------------------*\
+  必要CSS檔
+  ---
+  如果SASS編譯出現子資料夾的檔案，請檢查設定
+  "savePath": "~/../../css" //輸出資料夾
+\*------------------------------------*/
+
+/*------------------------------------*\
+  font face
+\*------------------------------------*/
+/* font weight - 400 500 700 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+// base & reset
+@import "base/_variables";
+@import "base/_reset";
+@import "base/_common";
+@import "base/_pagemenu";
+// 天地
+@import "base/_frame";
+@import "base/_frame-popup";
+
+/*------------------------------------*\
+  需要的部分樣式 放置於parts/
+\*------------------------------------*/
+@import "parts/_btn";
+@import "parts/_chip";
+@import "parts/_input";
+@import "parts/_table";
+
+/*------------------------------------*\
+  此頁樣式
+\*------------------------------------*/
+@import "page/_index";

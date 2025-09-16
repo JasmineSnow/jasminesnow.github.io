@@ -1,0 +1,70 @@
+/*------------------------------------*\
+  必要CSS檔
+  ---
+  如果SASS編譯出現子資料夾的檔案，請檢查設定
+  "savePath": "~/../../css" //輸出資料夾
+\*------------------------------------*/
+
+/*------------------------------------*\
+  font face
+\*------------------------------------*/
+/* font weight - 400 500 700 */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../fonts/NotoSans-Regular.woff2') format('woff2'), url('../fonts/NotoSans-Regular.woff') format('woff');
+  font-weight: normal; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../fonts/NotoSans-Medium.woff2') format('woff2'), url('../fonts/NotoSans-Medium.woff') format('woff');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../fonts/NotoSans-Bold.woff2') format('woff2'), url('../fonts/NotoSans-Bold.woff') format('woff');
+  font-weight: bold; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('../fonts/NotoSansTC-Regular.woff2') format('woff2'), url('../fonts/NotoSansTC-Regular.woff') format('woff');
+  font-weight: normal; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('../fonts/NotoSansTC-Medium.woff2') format('woff2'), url('../fonts/NotoSansTC-Medium.woff') format('woff');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+font-family: 'Noto Sans TC';
+src: url('../fonts/NotoSansTC-Bold.woff2') format('woff2'), url('../fonts/NotoSansTC-Bold.woff') format('woff');
+font-weight: bold; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('../fonts/NotoSansTC-Black.woff2') format('woff2'), url('../fonts/NotoSansTC-Black.woff') format('woff');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+
+
+// base & reset
+@import "base/_variables";
+@import "base/_reset";
+@import "base/_common";
+@import "base/_pagemenu";
+// 天地
+@import "base/_frame";
+@import "base/_frame-popup";
+
+/*------------------------------------*\
+  需要的部分樣式 放置於parts/
+\*------------------------------------*/
+@import "parts/_btn";
+@import "parts/_chip";
+@import "parts/_input";
+@import "parts/_table";
+
+/*------------------------------------*\
+  此頁樣式
+\*------------------------------------*/
+@import "page/_index";
