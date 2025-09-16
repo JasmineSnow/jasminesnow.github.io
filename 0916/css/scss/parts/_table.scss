@@ -1,0 +1,323 @@
+/*------------------------------------*\
+  table
+\*------------------------------------*/
+.tableframe {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.tableBox {
+  width: 100%;
+  line-height: 1.25em;
+  border-bottom: solid 1px #cd545e;
+  &.bor-none {
+    border-bottom: none;
+  }
+  th, td {
+    min-width: 5em;
+    height: 50px;
+    padding: 9px 8px;
+    word-break: break-word;
+    @include screen($width-mobile) {
+      height: 40px;
+    }
+    &.h-s {
+      height: 40px;
+    }
+  }
+  &.table-s {
+    th, td {
+      height: 40px;
+      font-size: 15px;
+    }
+  }
+  thead {
+    background-color: #cd545e;
+    th {
+      font-weight: 500;
+      color: #fff;
+      border-right: solid 1px #fff;
+      border-bottom: solid 1px #fff;
+      .last {
+        border: none;
+      }
+    }
+    .bg--dark {
+      background-color: #be4d57;
+    }
+  }
+  .sideTh {
+    text-align: left;
+    color: #cd545e;
+    background-color: #fcf6f7;
+    &.bg-second {
+      background-color: #f7f8fc;
+    }
+    &.tC {
+      text-align: center;
+    }
+  }
+  .colTh {
+    color: #cd545e;
+    background-color: #ffe1e4;
+  }
+}
+// 收合
+.tableBox--fold {
+  border-bottom: none;
+  tr {
+    border-bottom: solid 1px #c9c9c9;
+  }
+}
+.table-hide {
+  border-bottom: none !important;
+  & > td {
+    height: auto;
+    padding: 0;
+    border-bottom: none !important;
+  }
+  &-inner {
+    display: none;
+    padding: 20px 30px;
+    background-color: $bg-second;
+    border-bottom: solid 1px #c9c9c9;
+    @include screen($width-mobile) {
+      padding: 15px;
+    }
+  }
+}
+
+// 原編輯器用
+.table--stripe {
+  border-bottom: solid 1px #cd545e;
+  thead {
+    background-color: #cd545e;
+    th {
+      color: #fff;
+      border-right: solid 1px #fff;
+      // border-bottom: solid 1px #fff;
+      &:nth-last-child(1) {
+        border-right: none;
+      }
+    }
+  }
+  tbody {
+    tr:nth-child(odd) {
+      background-color: $bg-second;
+    }
+    th {
+      text-align: left;
+      color: #cd545e;
+      background-color: #fcf6f7;
+    }
+  }
+}
+// 原編輯器用
+.table--border {
+  border: solid 1px #c8c8c8;
+  border-top: solid 2px #ababab;
+  tr {
+    border-bottom: solid 1px #c8c8c8;
+  }
+  th, td {
+    border: solid 1px #c8c8c8;
+  }
+  th {
+    font-weight: 500;
+    color: $text-dark;
+    background-color: #f9f9f9;
+  }
+}
+.editBox_tableframe {
+  table {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
+
+// 內頁用
+.tableBox--stripe {
+  @extend .tableBox;
+  tbody {
+    tr:nth-child(odd) {
+      background-color: $bg-second;
+    }
+  }
+}
+// 內頁用
+.tableBox--border {
+  @extend .tableBox;
+  border: solid 1px #c8c8c8;
+  tr {
+    border-bottom: solid 1px #c8c8c8;
+  }
+  th {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.tableBox--borderAll,
+.table-hide .tableBox--borderAll {
+  @extend .tableBox;
+  border: solid 1px #c8c8c8;
+  border-top: solid 2px #ababab;
+  th, td {
+    border: solid 1px #c8c8c8;
+  }
+  .sideTh {
+    text-align: center;
+    font-weight: 500;
+    color: $text-dark;
+    background-color: #f9f9f9;
+    @include screen($width-mobile) {
+      width: 110px;
+      text-align: left;
+    }
+  }  
+}
+
+// table rwd
+.table-rwd {
+  @include screen($width-mobile) {
+    border: none;
+    &, tbody, tfoot, tr {
+      display: block;
+    }
+    thead, th {
+      display: none;
+    }
+    tr {
+      margin-bottom: 20px;
+      border: solid 1px #c8c8c8;
+      border-bottom: none;
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+    }
+    td {
+      display: flex; 
+      align-items: stretch;
+      height: auto;
+      line-height: 1.5rem;
+      text-align: left;
+      padding: 0; 
+      background-color: #fff;
+      border-bottom: solid 1px #c8c8c8;
+      &::before {
+        content: attr(data-th); 
+        flex: 0 0 auto;
+        width: 120px;
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+        color: #cd545e;
+        padding: 10px 12px;
+        background-color: #f7f8fc;
+      }
+      .td-inner {
+        flex: 1 1 auto;
+        padding: 10px 12px;
+      }
+    }
+    tbody tr:nth-child(odd) td::before,
+    tfoot td::before {
+      background-color: #fcf6f7;
+    }
+    tfoot {
+      margin-top: 20px;
+    }
+    .m-th-main td::before { background-color: #fcf6f7 !important; }
+    .m-th-second td::before { background-color: #f7f8fc !important; }
+    
+    // title
+    .table-rwd-title {
+      font-weight: 500;
+      padding: 10px 12px;
+      color: #cd545e;
+      background-color: #ffe1e4;
+      &::before {
+        content: none;
+      }
+    }
+    .m-lh-l::before {
+      line-height: 30px;
+    }
+
+    &.tr-bor tr {
+      border-bottom: none;
+    }
+
+    // table
+    .table-folder {
+      margin-bottom: 0;
+    }
+    .table-hide {
+      border: none;
+      td {
+        display: block;
+        &::before {
+          content: none;
+        }
+      }
+    }
+    .table-hide-inner {
+      
+      table, thead, tbody, tfoot, tr , th, td {
+        display: revert;
+        border-collapse: collapse;
+      }
+    }
+  }
+  @include screen($width-xs) {
+    td::before {
+      width: 100px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    td .td-inner,
+    .table-rwd-title {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+// 摺疊
+.table-folder {
+  .JS_foldBtn-open, .JS_foldBtn-close {
+    position: relative;
+    padding-right: 20px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 5px);
+      right: 2px;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 10px 6px 0 6px;
+      border-color: $color-main transparent transparent transparent;
+      transform: rotate(0deg);
+    }
+  }
+  .JS_foldBtn-close {
+    @extend .a-line, .color-text-dark;
+    display: none;
+    &::after {
+      border-width: 10px 6px 0 6px;
+      border-width: 0 6px 10px 6px;
+      border-color: transparent transparent $text-dark transparent;
+    }
+  }
+  .JS_foldBtn-open {
+    @extend .a-line;
+  }
+  &.open {
+    border-bottom: none;
+    .JS_foldBtn-close { display: inline; }
+    .JS_foldBtn-open { display: none; }
+  }
+}
+
+
