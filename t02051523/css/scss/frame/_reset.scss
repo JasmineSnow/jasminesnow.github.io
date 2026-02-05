@@ -30,11 +30,13 @@ body {
   color: $text-color;
   background: #fff;
   word-break: break-word;
+  touch-action: manipulation;
 }
 html {
   -webkit-text-size-adjust: 100%; // safari內網頁的字體不會無緣無故變大
   -webkit-overflow-scrolling: touch; // safari內網頁滑動起來不會卡卡的
   overflow-scrolling: touch;
+  touch-action: manipulation;
 }
 a {
   color: inherit;
