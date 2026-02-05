@@ -1,0 +1,192 @@
+@charset "UTF-8";
+/*------------------------------------*\
+  color
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+  使用顏色設定_主要
+\*------------------------------------*/
+// 黑白
+$white: #fff;
+$black: #000;
+
+$text-color: #333;
+$text-dark: #292929;
+
+$text-gray: #666;
+$text-notice: #9f9f9f;
+$text-placeholder: #5daaaa;
+
+$color-devider: #f0f0f0;
+
+// 主色 
+$color-main: #007D7D;
+$color-main-600: #1C9C9F;
+$color-danger: #ea2e31;
+
+$color-star: #ECB010;
+
+
+/*------------------------------------*\
+  使用顏色設定_文字及背景顏色
+\*------------------------------------*/
+$set-colors: (
+  // "text": $text-color,
+  // "text-dark": $text-dark,
+  "gray": $text-gray,
+  "notice": $text-notice,
+  "main": $color-main,
+  "danger": $color-danger,
+  "star": $color-star,
+);
+@each $name,$color in $set-colors {
+  .color-#{$name} {
+    color: $color;
+  }
+}
+
+
+
+/*------------------------------------*\
+  使用顏色設定_按鈕顏色
+\*------------------------------------*/
+$btn-theme :(
+  main: (
+    class: 'main',
+    color: $white,
+    bg: $color-main,
+  ),
+  sub: (
+    class: 'sub',
+    color: $white,
+    bg: $text-placeholder,
+  ),
+  cancel: (
+    class: 'cancel',
+    color: $white,
+    bg: #CDD2D2,
+  ),
+  disabled: (
+    class: 'disabled',
+    color: $text-notice,
+    bg: $color-devider,
+  ),
+  attention: (
+    class: 'attention',
+    color: $white,
+    bg: #E61114,
+  )
+);
+
+
+
+
+/*------------------------------------*\
+  RWD尺寸標準
+\*------------------------------------*/
+$width-max: 1440px;
+$width-xl-wide: 1260px;
+$width-xl: 1200px;
+$width-large: 1100px;
+$width-mid: 1024px;
+$width-mobile: 900px; //mobile
+$width-mobile-m: 768px;
+$width-small: 540px;
+$width-xs: 374px;
+@mixin screen($screensize) {
+  @media screen and (max-width: $screensize) {
+    @content;
+  }
+}
+// 使用範例
+// @include screen($width-mobile) {}
+@mixin web-only {
+  @media screen and (min-width: 900.1px) {
+    @content;
+  }
+}
+
+/*------------------------------------*\
+  大小網
+\*------------------------------------*/
+.m-show {
+  display: none; 
+  @include screen($width-mobile) { display: block; }
+}
+@include screen($width-mobile) {
+	.m-hide { display: none !important; }
+}
+
+
+/*------------------------------------*\
+  頁面寬度
+\*------------------------------------*/
+$pagesize-width: 1200px;
+$pagesize-padding: 24px;
+$pagesize-max: calc($pagesize-width + $pagesize-padding * 2);
+
+
+
+/*------------------------------------*\
+  base extend
+\*------------------------------------*/
+// transition
+@mixin transition($value: all) {
+  transition: $value 0.2s ease-in-out;
+}
+// 預設使用         @include transition();
+// 加入需要的項目    @include transition(變數);
+
+// 最後一個margin 0
+%last-no-margin {
+  &:nth-last-child(1) {
+    margin: 0;
+  }
+}
+// 最後一個border 0
+%last-no-border {
+  &:nth-last-child(1) {
+    border: none;
+  }
+}
+// border dotted
+%border-bottom-dot {
+  border-bottom: dotted 2px #dad2c1;
+}
+
+// btn hover transition
+%btnHover {
+  @include transition(opacity);
+  &:hover, &:focus {
+    opacity: 0.75;
+  }
+}
+
+
+
+%swiperPagi {
+  .swiper-pagination {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0 10px;
+    height: 18px;
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      @include screen($width-mobile) {
+        width: 8px; height: 8px;
+      }
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background: $color-main;
+  }
+  .swiper-pagination-lock {
+    display: none;
+  }
+}
+

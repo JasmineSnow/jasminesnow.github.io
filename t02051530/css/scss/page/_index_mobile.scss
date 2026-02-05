@@ -1,0 +1,214 @@
+/*------------------------------------*\
+  index頁 AWD
+\*------------------------------------*/
+@use '../base/variables' as *;
+
+.page {
+  // overflow-x: hidden;
+}
+
+.wrapper.bg--index {
+  background: #fff;
+}
+.wrapper.bg--index .topBn {
+  margin-bottom: 0;
+  .swiper-pagination {
+    display: none;
+  }
+}
+
+.eventRow::before,
+.lifeCard-area::before {
+  content: none;
+}
+.lifeCard-area-inner {
+  padding-bottom: 24px;
+  background: none;
+}
+
+.wrapper,
+.wrapper.bg--index .container {
+  overflow: initial;
+}
+
+.index_topArea {
+  position: sticky;
+  top: 50px;
+  z-index: 20;
+  background-color: #fff;
+  padding: 8px 0 0;
+}
+.openmenu .index_topArea {
+  top: 0;
+}
+
+
+// 調整原有區塊
+.indexTitle {
+  .size-s {
+    padding-left: 12px; padding-right: 12px;
+  }
+}
+
+.eventRow-hot,
+.eventRow-event,
+.newestCard-area {
+  margin-bottom: 24px;
+}
+
+.hotCard .cardImg {
+  width: 320px;
+  @include screen($width-mid) {
+    width: 267px;
+  }
+  @include screen($width-mobile) {
+    width: 214px;
+  }
+  @include screen($width-small) {
+    width: 170px;
+  }
+}
+
+.eventRow-event {
+  width: 100%;
+  padding: 0;
+}
+
+.lifeCard-area-inner {
+  padding-top: 0;
+}
+
+
+
+// 跑馬燈
+.marquee {
+  display: flex;
+  justify-content: center;
+  gap: 0 8px;
+  font-size: 14px;
+  line-height: 20px;
+  width: 100vw;
+  overflow-x: clip;
+  padding: 6px 10px;
+  &-inner {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .inner-1 {
+    //animation: marquee_1 15s linear infinite;
+  }
+  .inner-2 {
+    animation: marquee_2 15s linear infinite;
+  }
+  .inner-3 {
+    animation: marquee_3 15s linear infinite;
+  }
+  .tag {
+    color: #fff;
+    padding: 0 4px;
+    margin-right: 4px;
+    border-radius: 4px;
+    background-color: #FFBD06;
+    &.hot {
+      background-color: #FA9496;
+    }
+  }
+}
+@keyframes marquee_1 {
+	from { transform: translateX(0); }
+	to { transform: translateX(-100%); }
+}
+@keyframes marquee_2 {
+	from { transform: translateX(0); }
+	to { transform: translateX(-100%); }
+}
+@keyframes marquee_3 {
+	from { transform: translateX(0); }
+	to { transform: translateX(-100%); }
+}
+
+
+
+// 快速入口
+// .qckNav {
+//   @extend %swiperPagi;
+//   position: relative;
+//   padding: 24px 0;
+//   background-color: #FFFAF7;
+//   margin-bottom: 24px;
+//   .swiper-slide {
+//     height: unset;
+//   }
+//   .swiper-pagination {
+//     position: absolute;
+//     top: auto;
+//     bottom: 8px;
+//   }
+//   &-list {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 12px 4px;
+//     a {
+//       display: block;
+//       text-align: center;
+//         line-height: 24px;
+//       font-weight: 500;
+//       @include screen($width-mobile-m) {
+//         font-size: 14px;
+//       }
+//       @include screen($width-xs) {
+//         font-size: 12px;
+//       }
+//     }
+//     img {
+//       display: block;
+//       width: 24px; height: 24px;
+//       margin: 0 auto 4px;
+//       @include screen($width-mobile-m) {
+//         width: 20px; height: 20px;
+//       }
+//     }
+//   }
+// }
+.qckNav {
+  @extend %swiperPagi;
+  position: relative;
+  padding: 16px 0 24px;
+  margin-bottom: 8px;
+  .swiper-slide {
+    height: unset;
+  }
+  .swiper-pagination {
+    position: absolute;
+    top: auto;
+    bottom: 8px;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px 4px;
+    a {
+      display: block;
+      text-align: center;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 500;
+      color: $text-gray;
+      letter-spacing: 0;
+      background-color: $color-devider;
+      padding: 4px;
+      border-radius: 16px;
+      @include screen($width-mobile-m) {
+        font-size: 14px;
+      }
+      @include screen($width-xs) {
+        font-size: 12px;
+      }
+    }
+    img {
+      display: none;
+    }
+  }
+}
