@@ -1,0 +1,86 @@
+@use 'base/variables' as *;
+
+
+/*------------------------------------*\
+  editbox
+\*------------------------------------*/
+.editbox {
+  * { all: revert; }
+  p {
+    min-height: 20px;
+    margin: 0;
+  }
+  ol, ul {
+    list-style: revert;
+    padding-left: 2em;
+  }
+  img {
+    max-width: 100%;
+  }
+  // 標題
+  .title-h2 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    @include screen($width-mobile) {
+      font-size: 1rem;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+  }
+
+  // table
+  .editTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-style: hidden;
+    text-align: center;
+    font-weight: 500;
+    border-bottom: solid 1px #f0f0f0;
+    @include screen($width-mobile) {
+      font-size: 15px;
+      line-height: 20px;
+    }
+    @include screen($width-xs) {
+      font-size: 14px;
+    }
+    th {
+      color: #fff;
+      padding: 10px;
+      background-color: #1C9C9F;
+      @include screen($width-mobile) {
+        padding: 8px 5px;
+      }
+      @include screen($width-xs) {
+        padding: 8px 2px;
+      }
+    }
+    .th-strong {
+      background-color: $color-main;
+    }
+    th,
+    td {
+      border: solid 1px #f0f0f0;
+    }
+  }
+
+  /*影片box*/
+  .videoBox {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 20px 0;
+  }
+  .videoBox iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  
+}
+.container--old .articinner .editbox {
+  @extend .editbox;
+}
