@@ -87,7 +87,7 @@ header {
     grid-template-columns: 1fr;
     align-items: flex-end;
     max-width: 600px;
-    max-height: calc(100% - 80px);
+    max-height: calc(100dvh - 80px);
     border-radius: 8px 8px 0 0;
     padding: 0;
     transform: translateY(100%);
