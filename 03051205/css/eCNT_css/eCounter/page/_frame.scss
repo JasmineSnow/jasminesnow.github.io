@@ -288,6 +288,7 @@
     max-height: calc(100dvh - 140px);
     display: flex;
     flex-direction: column;
+    transition: max-height 0.2s;
     @include screen($width-mobile) {
       max-height: calc(100dvh - 140px);
     }
