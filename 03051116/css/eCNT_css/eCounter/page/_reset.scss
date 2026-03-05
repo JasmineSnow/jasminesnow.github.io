@@ -1,0 +1,86 @@
+/*reset*/
+body, div, h1, h2, h3, h4, h5, h6, li, form, input, select, textarea, label, p, blockquote, th, td, iframe, button, a, header, footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  vertical-align: baseline;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: 'Noto Sans', 'Noto Sans TC', 'Helvetica Neue', Helvetica, '微軟正黑體', sans-serif;
+  font-weight: 400;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+}
+
+html {
+  overflow: unset;
+  -webkit-text-size-adjust: 100%;
+}
+
+// html, body {
+//   height: 100%;
+// }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+button {
+  color: inherit;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+ul, ol {
+  padding-left: 1.5em;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input, button, textarea, select, optgroup, option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+
+input[type="button"],
+select {
+  -webkit-appearance: none; /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+  -moz-appearance: none; /* FireFox */
+  appearance: none;
+}
+
+img {
+  /*防止chrome將圖片縮放時平滑化處理*/
+  image-rendering: -webkit-optimize-contrast;
+  max-width: 100%;
+}
+
+/*reset end*/
+
+.page {
+  background: #fff;
+}
+
+

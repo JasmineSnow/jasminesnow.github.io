@@ -1,0 +1,73 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+// @import 'ngx-toastr/toastr';
+@import './style/dialog.scss';
+@import "./style/shadow.scss";
+@import "./style/color.scss";
+@import "./style/font/size.scss";
+
+:root {
+	--tss-primary-darker-color: #a93217;
+	--tss-primary-color: #ed5565;
+	--tss-primary-lighter-color: #f2828e;
+	--tss-primary-lightest-color: #fff0f0;
+
+	forced-color-adjust: none;
+}
+
+html {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+}
+
+/* 強制複寫掉 bootstrap 左右 margin 撐出的row */
+.row {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.flex-fill {
+	flex-basis: 0% !important;
+}
+
+@media (min-width: 576px) {
+	.flex-sm-fill {
+		flex-basis: 0 !important;
+	}
+}
+
+@media (min-width: 768px) {
+	.flex-md-fill {
+		flex-basis: 0 !important;
+	}
+}
+
+@media (min-width: 992px) {
+	.flex-lg-fill {
+		flex-basis: 0 !important;
+	}
+}
+
+// 複寫 style
+.toast-top-center {
+	top: 12px;
+}

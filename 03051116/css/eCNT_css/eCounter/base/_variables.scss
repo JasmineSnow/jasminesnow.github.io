@@ -1,0 +1,108 @@
+// --------------------------------------- 
+// 初始變數設定
+// --------------------------------------- 
+@charset "UTF-8";
+
+
+
+// --------------------------------------- 
+// RWD尺寸標準
+// --------------------------------------- 
+$width-max: 1440px;
+$width-m: 1023.9px;
+$width-mobile: 767.9px; //767
+$width-ms: 539.9px;
+$width-s: 374.9px;
+$width-xs: 319.9px;
+@mixin screen($screensize) {
+  @media screen and (max-width: $screensize) {
+    @content;
+  }
+}
+// 使用範例
+// @include screen($width-mobile) {
+// }
+@mixin web-only {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+
+
+// --------------------------------------- 
+// color
+// --------------------------------------- 
+$color-ci-main: #D70C18;
+$color-ci-gray: #d8d8d8;
+$color-ci-gray-dark: #464646;
+
+$color-primary-100: #FFF0F0;
+$color-primary-200: #FFCCD1;
+$color-primary-300: #FFA6AF;
+$color-primary-400: #FF808E;
+$color-primary: #ED5565;
+$color-primary-600: #DC3545;
+$color-primary-700: #991F2C;
+
+$color-second-100: #FFF5E5;
+$color-second-200: #F3E4CE;
+$color-second: #D8A65A;
+$color-second-600: #AE8648;
+
+$color-white: #fff;
+$color-gray-200: #fafafa;
+$color-gray-300: #ebebeb;
+$color-gray-400: #ccc;
+$color-gray: #A6A6A6;
+$color-gray-600: #888;
+$color-gray-700: #555;
+$color-gray-800: #333;
+$color-black: #000;
+
+$color-success-bg: #DFF4E2;
+$color-success: #2FAB48;
+
+$color-danger-bg: $color-primary-100;
+$color-danger: $color-primary-600;
+
+$color-caution-bg: #FFEDD9;
+$color-caution-border: #FFE8CF;
+$color-caution: #F08519;
+$color-caution-700: #D17315;
+
+$color-strong: #F05C38;
+
+$color-devider: $color-gray-300;
+
+$color-disable-bg: $color-gray-300;
+$color-disable: $color-gray;
+
+$color-msg-bg: $color-second-100;
+$color-msg: $color-second-600;
+
+
+// --------------------------------------- 
+// 使用顏色設定_主要
+// --------------------------------------- 
+$text-colors: (
+  "text": $color-gray-800,
+  "gray": $color-gray,
+  "gray-c": #ccc,
+  "gray-8": #888,
+  "gray-5": #555,
+  "dark": #322614,
+  "black": #000,
+  "main": $color-primary,
+  "main-600": $color-primary-600,
+  "second": $color-second,
+  "second-dark": $color-second-600,
+  "success": $color-success,
+  "caution": $color-caution,
+  "strong": $color-strong,
+  "danger": $color-primary-600,
+);
+
+
+
+

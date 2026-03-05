@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="shortcut icon" type="image/x-icon" href="eCNT_images/favicon.ico">
+  <title>台新證券</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.4e6bced264773b76.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/eCounter.css"/>
+</head>
+
+<body>
+  <div class="eCNT_area">
+    <!-- SVG -->
+    <div style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+        <!-- select -->
+        <g id="eCNT_select" fill="currentColor">
+          <path d="M12 15.375L6 9.37498L7.4 7.97498L12 12.575L16.6 7.97498L18 9.37498L12 15.375Z"/>
+        </g>
+      </svg>
+    </div>
+    <!-- page -->
+    <div class="page">
+      <div class="page_cover"></div>
+      <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+          <div class="pagesize">
+            <div class="header-logo"><a href="#" class="logo">台新證券</a></div>
+            <button class="headBtn ty--menu"></button>
+          </div>
+        </div>
+        <!-- container -->
+        <div class="container">
+          <!-- banner -->
+          <div class="titleBn" style="background-image: url(eCNT_img/titleBn_05.jpg);">
+            <div class="pagesize">
+              <h2>股票出借</h2>
+            </div>
+          </div>
+          <!-- content -->
+          <div class="mainArea hasNav">
+            <div class="mainArea-nav">
+              <div class="pagesize">
+                <div class="swiper" data-slide="4">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a class="nav-link" href="#">查熱門券</a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link" href="#">出借申請</a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link" href="#">出借成交</a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link" href="#">出借紀錄</a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link on" href="#">出借狀態</a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link" href="#">出借試算</a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a class="nav-link" href="#">出借Q&A</a>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="btn-mAll"><span class="text">全部</span></a>
+              </div>
+              <!-- 選單sub-->
+            </div>
+            <div class="mainArea-content">
+              <div class="pagesize">
+                <div class="mainArea-bg">
+                  <div class="mainArea-inner">
+                    <!-- main -->
+
+                    <div class="mainBox">
+                      <h3 class="boxTitle">出借狀態</h3>
+
+                      <!-- 查詢 -->
+                      <div class="ect_d-flex m-column mb-2x">
+                        <div class="flex-item w-max-m m-w-full">
+                          <div class="inputbox--select disabled">
+                            <select>
+                              <option hidden="" >請選擇</option>
+                              <option disabled="" selected="">證-台北總公司1234567-陳小新</option>
+                              <option>證-台北總公司1234567-陳小新</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="flex-item f-1">
+                          <div class="inputbox ">
+                          
+                            <!-- 請RD改套 輸入+下拉快速搜尋 -->
+                            <input type="text" placeholder="輸入股票名稱/代號">
+                            <!-- 請RD改套 輸入+下拉快速搜尋 end -->
+                          
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="w-max-m m-w-full mb-2x">
+                        <div class="inputbox--select">
+                          <select>
+                            <option hidden disabled selected>全部狀態</option>
+                            <option>未出借</option>
+                            <option>已出借</option>
+                            <option>部分出借</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <hr class="hr-line my-2x">
+
+                      <div class="ect_d-flex f-wrap j-between a-end mb-2x m-column">
+                        <div class="flex-item">
+                          <p class="fs-m color-caution">※狀態為「未出借」才可撤銷，若股票已出借，請至「出借記錄」進行查詢。</p>
+                        </div>
+                        <div class="flex-item f-1">
+                          <div class=" ect_d-flex tR">
+                            <p class="flex-item fs-s color-gray">更新時間：2025/09/22 13:15:15</p>
+                            <a href="#" class="flex-item textLink iconText iconText-inline fs-m color-main">
+                              <img class="iconText-img" src="eCNT_images/iconText-refresh.svg">
+                              <span class="iconText-text">重新查詢</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- table web -->
+                      <div class="tableframe m-hide">
+                        <table class="table--stripe">
+                          <thead class="sticky--top">
+                            <tr>
+                              <th><a class="text sortBtn down" href="#"><span class="sortBtn-text">申請書效期</span></a><br />申請書號</th>
+                              <th>狀態</th>
+                              <th><a class="text sortBtn down" href="#"><span class="sortBtn-text">股票名稱</span></a></th>
+                              <th>費率</th>
+                              <th>申請張數</th>
+                              <th>出借張數</th>
+                              <th>操作</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tC">2025/05/26～2025/11/26<br/>5</td>
+                              <td class="tC"><span class="bgChip ty-gray">未出借</span></td>
+                              <td class="">6719<br />智利</td>
+                              <td class="tR">112.0%</td>
+                              <td class="tR">1,000,000</td>
+                              <td class="tR">20</td>
+                              <td>
+                                <div class="btn-box">
+                                  <a href="#" class="btn px-s ty-line-cancel">撤銷</a>
+                                  <a href="#" class="btn px-s ty-line-main">更改</a>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="tC">2025/05/26～2025/11/26<br />5</td>
+                              <td class="tC"><span class="bgChip ty-success">已出借</span></td>
+                              <td class="">6719<br />智利</td>
+                              <td class="tR">112.0%</td>
+                              <td class="tR">5</td>
+                              <td class="tR">20</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="tC">2025/05/26～2025/11/26<br />15</td>
+                              <td class="tC"><span class="bgChip ty-caution">部分出借</span></td>
+                              <td class="">006208<br />富邦台50</td>
+                              <td class="tR">8.0%</td>
+                              <td class="tR">10</td>
+                              <td class="tR">10</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="tC">2025/05/26～2025/11/26<br />15</td>
+                              <td class="tC"><span class="bgChip ty-caution">部分出借</span></td>
+                              <td class="">006208<br />富邦台50</td>
+                              <td class="tR">8.0%</td>
+                              <td class="tR">10</td>
+                              <td class="tR">10</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td class="tC">2025/05/26～2025/11/26<br />15</td>
+                              <td class="tC"><span class="bgChip ty-caution">部分出借</span></td>
+                              <td class="">006208<br />富邦台50</td>
+                              <td class="tR">8.0%</td>
+                              <td class="tR">10</td>
+                              <td class="tR">10</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <table class="table--stripe cover--more">
+                            <tr>
+                              <td colspan="5" class="tC">
+                                <a href="#" class="textLink iconText color-second">
+                                  <span class="iconText-text">查看更多筆</span>
+                                  <svg viewBox="0 0 24 24" width="24" height="24" class="iconText-img">
+                                    <use xlink:href="#eCNT_select"></use>
+                                  </svg>
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+
+                      <!-- table mobile -->
+                      <div class="m-show">
+                        <div class="tableCard JS_folder mb-2x">
+                          <div class="tableCard-item folder open">
+                            <div class="tableCard-head">
+                              <div class="stockNum">
+                                <p class="stockNum-title">2330 台積電</p>
+                                <div class="stockNum-inner">
+                                  <span class="bgChip ty-gray">未出借</span>
+                                  <a class="fold-btn" href="#"></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tableCard-inner">
+                              <div class="tableCard-inlist">
+                                <div class="item">
+                                  <p class="title">費率</p>
+                                  <p class="text">2.0%</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">出借張數</p>
+                                  <p class="text">5張</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請張數</p>
+                                  <p class="text">5張</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請書效期</p>
+                                  <p class="text">2025/05/26~2025/08/26</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請書號</p>
+                                  <p class="text">6</p>
+                                </div>
+                              </div>
+                              <div class="fold-hide">
+                                <div class="btn-box pt-4x">
+                                  <a href="#" class="btn w-m ty-line-cancel-light">撤銷</a>
+                                  <a href="#" class="btn w-m ty-main">更改</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tableCard-item folder">
+                            <div class="tableCard-head">
+                              <div class="stockNum">
+                                <p class="stockNum-title">1101 台泥</p>
+                                <div class="stockNum-inner">
+                                  <span class="bgChip ty-success">已出借</span>
+                                  <a class="fold-btn" href="#"></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tableCard-inner">
+                              <div class="tableCard-inlist">
+                                <div class="item">
+                                  <p class="title">費率</p>
+                                  <p class="text">2.0%</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">出借張數</p>
+                                  <p class="text">5張</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請張數</p>
+                                  <p class="text">5張</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請書效期</p>
+                                  <p class="text">2025/05/26~2025/08/26</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請書號</p>
+                                  <p class="text">6</p>
+                                </div>
+                              </div>
+                              <div class="fold-hide">
+                                <div class="btn-box pt-4x">
+                                  <a href="#" class="btn w-m ty-line-cancel-light">撤銷</a>
+                                  <a href="#" class="btn w-m ty-main">更改</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tableCard-item folder">
+                            <div class="tableCard-head">
+                              <div class="stockNum">
+                                <p class="stockNum-title">1303 南亞</p>
+                                <div class="stockNum-inner">
+                                  <span class="bgChip ty-caution">部分出借</span>
+                                  <a class="fold-btn" href="#"></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tableCard-inner">
+                              <div class="tableCard-inlist">
+                                <div class="item">
+                                  <p class="title">費率</p>
+                                  <p class="text">2.0%</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">出借張數</p>
+                                  <p class="text">5張</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請張數</p>
+                                  <p class="text">5張</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請書效期</p>
+                                  <p class="text">2025/05/26~2025/08/26</p>
+                                </div>
+                                <div class="item">
+                                  <p class="title">申請書號</p>
+                                  <p class="text">6</p>
+                                </div>
+                              </div>
+                              <div class="fold-hide">
+                                <div class="btn-box pt-4x">
+                                  <a href="#" class="btn w-m ty-line-cancel-light">撤銷</a>
+                                  <a href="#" class="btn w-m ty-main">更改</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <table class="table--stripe cover--more">
+                            <tr>
+                              <td colspan="5" class="tC">
+                                <a href="#" class="textLink iconText color-second">
+                                  <span class="iconText-text">查看更多筆</span>
+                                  <svg viewBox="0 0 24 24" width="24" height="24" class="iconText-img">
+                                    <use xlink:href="#eCNT_select"></use>
+                                  </svg>
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+
+                    </div>
+                    
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+          <div class="f_t">
+            <div class="pagesize">
+              <div>
+                <p>地址：(104) 台北市中山北路二段 44 號 2 樓 </p>
+                <p>台新證券服務專線：<span class="fw-bold">(02)4050-9799</span></p>
+                <p>112年金管證總字第 0023 號</p>
+              </div>
+            </div>
+          </div>
+          <div class="f_b">
+            <div class="pagesize">
+              <div class="f_b_in">
+                <div>
+                  <p>©台新綜合證券股份有限公司<span>Copyright Taishin Securities Co., Ltd. All Rights Reserved</span></p>
+                </div>
+                <div><img src="eCNT_images/footer_logo.svg" class="f_logo" alt="台新金控"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- float -->
+        <div class="floatNav">
+          <a href="#" class="floatNav-top"></a>
+        </div>
+      </div>
+    </div>
+    <!-- page end -->
+    <!-- m-主選單 -->
+    <div class="popup ty-mainAreaNav"><!-- open -->
+      <div class="popup-wrapper">
+        <div class="popup-content">
+          <div class="popup-area">
+            <div class="popup-head">
+              <h2 class="popup-title">主選單</h2>
+              <a class="popup-close" href="#"></a>
+            </div>
+            <div class="popup-inner">
+              <!-- inner -->
+              <ul class="mainAreaNav-mList JS_folder">
+                <li>
+                  <a href="#" class="nav-link">查熱門券</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link">出借申請</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link">出借成交</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link">出借紀錄</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link on">出借狀態</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link">出借試算</a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link">出借Q&A</a>
+                </li>
+              </ul>
+              <!-- inner end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- popup -->
+    <div class="popup m-bot open"><!-- open -->
+      <div class="popup-wrapper">
+        <div class="popup-content">
+          <div class="popup-area">
+            <div class="popup-head bg-main-700">
+              <h2 class="popup-title">更改出借張數及費率</h2>
+              <a class="popup-close" href="#"></a>
+            </div>
+            <div class="popup-inner px-l">
+              <!-- inner -->
+              <p class="pl-0x5 m-pd-0 mb-1x">原出借設定</p>
+              <!-- table -->
+              <div class="tableframe mb-4x m-mb-2x">
+                <table class="table--sideTh">
+                  <tbody>
+                    <tr>
+                      <th class="sideTh bg-gray">股票<br class="m-show" />名稱</th>
+                      <td class="fw-bold">1101台泥</td>
+                    </tr>
+                    <tr>
+                      <th class="sideTh bg-gray">出借<br class="m-show" />費率</th>
+                      <td class="fw-bold">2.0%</td>
+                    </tr>
+                    <tr>
+                      <th class="sideTh bg-gray">申請<br class="m-show" />張數</th>
+                      <td class="fw-bold">78張</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="pl-0x5 m-pd-0 mb-1x">請輸入您欲更改的出借條件</p>
+              <!-- table -->
+              <div class="tableframe">
+                <table class="table--sideTh">
+                  <tbody>
+                    <tr>
+                      <th class="sideTh">出借<br class="m-show" />費率</th>
+                      <td class="td--input">
+                        <div class="ect_d-flex f-column">
+                          <div class="flex-item">
+                            <p class="radio">
+                              <input type="radio" id="r1-1" name="r1">
+                              <label for="r1-1">授權貴公司訂定費率</label>
+                            </p>
+                          </div>
+                          <div class="flex-item f-1 ect_d-flex a-center m-column">
+                            <div class="flex-item">
+                              <p class="radio">
+                                <input type="radio" id="r1-5" name="r1">
+                                <label for="r1-5">自訂</label>
+                              </p>
+                            </div>
+                            <div class="flex-item f-1">
+                              <div class="inputbox-outer">
+                                <div class="inputbox w-full">
+                                  <input type="text" placeholder="請輸入0.01~16的數字">
+                                </div>
+                                <p>%</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="sideTh">申請<br class="m-show"/>張數</th>
+                      <td class="td--input">
+                        <div class="formbox">
+                          <div class="formbox-inner">
+                            <div class="inputbox-outer">
+                              <div class="inputbox w-full">
+                                <input type="text" placeholder="請輸入張數">
+                              </div>
+                              <p>張</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- inner end -->
+            </div>
+            <div class="popup-foot">
+              <div class="btn-box">
+                <a href="#" class="btn h-l w-chk ty-line-cancel order-2">取消</a>
+                <a href="#" class="btn h-l w-chk ty-main order-1">確定</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--main js-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="eCNT_js/main.js"></script>
+  <!-- 切版測試 請刪除下列 -->
+  <script type="text/javascript" src="eCNT_js/test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+$font-size: (
+	12,
+	14,
+	20,
+	24
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+	@each $size in $font-size {
+		@if $name =="xs" {
+			.fs-#{$size}p {
+				font-size: $size + px;
+			}
+		}
+
+		@else {
+			@media all and (min-width: $breakpoint) {
+				.fs-#{$name}-#{$size}p {
+					font-size: $size + px;
+				}
+			}
+		}
+	}
+}

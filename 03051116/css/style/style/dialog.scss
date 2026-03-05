@@ -1,0 +1,16 @@
+.modal-dialog.custom13 {
+	.modal-header {
+		background: #aa2b37;
+		background: linear-gradient(#aa2b37, #a92b36);
+		color: #ffffff;
+	}
+}
+
+/**
+ * 宜珊客製版
+ */
+@media (min-width: 576px) {
+	.modal-dialog.custom13 {
+		max-width: 650px;
+	}
+}
