@@ -288,7 +288,6 @@
     max-height: calc(100dvh - 140px);
     display: flex;
     flex-direction: column;
-    transition: max-height 0.2s;
     @include screen($width-mobile) {
       max-height: calc(100dvh - 140px);
     }
@@ -403,7 +402,7 @@
     max-height: calc(100dvh - 80px);
     border-radius: 8px 8px 0 0;
     transform: translateY(100%);
-    transition: transform 0.3s ease-in-out, max-height 0.2s;
+    transition: transform 0.3s ease-in-out;
     @include screen($width-mobile) {
       max-width: 100%;
     }
