@@ -75,8 +75,12 @@ header {
 .popup.ty-bot {
   transition: all 0.3s ease-in-out;
   .popup-wrapper {
+    min-height: 100dvh;
     justify-content: flex-end;
     padding: 80px 0 0;
+  }
+  .popup-area {
+    max-height: calc(100dvh - 120px);
   }
   .popup-content {
     display: grid;
