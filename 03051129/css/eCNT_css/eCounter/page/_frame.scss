@@ -285,11 +285,11 @@
     }
   }
   &-area {
-    max-height: calc(100vh - 140px);
+    max-height: calc(100dvh - 140px);
     display: flex;
     flex-direction: column;
     @include screen($width-mobile) {
-      max-height: calc(100vh - 140px);
+      max-height: calc(100dvh - 140px);
     }
   }
   &.open {
